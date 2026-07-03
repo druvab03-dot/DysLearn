@@ -1,0 +1,166 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+.dashboard{
+  display:flex;
+  height:100vh;
+  background:#0f172a;
+  color:white;
+  font-family:Arial, sans-serif;
+}
+
+/* SIDEBAR */
+
+.sidebar{
+  width:240px;
+  background:#111827;
+  padding:30px;
+}
+
+.logo{
+  color:#818cf8;
+  margin-bottom:50px;
+}
+
+.sidebar ul{
+  list-style:none;
+}
+
+.sidebar li{
+  margin:25px 0;
+  font-size:18px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.sidebar li:hover{
+  color:#818cf8;
+}
+
+/* MAIN */
+
+.mainContent{
+  flex:1;
+  padding:40px;
+}
+
+/* HEADER */
+
+.header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:40px;
+}
+
+.profile{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.profileCircle{
+  width:45px;
+  height:45px;
+  border-radius:50%;
+  background:#4f46e5;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-weight:bold;
+}
+
+/* LANGUAGE CARDS */
+
+.languageCards{
+  display:flex;
+  gap:25px;
+  margin-bottom:40px;
+}
+
+.langCard{
+  flex:1;
+  height:220px;
+  border-radius:25px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.langCard:hover{
+  transform:translateY(-8px);
+}
+
+.langCard h1{
+  font-size:70px;
+  margin-bottom:15px;
+}
+
+.langCard p{
+  font-size:22px;
+  font-weight:bold;
+}
+
+/* CARD COLORS */
+
+.english{
+  background:linear-gradient(
+    135deg,
+    #4f46e5,
+    #6366f1
+  );
+}
+
+.kannada{
+  background:linear-gradient(
+    135deg,
+    #059669,
+    #10b981
+  );
+}
+
+.hindi{
+  background:linear-gradient(
+    135deg,
+    #dc2626,
+    #ef4444
+  );
+}
+
+/* GAME CARD */
+
+.gameCard{
+  background:#1e293b;
+  padding:35px;
+  border-radius:25px;
+}
+
+.gameCard h2{
+  margin-bottom:15px;
+}
+
+.gameCard p{
+  color:#cbd5e1;
+  margin-bottom:25px;
+}
+
+.gameCard button{
+  padding:14px 28px;
+  border:none;
+  border-radius:12px;
+  background:#4f46e5;
+  color:white;
+  font-size:16px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.gameCard button:hover{
+  background:#6366f1;
+}
