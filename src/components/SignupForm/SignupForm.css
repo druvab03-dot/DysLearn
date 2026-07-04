@@ -1,0 +1,142 @@
+.signupForm{
+
+    width:100%;
+
+}
+
+.signupHeader{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+
+    margin-bottom:25px;
+
+}
+
+.signupHeader h2{
+
+    color:var(--text);
+
+    margin-bottom:6px;
+
+}
+
+.signupHeader p{
+
+    color:var(--text-light);
+
+    font-size:14px;
+
+}
+
+.profileCircle{
+
+    width:80px;
+
+    height:80px;
+
+    border-radius:50%;
+
+    border:2px dashed var(--border);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    font-size:12px;
+
+    color:var(--text-light);
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.profileCircle:hover{
+
+    border-color:var(--primary);
+
+    color:var(--primary);
+
+}
+
+.verifyRow{
+
+    display:flex;
+
+    align-items:flex-end;
+
+    gap:12px;
+
+}
+
+.verifyInput{
+
+    flex:1;
+
+}
+
+.verifyButton{
+
+    height:48px;
+
+    padding:0 18px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:var(--primary);
+
+    color:white;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    margin-bottom:18px;
+
+}
+
+.verifyButton:hover{
+
+    background:var(--primary-dark);
+
+}
+
+.addChildButton{
+
+    width:100%;
+
+    margin:15px 0;
+
+    padding:14px;
+
+    border:2px dashed var(--primary);
+
+    border-radius:12px;
+
+    background:transparent;
+
+    color:var(--primary);
+
+    cursor:pointer;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.addChildButton:hover{
+
+    background:rgba(79,70,229,.08);
+
+}

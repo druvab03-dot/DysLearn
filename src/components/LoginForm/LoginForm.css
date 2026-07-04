@@ -1,0 +1,73 @@
+.loginForm{
+
+    width:100%;
+
+}
+
+.otpButton{
+
+    background:none;
+
+    border:none;
+
+    color:var(--primary);
+
+    cursor:pointer;
+
+    font-size:14px;
+
+    margin:5px 0 20px;
+
+    padding:0;
+
+    transition:.25s;
+}
+
+.otpButton:hover{
+
+    color:var(--primary-dark);
+
+}
+
+.loginFooter{
+
+    margin-top:20px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    font-size:14px;
+}
+
+.loginFooter label{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    color:var(--text-light);
+}
+
+.textButton{
+
+    background:none;
+
+    border:none;
+
+    color:var(--primary);
+
+    cursor:pointer;
+
+    font-size:14px;
+}
+
+.textButton:hover{
+
+    color:var(--primary-dark);
+
+}
