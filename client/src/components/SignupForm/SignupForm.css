@@ -1,0 +1,319 @@
+.signupForm {
+
+    width: 100%;
+
+}
+
+.signupHeader {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    margin-bottom: 25px;
+
+    gap: 20px;
+
+}
+
+.signupHeader h2 {
+
+    color: var(--text);
+
+    margin-bottom: 6px;
+
+    font-size: 28px;
+
+    font-weight: 700;
+
+}
+
+.signupHeader p {
+
+    color: var(--text-light);
+
+    font-size: 14px;
+
+}
+
+.profileCircle {
+
+    width: 80px;
+
+    height: 80px;
+
+    border: 2px dashed var(--border);
+
+    border-radius: 50%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    background: var(--surface);
+
+    color: var(--text-light);
+
+    font-size: 12px;
+
+    cursor: pointer;
+
+    transition: var(--transition);
+
+}
+
+.profileCircle:hover {
+
+    border-color: var(--primary);
+
+    background: var(--surface-2);
+
+    color: var(--primary);
+
+}
+
+.verifyRow {
+
+    display: flex;
+
+    align-items: flex-end;
+
+    gap: 12px;
+
+}
+
+.verifyInput {
+
+    flex: 1;
+
+}
+
+.verifyButton {
+
+    height: 48px;
+
+    padding: 0 18px;
+
+    margin-bottom: 18px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: var(--primary);
+
+    color: #ffffff;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: var(--transition);
+
+}
+
+.verifyButton:hover {
+
+    background: var(--primary-dark);
+
+}
+
+.addChildButton {
+
+    width: 100%;
+
+    margin: 18px 0;
+
+    padding: 14px;
+
+    border: 2px dashed var(--primary);
+
+    border-radius: 12px;
+
+    background: transparent;
+
+    color: var(--primary);
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: var(--transition);
+
+}
+
+.addChildButton:hover {
+
+    background: var(--primary-light);
+
+}
+
+/* ---------- Form Messages ---------- */
+
+.errorMessage {
+
+    margin-bottom: 18px;
+
+    padding: 14px 16px;
+
+    border-radius: 12px;
+
+    background: rgba(239, 68, 68, 0.12);
+
+    border: 1px solid rgba(239, 68, 68, 0.25);
+
+    color: #ef4444;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+}
+
+.successMessage {
+
+    margin-bottom: 18px;
+
+    padding: 14px 16px;
+
+    border-radius: 12px;
+
+    background: rgba(34, 197, 94, 0.12);
+
+    border: 1px solid rgba(34, 197, 94, 0.25);
+
+    color: #22c55e;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+}
+
+/* ---------- Password Strength ---------- */
+
+.passwordStrength {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin: -6px 0 14px;
+
+    font-size: 14px;
+
+    color: var(--text-light);
+
+}
+
+.passwordStrength strong {
+
+    font-weight: 700;
+
+}
+
+.weak {
+
+    color: #ef4444;
+
+}
+
+.medium {
+
+    color: #f59e0b;
+
+}
+
+.strong {
+
+    color: #22c55e;
+
+}
+
+/* ---------- Password Checklist ---------- */
+
+.passwordChecklist {
+
+    margin: -2px 0 20px;
+
+    padding: 14px 16px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+
+    background: var(--surface);
+
+}
+
+.passwordChecklist p {
+
+    margin: 8px 0;
+
+    color: var(--text-light);
+
+    font-size: 13px;
+
+    transition: var(--transition);
+
+}
+
+.passwordChecklist p.valid {
+
+    color: #22c55e;
+
+    font-weight: 600;
+
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 768px) {
+
+    .signupHeader {
+
+        flex-direction: column;
+
+        align-items: center;
+
+        text-align: center;
+
+    }
+
+    .verifyRow {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+    }
+
+    .verifyButton {
+
+        width: 100%;
+
+        margin-bottom: 0;
+
+    }
+
+    .passwordStrength {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 4px;
+
+    }
+
+}

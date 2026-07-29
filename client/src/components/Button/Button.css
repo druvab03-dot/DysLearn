@@ -1,0 +1,73 @@
+.primaryButton {
+
+    width: 100%;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: var(--primary);
+
+    color: #ffffff;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: var(--transition);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    user-select: none;
+
+}
+
+.primaryButton:hover:not(:disabled) {
+
+    background: var(--primary-dark);
+
+    transform: translateY(-2px);
+
+    box-shadow: var(--shadow);
+
+}
+
+.primaryButton:active:not(:disabled) {
+
+    transform: translateY(0);
+
+}
+
+.primaryButton:focus-visible {
+
+    outline: none;
+
+    box-shadow:
+        0 0 0 4px rgba(79, 70, 229, 0.18),
+        var(--shadow);
+
+}
+
+.primaryButton:disabled {
+
+    opacity: .6;
+
+    cursor: not-allowed;
+
+    transform: none;
+
+    box-shadow: none;
+
+    background: var(--primary);
+
+}

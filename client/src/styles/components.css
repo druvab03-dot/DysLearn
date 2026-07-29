@@ -1,0 +1,113 @@
+/* ==========================================
+           COMMON COMPONENT STYLES
+========================================== */
+
+/* ---------- Buttons ---------- */
+
+.btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    padding:12px 24px;
+
+    border:none;
+
+    border-radius:var(--radius-md);
+
+    background:var(--primary);
+
+    color:white;
+
+    font-size:var(--text-md);
+
+    font-weight:var(--weight-semibold);
+
+    cursor:pointer;
+
+    transition:var(--transition);
+
+}
+
+.btn:hover{
+
+    background:var(--primary-dark);
+
+    transform:translateY(-2px);
+
+    box-shadow:var(--shadow);
+
+}
+
+.btn:disabled{
+
+    opacity:.6;
+
+    cursor:not-allowed;
+
+}
+
+/* ---------- Cards ---------- */
+
+.card{
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:var(--radius-lg);
+
+    box-shadow:var(--shadow);
+
+    transition:var(--transition);
+
+}
+
+.card:hover{
+
+    transform:translateY(-4px);
+
+}
+
+/* ---------- Inputs ---------- */
+
+.input{
+
+    width:100%;
+
+    padding:14px 16px;
+
+    border:1px solid var(--border);
+
+    border-radius:var(--radius-md);
+
+    background:var(--input);
+
+    color:var(--text);
+
+    font-size:var(--text-md);
+
+    transition:var(--transition);
+
+}
+
+.input:focus{
+
+    border-color:var(--primary);
+
+}
+
+/* ---------- Containers ---------- */
+
+.container{
+
+    width:min(1200px,90%);
+
+    margin:auto;
+
+}

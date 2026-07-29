@@ -1,0 +1,275 @@
+.dashboard{
+
+    display:flex;
+
+    min-height:100vh;
+
+    background:var(--background);
+
+    color:var(--text);
+
+}
+
+/* ================= Sidebar ================= */
+
+.sidebar{
+
+    width:250px;
+
+    background:var(--surface);
+
+    border-right:1px solid var(--border);
+
+    padding:30px;
+
+    transition:var(--transition);
+
+}
+
+.logo{
+
+    color:var(--primary);
+
+    margin-bottom:50px;
+
+    font-size:28px;
+
+    font-weight:700;
+
+}
+
+.sidebar ul{
+
+    list-style:none;
+
+}
+
+.sidebar li{
+
+    margin:22px 0;
+
+    color:var(--text-light);
+
+    font-size:17px;
+
+    cursor:pointer;
+
+    transition:var(--transition);
+
+}
+
+.sidebar li:hover{
+
+    color:var(--primary);
+
+}
+
+/* ================= Main ================= */
+
+.mainContent{
+
+    flex:1;
+
+    padding:40px;
+
+}
+
+/* ================= Header ================= */
+
+.header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:40px;
+
+}
+
+.header h1{
+
+    color:var(--text);
+
+}
+
+.profile{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+.profileCircle{
+
+    width:45px;
+
+    height:45px;
+
+    border-radius:50%;
+
+    background:var(--primary);
+
+    color:#ffffff;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-weight:600;
+
+}
+
+/* ================= Cards ================= */
+
+.languageCards{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:25px;
+
+    margin-bottom:40px;
+
+}
+
+.langCard{
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:24px;
+
+    padding:30px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    box-shadow:var(--shadow);
+
+    cursor:pointer;
+
+    transition:var(--transition);
+
+}
+
+.langCard:hover{
+
+    transform:translateY(-6px);
+
+}
+
+.langCard h1{
+
+    font-size:64px;
+
+    color:var(--primary);
+
+    margin-bottom:15px;
+
+}
+
+.langCard p{
+
+    color:var(--text-light);
+
+    font-size:18px;
+
+    font-weight:600;
+
+}
+
+/* ================= Game ================= */
+
+.gameCard{
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:24px;
+
+    padding:35px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.gameCard h2{
+
+    color:var(--text);
+
+    margin-bottom:15px;
+
+}
+
+.gameCard p{
+
+    color:var(--text-light);
+
+    margin-bottom:25px;
+
+}
+
+.gameCard button{
+
+    padding:14px 28px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:var(--primary);
+
+    color:#ffffff;
+
+    cursor:pointer;
+
+    transition:var(--transition);
+
+}
+
+.gameCard button:hover{
+
+    background:var(--primary-dark);
+
+}
+
+@media(max-width:992px){
+
+    .dashboard{
+
+        flex-direction:column;
+
+    }
+
+    .sidebar{
+
+        width:100%;
+
+        border-right:none;
+
+        border-bottom:1px solid var(--border);
+
+    }
+
+    .languageCards{
+
+        grid-template-columns:1fr;
+
+    }
+
+}

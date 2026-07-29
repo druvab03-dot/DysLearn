@@ -1,0 +1,63 @@
+.segment{
+
+    width:100%;
+
+    display:flex;
+
+    padding:5px;
+
+    margin:25px 0;
+
+    background:var(--surface-2);
+
+    border:1px solid var(--border);
+
+    border-radius:14px;
+
+    transition:
+        background var(--transition),
+        border-color var(--transition);
+
+}
+
+.segment button{
+
+    flex:1;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:transparent;
+
+    color:var(--text-light);
+
+    font-size:15px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:var(--transition);
+
+}
+
+.segment button.active{
+
+    background:var(--primary);
+
+    color:#ffffff;
+
+    box-shadow:var(--shadow);
+
+}
+
+.segment button:not(.active):hover{
+
+    color:var(--text);
+
+    background:var(--surface);
+
+}
