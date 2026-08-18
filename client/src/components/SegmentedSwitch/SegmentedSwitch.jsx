@@ -1,33 +1,63 @@
-import { useLocation, useNavigate } from "react-router-dom";
+import {
+    useLocation,
+    useNavigate
+} from "react-router-dom";
+
+import { useTranslation } from "react-i18next";
 
 import "./SegmentedSwitch.css";
+
 
 function SegmentedSwitch() {
 
     const navigate = useNavigate();
+
     const location = useLocation();
+
+    const { t } = useTranslation();
+
 
     const active =
         location.pathname === "/signup"
             ? "signup"
             : "login";
 
+
     return (
 
         <div className="segment">
 
             <button
-                className={active === "login" ? "active" : ""}
-                onClick={() => navigate("/login")}
+                type="button"
+                className={
+                    active === "login"
+                        ? "active"
+                        : ""
+                }
+                onClick={() =>
+                    navigate("/login")
+                }
             >
-                Login
+
+                {t("auth.login")}
+
             </button>
 
+
             <button
-                className={active === "signup" ? "active" : ""}
-                onClick={() => navigate("/signup")}
+                type="button"
+                className={
+                    active === "signup"
+                        ? "active"
+                        : ""
+                }
+                onClick={() =>
+                    navigate("/signup")
+                }
             >
-                Create Account
+
+                {t("auth.createAccount")}
+
             </button>
 
         </div>
@@ -35,5 +65,6 @@ function SegmentedSwitch() {
     );
 
 }
+
 
 export default SegmentedSwitch;

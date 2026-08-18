@@ -1,94 +1,294 @@
 import "./Dashboard.css";
 
+import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
+
+import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+
+
 function Dashboard() {
-  return (
-    <div className="dashboard">
 
-      {/* SIDEBAR */}
+    const { t } =
+        useTranslation();
 
-      <div className="sidebar">
+    const navigate =
+        useNavigate();
 
-        <h2 className="logo">
-          DysLearn
-        </h2>
 
-        <ul>
-          <li>🏠 Home</li>
-          <li>📝 Tests</li>
-          <li>🎮 Games</li>
-          <li>👨‍👩‍👧 Parent Dashboard</li>
-        </ul>
+    const classes = [
+        {
+            number: 1,
+            objects: ["A", "B", "✎", "★", "📖", "ABC"]
+        },
+        {
+            number: 2,
+            objects: ["1", "2", "＋", "△", "✏", "123"]
+        },
+        {
+            number: 3,
+            objects: ["A", "B", "C", "✎", "📚", "★"]
+        },
+        {
+            number: 4,
+            objects: ["+", "−", "×", "÷", "△", "123"]
+        },
+        {
+            number: 5,
+            objects: ["A", "B", "1", "2", "★", "📖"]
+        }
+    ];
 
-      </div>
 
-      {/* MAIN CONTENT */}
+    const handleClassSelect =
+        (classNumber) => {
 
-      <div className="mainContent">
+            navigate(
+                `/class/${classNumber}`
+            );
 
-        {/* HEADER */}
+        };
 
-        <div className="header">
 
-          <h1>
-            Choose Your Language
-          </h1>
+    return (
 
-          <div className="profile">
-            <div className="profileCircle">
-              D
-            </div>
+        <div className="dashboardPage">
 
-            <span>
-              Druva
-            </span>
-          </div>
+            <Header />
+
+
+            <main className="dashboardMain">
+
+                <section className="classSection">
+
+
+                    <div className="classHeading">
+
+                        <h1 className="classTitle">
+
+                            {
+                                t(
+                                    "dashboard.chooseClass"
+                                )
+                            }
+
+                        </h1>
+
+
+                        <p className="classSubtitle">
+
+                            {
+                                t(
+                                    "dashboard.chooseClassDescription"
+                                )
+                            }
+
+                        </p>
+
+                    </div>
+
+
+                    <div className="classGrid">
+
+                        {
+                            classes.map(
+                                (classItem) => (
+
+                                    <button
+                                        key={
+                                            classItem.number
+                                        }
+                                        type="button"
+                                        className={
+                                            `classCard classCard${classItem.number}`
+                                        }
+                                        onClick={() =>
+                                            handleClassSelect(
+                                                classItem.number
+                                            )
+                                        }
+                                    >
+
+                                        <span
+                                            className="classBackgroundNumber"
+                                            aria-hidden="true"
+                                        >
+                                            {
+                                                classItem.number
+                                            }
+                                        </span>
+
+
+                                        <div
+                                            className="classBackgroundObjects"
+                                            aria-hidden="true"
+                                        >
+
+                                            {
+                                                classItem.objects.map(
+                                                    (
+                                                        object,
+                                                        index
+                                                    ) => (
+
+                                                        <span
+                                                            key={
+                                                                index
+                                                            }
+                                                            className={
+                                                                `backgroundObject object${index + 1}`
+                                                            }
+                                                        >
+                                                            {
+                                                                object
+                                                            }
+                                                        </span>
+
+                                                    )
+                                                )
+                                            }
+
+                                        </div>
+
+
+                                        <div className="classCardContent">
+
+                                            <span className="classSmallLabel">
+
+                                                {
+                                                    t(
+                                                        "dashboard.classLabel"
+                                                    )
+                                                }
+
+                                            </span>
+
+
+                                            <span className="classNumber">
+
+                                                {
+                                                    classItem.number
+                                                }
+
+                                            </span>
+
+
+                                            <span className="classLabel">
+
+                                                {
+                                                    t(
+                                                        "dashboard.class"
+                                                    )
+                                                }{" "}
+
+                                                {
+                                                    classItem.number
+                                                }
+
+                                            </span>
+
+
+                                            <span className="startLearning">
+
+                                                {
+                                                    t(
+                                                        "dashboard.startLearning"
+                                                    )
+                                                }
+
+                                                <span className="arrow">
+                                                    →
+                                                </span>
+
+                                            </span>
+
+                                        </div>
+
+                                    </button>
+
+                                )
+                            )
+                        }
+
+                    </div>
+
+
+                    <section className="recentActivity">
+
+                        <div className="recentActivityHeader">
+
+                            <h2>
+
+                                {
+                                    t(
+                                        "dashboard.recentActivity"
+                                    )
+                                }
+
+                            </h2>
+
+
+                            <span>
+
+                                {
+                                    t(
+                                        "dashboard.keepLearning"
+                                    )
+                                }
+
+                            </span>
+
+                        </div>
+
+
+                        <div className="activityEmpty">
+
+                            <div className="activityIcon">
+                                +
+                            </div>
+
+
+                            <div>
+
+                                <h3>
+
+                                    {
+                                        t(
+                                            "dashboard.learningJourney"
+                                        )
+                                    }
+
+                                </h3>
+
+
+                                <p>
+
+                                    {
+                                        t(
+                                            "dashboard.selectClassMessage"
+                                        )
+                                    }
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+                </section>
+
+            </main>
+
+
+            <Footer />
 
         </div>
 
-        {/* LANGUAGE CARDS */}
+    );
 
-        <div className="languageCards">
-
-          <div className="langCard english">
-            <h1>Aa</h1>
-            <p>English</p>
-          </div>
-
-          <div className="langCard kannada">
-            <h1>ಅ</h1>
-            <p>Kannada</p>
-          </div>
-
-          <div className="langCard hindi">
-            <h1>अ</h1>
-            <p>Hindi</p>
-          </div>
-
-        </div>
-
-        {/* GAME SECTION */}
-
-        <div className="gameCard">
-
-          <h2>
-            Ready to Learn with Fun?
-          </h2>
-
-          <p>
-            Play interactive games and improve
-            learning skills.
-          </p>
-
-          <button>
-            Start Playing
-          </button>
-
-        </div>
-
-      </div>
-
-    </div>
-  );
 }
+
 
 export default Dashboard;

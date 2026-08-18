@@ -1,27 +1,50 @@
 import "./Footer.css";
 
+import { useTranslation } from "react-i18next";
+
+
 function Footer() {
-  return (
-    <footer className="footer">
 
-      <img
-        src="/favicon.png"
-        alt="DysLearn Logo"
-        className="footerLogo"
-      />
+    const { t } = useTranslation();
 
-      <h2>DysLearn</h2>
 
-      <p>
-        Empowering Every Child To Learn Without Limits.
-      </p>
+    return (
 
-      <span>
-        © 2026 DysLearn. All Rights Reserved.
-      </span>
+        <footer className="footer">
 
-    </footer>
-  );
+            <div className="footerBrand">
+
+                <img
+                    src="/favicon.png"
+                    alt="DysLearn"
+                    className="footerLogo"
+                />
+
+                <h2>
+                    DysLearn
+                </h2>
+
+            </div>
+
+
+            <p className="footerTagline">
+
+                {t("footer.tagline")}
+
+            </p>
+
+
+            <p className="footerCopyright">
+
+                {t("footer.copyright")}
+
+            </p>
+
+        </footer>
+
+    );
+
 }
+
 
 export default Footer;

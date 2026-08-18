@@ -1,0 +1,186 @@
+{
+    "global": {
+        "home": "होम",
+        "about": "हमारे बारे में",
+        "help": "सहायता",
+        "profile": "प्रोफ़ाइल",
+        "logout": "लॉग आउट",
+        "parentDashboard": "अभिभावक डैशबोर्ड"
+    },
+
+    "landing": {
+        "heroTitleLine1": "हर बच्चे को सशक्त बनाना",
+        "heroTitleLine2": "बिना सीमाओं के सीखने के लिए",
+        "heroDescription": "हर बच्चे के लिए शिक्षा को इंटरैक्टिव, बहुभाषी और सुलभ बनाने के लिए डिज़ाइन किया गया AI आधारित शिक्षण मंच।",
+        "startLearning": "सीखना शुरू करें",
+
+        "featuresTitle": "आपके बच्चे को बेहतर सीखने के लिए आवश्यक सब कुछ",
+
+        "handwritingTitle": "AI हस्तलेखन विश्लेषण",
+        "handwritingDescription": "बच्चे के सीखने के स्तर को समझने के लिए हस्तलेखन नमूनों का विश्लेषण करें।",
+
+        "multilingualTitle": "बहुभाषी शिक्षण",
+        "multilingualDescription": "एक ही मंच के माध्यम से कई भाषाओं में आसानी से सीखें।",
+
+        "parentDashboardTitle": "अभिभावक डैशबोर्ड",
+        "parentDashboardDescription": "अपने बच्चे की सीखने की प्रगति और प्रदर्शन को ट्रैक करें।",
+
+        "interactiveTitle": "इंटरैक्टिव लर्निंग",
+        "interactiveDescription": "छोटे शिक्षार्थियों के लिए डिज़ाइन किए गए खेल, क्विज़ और रोचक पाठ।"
+    },
+
+    "dashboard": {
+        "chooseClass": "कक्षा चुनें",
+        "class": "कक्षा",
+        "chooseClassDescription": "सीखना शुरू करने के लिए अपनी कक्षा चुनें",
+        "classLabel": "कक्षा",
+        "startLearning": "सीखना शुरू करें",
+        "recentActivity": "हाल की गतिविधि",
+        "keepLearning": "सीखना जारी रखें",
+        "learningJourney": "आपकी सीखने की यात्रा यहाँ से शुरू होती है",
+        "selectClassMessage": "सीखना शुरू करने के लिए ऊपर एक कक्षा चुनें"
+    },
+
+    "classDashboard": {
+        "learning": "सीखना",
+        "chooseSubject": "सीखना शुरू करने के लिए एक विषय चुनें",
+
+        "english": "अंग्रेज़ी",
+        "kannada": "कन्नड़",
+        "mathematics": "गणित",
+        "science": "विज्ञान",
+        "gk": "सामान्य ज्ञान",
+
+        "englishDescription": "अक्षर, शब्द, पढ़ना और लिखना सीखें।",
+        "kannadaDescription": "कन्नड़ अक्षर, शब्द और पढ़ना सीखें।",
+        "mathematicsDescription": "संख्याओं, गिनती और बुनियादी गणित का अभ्यास करें।",
+        "scienceDescription": "सरल अवधारणाओं के माध्यम से अपने आसपास की दुनिया को जानें।",
+        "gkDescription": "जानवरों, प्रकृति, स्थानों और दैनिक जीवन के बारे में सीखें।",
+
+        "startLearning": "सीखना शुरू करें",
+        "progress": "प्रगति",
+        "lessons": "पाठ",
+        "remaining": "बाकी"
+    },
+
+    "auth": {
+        "login": "लॉगिन",
+        "createAccount": "खाता बनाएँ",
+        "creatingAccount": "खाता बनाया जा रहा है...",
+        "parent": "अभिभावक",
+
+        "fullName": "पूरा नाम",
+        "enterFullName": "अपना पूरा नाम दर्ज करें",
+
+        "email": "ईमेल",
+        "enterEmail": "अपना ईमेल दर्ज करें",
+
+        "phoneNumber": "फ़ोन नंबर",
+        "enterPhoneNumber": "अपना फ़ोन नंबर दर्ज करें",
+
+        "emailOrPhone": "ईमेल या फ़ोन नंबर",
+        "enterEmailOrPhone": "ईमेल या फ़ोन नंबर दर्ज करें",
+
+        "password": "पासवर्ड",
+        "enterPassword": "पासवर्ड दर्ज करें",
+        "createPassword": "पासवर्ड बनाएँ",
+
+        "confirmPassword": "पासवर्ड की पुष्टि करें",
+        "confirmPasswordPlaceholder": "पासवर्ड की पुष्टि करें",
+
+        "newPassword": "नया पासवर्ड",
+        "newPasswordPlaceholder": "नया पासवर्ड दर्ज करें",
+
+        "show": "दिखाएँ",
+        "hide": "छिपाएँ",
+
+        "loginWithOTP": "OTP से लॉगिन करें",
+        "backToPasswordLogin": "पासवर्ड लॉगिन पर वापस जाएँ",
+
+        "forgotPassword": "पासवर्ड भूल गए?",
+        "backToLogin": "लॉगिन पर वापस जाएँ",
+
+        "sendOTP": "OTP भेजें",
+        "resendOTP": "OTP दोबारा भेजें",
+        "verifyOTP": "OTP सत्यापित करें",
+        "sendResetOTP": "रीसेट OTP भेजें",
+
+        "enterOTP": "OTP दर्ज करें",
+        "verificationCode": "सत्यापन कोड",
+        "otpPlaceholder": "6 अंकों का OTP दर्ज करें",
+
+        "resetPassword": "पासवर्ड रीसेट करें",
+        "loggingIn": "लॉगिन हो रहा है...",
+        "addPhoto": "फ़ोटो जोड़ें",
+
+        "verified": "सत्यापित",
+        "verifying": "सत्यापित किया जा रहा है...",
+        "pleaseWait": "कृपया प्रतीक्षा करें...",
+
+        "otpSent": "OTP सफलतापूर्वक भेजा गया",
+        "verifiedSuccessfully": "सफलतापूर्वक सत्यापित",
+        "passwordUpdated": "पासवर्ड सफलतापूर्वक अपडेट किया गया",
+
+        "fillAllFields": "कृपया सभी फ़ील्ड भरें।",
+        "verifyEmail": "कृपया अपना ईमेल सत्यापित करें।",
+        "verifyPhone": "कृपया अपना फ़ोन नंबर सत्यापित करें।",
+        "passwordsDoNotMatch": "पासवर्ड मेल नहीं खाते।",
+
+        "passwordRequirements": "पासवर्ड में कम से कम 8 अक्षर, एक बड़ा अक्षर, एक छोटा अक्षर, एक संख्या और एक विशेष अक्षर होना चाहिए।",
+
+        "enterEmailFirst": "पहले अपना ईमेल दर्ज करें",
+        "enterPhoneFirst": "पहले अपना फ़ोन नंबर दर्ज करें",
+        "enterOTPError": "OTP दर्ज करें",
+
+        "loginFailed": "लॉगिन विफल हुआ",
+        "signupFailed": "खाता बनाना विफल हुआ",
+        "unableToSendOTP": "OTP भेजने में असमर्थ",
+        "invalidOTP": "अमान्य OTP",
+        "resetFailed": "पासवर्ड रीसेट विफल हुआ"
+    },
+
+    "footer": {
+        "tagline": "हर बच्चे को बिना सीमाओं के सीखने के लिए सशक्त बनाना।",
+        "copyright": "© 2026 DysLearn. सर्वाधिकार सुरक्षित।"
+    },
+
+    "child": {
+        "parentDashboard": "अभिभावक डैशबोर्ड",
+        "manageChildren": "अपने बच्चों के सीखने के प्रोफ़ाइल प्रबंधित करें।",
+        "addChild": "बच्चा जोड़ें",
+        "addDescription": "अपने बच्चे का नाम और हस्तलेखन नमूना जोड़ें।",
+        "childName": "बच्चे का नाम",
+        "namePlaceholder": "बच्चे का नाम दर्ज करें",
+        "handwritingSample": "हस्तलेखन नमूना",
+        "chooseImage": "चित्र चुनें",
+        "noFileSelected": "कोई चित्र चयनित नहीं है",
+        "imageHelp": "JPG, PNG या WEBP। अधिकतम 5 MB.",
+        "cancel": "रद्द करें",
+        "adding": "जोड़ा जा रहा है...",
+        "enterNameError": "अपने बच्चे का नाम दर्ज करें।",
+        "handwritingRequired": "कृपया हस्तलेखन चित्र चुनें।",
+        "addFailed": "बच्चे को जोड़ने में असमर्थ।",
+        "loadFailed": "बच्चों को लोड करने में असमर्थ।",
+        "loadingChildren": "बच्चों को लोड किया जा रहा है...",
+        "noChildren": "अभी तक कोई बच्चा नहीं जोड़ा गया है",
+        "noChildrenDescription": "अपने पहले बच्चे को जोड़कर उसका सीखने का प्रोफ़ाइल बनाएँ।",
+        "addFirstChild": "अपना पहला बच्चा जोड़ें",
+        "analysisPending": "विश्लेषण लंबित है",
+        "analysisComplete": "विश्लेषण पूरा हुआ",
+        "viewDetails": "विवरण देखें",
+        "remove": "हटाएँ",
+        "deleteConfirm": "क्या आप {{name}} को अपने खाते से हटाना चाहते हैं?",
+        "deleteFailed": "बच्चे को हटाने में असमर्थ।",
+        "startLearning": "सीखना शुरू करें",
+        "handwritingSampleLabel": "हस्तलेखन नमूना",
+        "predictedCategory": "अनुमानित श्रेणी",
+        "gradCamHeatmap": "Grad-CAM हीटमैप",
+        "gradCamExplanation": "Grad-CAM विवरण",
+        "analyzingHandwriting": "हस्तलेखन का विश्लेषण किया जा रहा है...",
+        "reanalyzeHandwriting": "हस्तलेखन का पुनः विश्लेषण करें",
+        "submitForAnalysis": "विश्लेषण के लिए सबमिट करें",
+        "supportNeeded": "सहायता आवश्यक",
+        "developingWell": "अच्छी तरह विकसित हो रहा है",
+        "progressingWell": "अच्छी तरह प्रगति कर रहा है"
+    }
+}

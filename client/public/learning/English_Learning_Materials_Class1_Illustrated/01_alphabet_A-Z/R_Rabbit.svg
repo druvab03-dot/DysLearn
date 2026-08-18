@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+<rect width="1200" height="800" rx="40" fill="#F7F8FF"/>
+<rect x="28" y="28" width="1144" height="744" rx="32" fill="none" stroke="#6366F1" stroke-width="5" opacity=".35"/>
+<text x="90" y="155" font-family="Arial, sans-serif" font-size="120" font-weight="800" fill="#6366F1">R</text>
+<text x="90" y="225" font-family="Arial, sans-serif" font-size="42" font-weight="700" fill="#263044">R for Rabbit</text>
+<g transform="translate(520,120)">
+<path d="M245 170 Q190 30 240 30 Q295 45 300 170 Q350 45 405 30 Q455 30 400 175" fill="#F1F5F9"/>
+<ellipse cx="315" cy="330" rx="145" ry="165" fill="#F1F5F9"/>
+<circle cx="275" cy="300" r="12" fill="#263044"/><circle cx="355" cy="300" r="12" fill="#263044"/>
+<path d="M300 345 L315 355 L330 345" fill="#F9A8D4"/>
+</g>
+</svg>

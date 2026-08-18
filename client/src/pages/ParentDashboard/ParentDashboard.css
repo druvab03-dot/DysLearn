@@ -1,0 +1,502 @@
+.parentDashboardPage {
+
+    min-height: 100vh;
+
+    background: var(--background);
+
+    color: var(--text);
+
+}
+
+
+.parentDashboardMain {
+
+    width: 100%;
+
+    max-width: 1400px;
+
+    min-height: 65vh;
+
+    margin: 0 auto;
+
+    padding: 55px 40px;
+
+}
+
+
+.parentDashboardSection {
+
+    width: 100%;
+
+}
+
+
+/* ================= Heading ================= */
+
+.parentDashboardHeading {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    gap: 24px;
+
+    margin-bottom: 36px;
+
+}
+
+
+.parentDashboardHeading h1 {
+
+    margin: 0 0 8px;
+
+    color: var(--text);
+
+    font-size: 32px;
+
+    font-weight: 700;
+
+}
+
+
+.parentDashboardHeading p {
+
+    margin: 0;
+
+    color: var(--text-light);
+
+    font-size: 15px;
+
+}
+
+
+.openAddChildButton {
+
+    min-height: 44px;
+
+    padding: 0 18px;
+
+    border: 1px solid var(--primary);
+
+    border-radius: 11px;
+
+    background: var(--primary);
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: var(--transition);
+
+}
+
+
+.openAddChildButton:hover {
+
+    background: var(--primary-dark);
+
+}
+
+
+/* ================= Children ================= */
+
+.childrenGrid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fill,
+            minmax(240px, 1fr)
+        );
+
+    gap: 20px;
+
+}
+
+
+.childCard {
+
+    padding: 24px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    background: var(--surface);
+
+    box-shadow: var(--shadow);
+
+    transition: var(--transition);
+
+}
+
+
+.childCard:hover {
+
+    transform: translateY(-3px);
+
+}
+
+
+.childCardTop {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.childAvatar {
+
+    width: 48px;
+
+    height: 48px;
+
+    border-radius: 50%;
+
+    background: var(--primary);
+
+    color: #ffffff;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+}
+
+
+.childCard h2 {
+
+    margin: 0 0 14px;
+
+    color: var(--text);
+
+    font-size: 20px;
+
+}
+
+
+.removeChildButton {
+
+    padding: 7px 10px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 8px;
+
+    background: transparent;
+
+    color: var(--text-light);
+
+    font-size: 12px;
+
+    cursor: pointer;
+
+    transition: var(--transition);
+
+}
+
+
+.removeChildButton:hover {
+
+    border-color: var(--primary);
+
+    color: var(--primary);
+
+}
+
+
+.removeChildButton:disabled {
+
+    opacity: 0.6;
+
+    cursor: not-allowed;
+
+}
+
+
+/* ================= Analysis ================= */
+
+.analysisStatus {
+
+    display: inline-flex;
+
+    margin-bottom: 22px;
+
+    padding: 7px 10px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 999px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+}
+
+
+.analysisStatus.pending {
+
+    background: var(--surface-2);
+
+    color: var(--text-light);
+
+}
+
+
+.analysisStatus.analyzed {
+
+    background: var(--primary-light);
+
+    color: var(--primary);
+
+}
+
+
+.analyzeHandwritingButton {
+
+    width: 100%;
+
+    min-height: 40px;
+
+    margin-bottom: 10px;
+
+    border: 1px solid var(--primary);
+
+    border-radius: 10px;
+
+    background: var(--primary);
+
+    color: #ffffff;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: var(--transition);
+
+}
+
+
+.analyzeHandwritingButton:hover {
+
+    background: var(--primary-dark);
+
+}
+
+
+.analyzeHandwritingButton:disabled {
+
+    cursor: wait;
+
+    opacity: 0.7;
+
+}
+
+
+/* ================= View ================= */
+
+.viewChildButton {
+
+    width: 100%;
+
+    min-height: 40px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    background: var(--surface);
+
+    color: var(--text);
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: var(--transition);
+
+}
+
+
+.viewChildButton:hover {
+
+    border-color: var(--primary);
+
+    color: var(--primary);
+
+}
+
+
+/* ================= Empty / Loading ================= */
+
+.childrenState {
+
+    padding: 70px 20px;
+
+    color: var(--text-light);
+
+    text-align: center;
+
+}
+
+
+.emptyChildren {
+
+    max-width: 500px;
+
+    margin: 70px auto;
+
+    text-align: center;
+
+}
+
+
+.emptyChildIcon {
+
+    width: 58px;
+
+    height: 58px;
+
+    margin: 0 auto 18px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 50%;
+
+    background: var(--surface);
+
+    color: var(--primary);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 28px;
+
+}
+
+
+.emptyChildren h2 {
+
+    margin: 0 0 10px;
+
+    color: var(--text);
+
+    font-size: 22px;
+
+}
+
+
+.emptyChildren p {
+
+    margin: 0 auto 22px;
+
+    color: var(--text-light);
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+}
+
+
+.emptyChildren button {
+
+    min-height: 42px;
+
+    padding: 0 18px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: var(--primary);
+
+    color: #ffffff;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+}
+
+
+.dashboardError {
+
+    margin-bottom: 24px;
+
+    padding: 12px 14px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    background: var(--surface);
+
+    color: var(--text);
+
+    font-size: 13px;
+
+}
+
+
+/* ================= Responsive ================= */
+
+@media (max-width: 700px) {
+
+    .parentDashboardMain {
+
+        padding: 38px 20px;
+
+    }
+
+
+    .parentDashboardHeading {
+
+        flex-direction: column;
+
+    }
+
+
+    .parentDashboardHeading h1 {
+
+        font-size: 27px;
+
+    }
+
+
+    .openAddChildButton {
+
+        width: 100%;
+
+    }
+
+}

@@ -1,0 +1,32 @@
+{
+  "subject": "English",
+  "class": 1,
+  "type": "image_based_learning_material",
+  "modules": [
+    {
+      "name": "Alphabet",
+      "folder": "01_alphabet_A-Z",
+      "items": 26
+    },
+    {
+      "name": "Vowels",
+      "folder": "02_vowels",
+      "items": 5
+    },
+    {
+      "name": "Numbers 1-10",
+      "folder": "03_numbers_1-10",
+      "items": 10
+    },
+    {
+      "name": "Colours",
+      "folder": "04_colours",
+      "items": 9
+    },
+    {
+      "name": "Simple Words",
+      "folder": "05_simple_words",
+      "items": 10
+    }
+  ]
+}

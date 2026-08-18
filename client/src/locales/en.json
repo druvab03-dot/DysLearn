@@ -1,0 +1,190 @@
+{
+    "global": {
+        "home": "Home",
+        "about": "About",
+        "help": "Help",
+        "profile": "Profile",
+        "logout": "Logout",
+        "parentDashboard": "Parent Dashboard"
+    },
+
+    "landing": {
+        "heroTitleLine1": "Empowering Every Child",
+        "heroTitleLine2": "To Learn Without Limits",
+        "heroDescription": "AI-powered learning platform designed to make education interactive, multilingual, and accessible for every child.",
+        "startLearning": "Start Learning",
+
+        "featuresTitle": "Everything Your Child Needs to Learn Better",
+
+        "handwritingTitle": "AI Handwriting Analysis",
+        "handwritingDescription": "Analyze handwriting samples to understand each child's learning level.",
+
+        "multilingualTitle": "Multilingual Learning",
+        "multilingualDescription": "Learn seamlessly in multiple languages through one platform.",
+
+        "parentDashboardTitle": "Parent Dashboard",
+        "parentDashboardDescription": "Track your child's learning progress and performance.",
+
+        "interactiveTitle": "Interactive Learning",
+        "interactiveDescription": "Games, quizzes and engaging lessons designed for young learners."
+    },
+
+    "dashboard": {
+        "chooseClass": "Choose a Class",
+        "class": "Class",
+        "chooseClassDescription": "Choose your class to start learning",
+        "classLabel": "CLASS",
+        "startLearning": "Start Learning",
+        "recentActivity": "Recent Activity",
+        "keepLearning": "Keep learning",
+        "learningJourney": "Your learning journey starts here",
+        "selectClassMessage": "Select a class above to begin learning"
+    },
+
+    "classDashboard": {
+        "learning": "LEARNING",
+        "chooseSubject": "Choose a subject to start learning",
+
+        "english": "English",
+        "kannada": "Kannada",
+        "mathematics": "Mathematics",
+        "science": "Science",
+        "gk": "General Knowledge",
+
+        "englishDescription": "Learn letters, words, reading and writing.",
+        "kannadaDescription": "Learn Kannada letters, words and reading.",
+        "mathematicsDescription": "Explore numbers, counting and basic mathematics.",
+        "scienceDescription": "Discover the world around you through simple concepts.",
+        "gkDescription": "Learn about animals, nature, places and everyday life.",
+
+        "startLearning": "Start Learning",
+        "progress": "Progress",
+        "lessons": "Lessons",
+        "remaining": "remaining"
+    },
+
+    "auth": {
+        "login": "Login",
+        "createAccount": "Create Account",
+        "creatingAccount": "Creating Account...",
+
+        "parent": "Parent",
+
+        "fullName": "Full Name",
+        "enterFullName": "Enter your full name",
+
+        "email": "Email",
+        "enterEmail": "Enter your email",
+
+        "phoneNumber": "Phone Number",
+        "enterPhoneNumber": "Enter your phone number",
+
+        "emailOrPhone": "Email or Phone Number",
+        "enterEmailOrPhone": "Enter email or phone",
+
+        "password": "Password",
+        "enterPassword": "Enter password",
+        "createPassword": "Create password",
+
+        "confirmPassword": "Confirm Password",
+        "confirmPasswordPlaceholder": "Confirm password",
+
+        "newPassword": "New Password",
+        "newPasswordPlaceholder": "New password",
+
+        "show": "Show",
+        "hide": "Hide",
+
+        "loginWithOTP": "Login with OTP instead",
+        "backToPasswordLogin": "Back to Password Login",
+
+        "forgotPassword": "Forgot Password?",
+        "backToLogin": "Back to Login",
+
+        "sendOTP": "Send OTP",
+        "resendOTP": "Resend OTP",
+        "verifyOTP": "Verify OTP",
+        "sendResetOTP": "Send Reset OTP",
+
+        "enterOTP": "Enter OTP",
+        "verificationCode": "Verification Code",
+        "otpPlaceholder": "Enter 6 digit OTP",
+
+        "resetPassword": "Reset Password",
+
+        "loggingIn": "Logging in...",
+
+        "addPhoto": "Add Photo",
+
+        "verified": "Verified",
+        "verifying": "Verifying...",
+        "pleaseWait": "Please wait...",
+
+        "otpSent": "OTP sent successfully",
+        "verifiedSuccessfully": "Verified successfully",
+        "passwordUpdated": "Password updated successfully",
+
+        "fillAllFields": "Please fill all fields.",
+        "verifyEmail": "Please verify your email.",
+        "verifyPhone": "Please verify your phone number.",
+        "passwordsDoNotMatch": "Passwords do not match.",
+
+        "passwordRequirements": "Password must contain at least 8 characters, one uppercase letter, one lowercase letter, one number and one special character.",
+
+        "enterEmailFirst": "Enter your email first",
+        "enterPhoneFirst": "Enter your phone number first",
+        "enterOTPError": "Enter OTP",
+
+        "loginFailed": "Login failed",
+        "signupFailed": "Signup failed",
+        "unableToSendOTP": "Unable to send OTP",
+        "invalidOTP": "Invalid OTP",
+        "resetFailed": "Reset failed"
+    },
+
+    "footer": {
+        "tagline": "Empowering Every Child To Learn Without Limits.",
+        "copyright": "© 2026 DysLearn. All Rights Reserved."
+    },
+
+    "child": {
+        "parentDashboard": "Parent Dashboard",
+        "manageChildren": "Manage your children's learning profiles.",
+        "addChild": "Add Child",
+        "addDescription": "Add your child's name and a handwriting sample.",
+        "childName": "Child Name",
+        "namePlaceholder": "Enter child's name",
+        "handwritingSample": "Handwriting Sample",
+        "chooseImage": "Choose Image",
+        "noFileSelected": "No image selected",
+        "imageHelp": "JPG, PNG or WEBP. Maximum 5 MB.",
+        "cancel": "Cancel",
+        "adding": "Adding...",
+        "enterNameError": "Enter your child's name.",
+        "handwritingRequired": "Please select a handwriting image.",
+        "addFailed": "Unable to add child.",
+        "loadFailed": "Unable to load children.",
+        "loadingChildren": "Loading children...",
+        "noChildren": "No children added yet",
+        "noChildrenDescription": "Add your first child to create their learning profile.",
+        "addFirstChild": "Add Your First Child",
+        "analysisPending": "Analysis Pending",
+        "analysisComplete": "Analysis Complete",
+        "viewDetails": "View Details",
+        "remove": "Remove",
+        "deleteConfirm": "Remove {{name}} from your account?",
+        "deleteFailed": "Unable to remove child.",
+        "startLearning": "Start Learning",      
+        "handwritingSampleLabel": "Handwriting Sample",
+        "predictedCategory": "Predicted Category",
+        "gradCamHeatmap": "Grad-CAM Heatmap",
+        "gradCamExplanation": "Grad-CAM Explanation",
+        "analyzingHandwriting": "Analyzing Handwriting...",
+        "reanalyzeHandwriting": "Re-Analyze Handwriting",
+        "submitForAnalysis": "Submit for Analysis",
+        "supportNeeded": "Support Needed",
+        "developingWell": "Developing Well",
+        "progressingWell": "Progressing Well"
+        
+    }
+}

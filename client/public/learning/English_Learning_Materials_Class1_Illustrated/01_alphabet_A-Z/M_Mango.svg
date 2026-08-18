@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+<rect width="1200" height="800" rx="40" fill="#F7F8FF"/>
+<rect x="28" y="28" width="1144" height="744" rx="32" fill="none" stroke="#6366F1" stroke-width="5" opacity=".35"/>
+<text x="90" y="155" font-family="Arial, sans-serif" font-size="120" font-weight="800" fill="#6366F1">M</text>
+<text x="90" y="225" font-family="Arial, sans-serif" font-size="42" font-weight="700" fill="#263044">M for Mango</text>
+<g transform="translate(520,120)">
+<path d="M325 110 Q390 65 430 100" fill="none" stroke="#4D7C0F" stroke-width="18" stroke-linecap="round"/>
+<path d="M330 125 Q470 120 480 280 Q475 480 300 505 Q125 470 170 280 Q205 145 330 125Z" fill="#FBBF24"/>
+<path d="M330 125 Q385 95 420 115" fill="none" stroke="#65A30D" stroke-width="25" stroke-linecap="round"/>
+</g>
+</svg>

@@ -1,142 +1,137 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 import "./LoginForm.css";
 
 import Input from "../Input/Input";
 import Button from "../Button/Button";
 
-import { login } from "../../services/authService";
+import {
+    login,
+    sendLoginOTP,
+    verifyLoginOTP,
+    sendForgotPasswordOTP,
+    resetPassword
+} from "../../services/authService";
+
 
 function LoginForm() {
 
     const navigate = useNavigate();
 
-    const [loading, setLoading] = useState(false);
+    const { t } = useTranslation();
 
-    const [formError, setFormError] = useState("");
 
-    const [errors, setErrors] = useState({
-        email: "",
-        password: "",
-    });
+    const [mode, setMode] =
+        useState("login");
 
-    const [rememberMe, setRememberMe] = useState(false);
+    // login | otp | forgot | reset
 
-    const [formData, setFormData] = useState({
-        email: "",
-        password: "",
-    });
+    const [loading, setLoading] =
+        useState(false);
+
+    const [otpSent, setOtpSent] =
+        useState(false);
+
+    const [error, setError] =
+        useState("");
+
+    const [success, setSuccess] =
+        useState("");
+
+
+    const [formData, setFormData] =
+        useState({
+
+            identifier: "",
+
+            password: "",
+
+            otp: "",
+
+            newPassword: "",
+
+            confirmPassword: ""
+
+        });
+
 
     const handleChange = (e) => {
 
-        const { name, value } = e.target;
+        setFormData({
 
-        setFormData((prev) => ({
-            ...prev,
-            [name]: value,
-        }));
+            ...formData,
 
-        setErrors((prev) => ({
-            ...prev,
-            [name]: "",
-        }));
+            [e.target.name]:
+                e.target.value
 
-        setFormError("");
+        });
 
-        if (name === "email") {
 
-            const emailRegex =
-                /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        setError("");
 
-            if (value && !emailRegex.test(value)) {
-
-                setErrors((prev) => ({
-                    ...prev,
-                    email: "Enter a valid email address.",
-                }));
-
-            }
-
-        }
-
-        if (name === "password") {
-
-            if (value && value.length < 8) {
-
-                setErrors((prev) => ({
-                    ...prev,
-                    password:
-                        "Password must contain at least 8 characters.",
-                }));
-
-            }
-
-        }
+        setSuccess("");
 
     };
 
+
+    const saveLogin = (data) => {
+
+        localStorage.setItem(
+            "token",
+            data.token
+        );
+
+
+        localStorage.setItem(
+            "parent",
+            JSON.stringify(data.parent)
+        );
+
+
+        navigate(
+            "/parent-dashboard",
+            {
+               replace: true
+            }
+        );
+
+    };
+
+
+    // ==========================================
+    // PASSWORD LOGIN
+    // ==========================================
+
     const handleLogin = async () => {
-
-        setFormError("");
-
-        if (!formData.email || !formData.password) {
-
-            setFormError("Please fill all required fields.");
-
-            return;
-
-        }
-
-        if (errors.email || errors.password) {
-
-            return;
-
-        }
 
         try {
 
             setLoading(true);
 
+
             const data = await login({
-                email: formData.email.trim(),
-                password: formData.password,
+
+                identifier:
+                    formData.identifier,
+
+                password:
+                    formData.password
+
             });
 
-            if (rememberMe) {
 
-                localStorage.setItem(
-                    "token",
-                    data.token
-                );
+            saveLogin(data);
 
-                localStorage.setItem(
-                    "parent",
-                    JSON.stringify(data.parent)
-                );
-
-            } else {
-
-                sessionStorage.setItem(
-                    "token",
-                    data.token
-                );
-
-                sessionStorage.setItem(
-                    "parent",
-                    JSON.stringify(data.parent)
-                );
-
-            }
-
-            navigate("/dashboard");
 
         } catch (error) {
 
-            setFormError(
+            setError(
                 error.response?.data?.message ||
-                "Invalid email or password."
+                t("auth.loginFailed")
             );
+
 
         } finally {
 
@@ -145,87 +140,532 @@ function LoginForm() {
         }
 
     };
+
+
+    // ==========================================
+    // SEND LOGIN OTP
+    // ==========================================
+
+    const handleSendLoginOTP =
+        async () => {
+
+            try {
+
+                setLoading(true);
+
+
+                await sendLoginOTP(
+                    formData.identifier
+                );
+
+
+                setOtpSent(true);
+
+                setSuccess(
+                    t("auth.otpSent")
+                );
+
+
+            } catch (error) {
+
+                setError(
+                    error.response?.data?.message ||
+                    t("auth.unableToSendOTP")
+                );
+
+
+            } finally {
+
+                setLoading(false);
+
+            }
+
+        };
+
+
+    // ==========================================
+    // VERIFY LOGIN OTP
+    // ==========================================
+
+    const handleVerifyLoginOTP =
+        async () => {
+
+            try {
+
+                setLoading(true);
+
+
+                const data =
+                    await verifyLoginOTP({
+
+                        identifier:
+                            formData.identifier,
+
+                        otp:
+                            formData.otp
+
+                    });
+
+
+                saveLogin(data);
+
+
+            } catch (error) {
+
+                setError(
+                    error.response?.data?.message ||
+                    t("auth.invalidOTP")
+                );
+
+
+            } finally {
+
+                setLoading(false);
+
+            }
+
+        };
+
+
+    // ==========================================
+    // FORGOT PASSWORD OTP
+    // ==========================================
+
+    const handleForgotOTP =
+        async () => {
+
+            try {
+
+                setLoading(true);
+
+
+                await sendForgotPasswordOTP(
+                    formData.identifier
+                );
+
+
+                setOtpSent(true);
+
+                setMode("reset");
+
+                setSuccess(
+                    t("auth.otpSent")
+                );
+
+
+            } catch (error) {
+
+                setError(
+                    error.response?.data?.message ||
+                    t("auth.unableToSendOTP")
+                );
+
+
+            } finally {
+
+                setLoading(false);
+
+            }
+
+        };
+
+
+    // ==========================================
+    // RESET PASSWORD
+    // ==========================================
+
+    const handleResetPassword =
+        async () => {
+
+            if (
+                formData.newPassword !==
+                formData.confirmPassword
+            ) {
+
+                setError(
+                    t("auth.passwordsDoNotMatch")
+                );
+
+                return;
+
+            }
+
+
+            try {
+
+                setLoading(true);
+
+
+                await resetPassword({
+
+                    identifier:
+                        formData.identifier,
+
+                    otp:
+                        formData.otp,
+
+                    newPassword:
+                        formData.newPassword
+
+                });
+
+
+                setSuccess(
+                    t("auth.passwordUpdated")
+                );
+
+
+                setTimeout(() => {
+
+                    setMode("login");
+
+                    setOtpSent(false);
+
+
+                    setFormData({
+
+                        identifier: "",
+
+                        password: "",
+
+                        otp: "",
+
+                        newPassword: "",
+
+                        confirmPassword: ""
+
+                    });
+
+                }, 1500);
+
+
+            } catch (error) {
+
+                setError(
+                    error.response?.data?.message ||
+                    t("auth.resetFailed")
+                );
+
+
+            } finally {
+
+                setLoading(false);
+
+            }
+
+        };
+
+
     return (
 
         <div className="loginForm">
 
-            {formError && (
+            {error && (
+
                 <div className="errorMessage">
-                    {formError}
+                    {error}
                 </div>
+
             )}
 
-            <Input
-                label="Email"
-                name="email"
-                type="email"
-                placeholder="Enter your email"
-                value={formData.email}
-                onChange={handleChange}
-                error={errors.email}
-                required
-                autoComplete="email"
-            />
+
+            {success && (
+
+                <div className="successMessage">
+                    {success}
+                </div>
+
+            )}
+
 
             <Input
-                label="Password"
-                name="password"
-                type="password"
-                placeholder="Enter your password"
-                value={formData.password}
+                label={
+                    t("auth.emailOrPhone")
+                }
+                name="identifier"
+                placeholder={
+                    t("auth.enterEmailOrPhone")
+                }
+                value={
+                    formData.identifier
+                }
                 onChange={handleChange}
-                error={errors.password}
-                required
-                autoComplete="current-password"
             />
 
-            <button
-                type="button"
-                className="otpButton"
-            >
-                Login with OTP instead
-            </button>
 
-            <Button
-                onClick={handleLogin}
-                disabled={loading}
-            >
-                {loading
-                    ? "Logging In..."
-                    : "Login"}
-            </Button>
+            {mode === "login" && (
 
-            <div className="loginFooter">
+                <>
 
-                <label className="rememberMe">
-
-                    <input
-                        type="checkbox"
-                        checked={rememberMe}
-                        onChange={(e) =>
-                            setRememberMe(
-                                e.target.checked
-                            )
+                    <Input
+                        label={
+                            t("auth.password")
                         }
+                        name="password"
+                        type="password"
+                        placeholder={
+                            t("auth.enterPassword")
+                        }
+                        value={
+                            formData.password
+                        }
+                        onChange={handleChange}
                     />
 
-                    <span>Remember Me</span>
 
-                </label>
+                    <button
+                        className="otpButton"
+                        type="button"
+                        onClick={() =>
+                            setMode("otp")
+                        }
+                    >
 
-                <button
-                    type="button"
-                    className="textButton"
-                >
-                    Forgot Password?
-                </button>
+                        {t("auth.loginWithOTP")}
 
-            </div>
+                    </button>
+
+
+                    <Button
+                        onClick={handleLogin}
+                        disabled={loading}
+                    >
+
+                        {
+                            loading
+                                ? t("auth.loggingIn")
+                                : t("auth.login")
+                        }
+
+                    </Button>
+
+
+                    <button
+                        className="textButton"
+                        type="button"
+                        onClick={() => {
+
+                            setMode("forgot");
+
+                            setOtpSent(false);
+
+                        }}
+                    >
+
+                        {t("auth.forgotPassword")}
+
+                    </button>
+
+                </>
+
+            )}
+
+
+            {mode === "otp" && (
+
+                <>
+
+                    {otpSent && (
+
+                        <Input
+                            label={
+                                t("auth.enterOTP")
+                            }
+                            name="otp"
+                            placeholder={
+                                t("auth.otpPlaceholder")
+                            }
+                            value={
+                                formData.otp
+                            }
+                            onChange={
+                                handleChange
+                            }
+                        />
+
+                    )}
+
+
+                    {!otpSent ? (
+
+                        <Button
+                            onClick={
+                                handleSendLoginOTP
+                            }
+                            disabled={loading}
+                        >
+
+                            {
+                                loading
+                                    ? t("auth.pleaseWait")
+                                    : t("auth.sendOTP")
+                            }
+
+                        </Button>
+
+                    ) : (
+
+                        <Button
+                            onClick={
+                                handleVerifyLoginOTP
+                            }
+                            disabled={loading}
+                        >
+
+                            {
+                                loading
+                                    ? t("auth.verifying")
+                                    : t("auth.verifyOTP")
+                            }
+
+                        </Button>
+
+                    )}
+
+
+                    <button
+                        className="textButton"
+                        type="button"
+                        onClick={() => {
+
+                            setMode("login");
+
+                            setOtpSent(false);
+
+                        }}
+                    >
+
+                        {
+                            t(
+                                "auth.backToPasswordLogin"
+                            )
+                        }
+
+                    </button>
+
+                </>
+
+            )}
+
+
+            {mode === "forgot" && (
+
+                <>
+
+                    <Button
+                        onClick={
+                            handleForgotOTP
+                        }
+                        disabled={loading}
+                    >
+
+                        {
+                            loading
+                                ? t("auth.pleaseWait")
+                                : t("auth.sendResetOTP")
+                        }
+
+                    </Button>
+
+
+                    <button
+                        className="textButton"
+                        type="button"
+                        onClick={() =>
+                            setMode("login")
+                        }
+                    >
+
+                        {t("auth.backToLogin")}
+
+                    </button>
+
+                </>
+
+            )}
+
+
+            {mode === "reset" && (
+
+                <>
+
+                    <Input
+                        label={
+                            t("auth.enterOTP")
+                        }
+                        name="otp"
+                        placeholder={
+                            t("auth.otpPlaceholder")
+                        }
+                        value={
+                            formData.otp
+                        }
+                        onChange={handleChange}
+                    />
+
+
+                    <Input
+                        label={
+                            t("auth.newPassword")
+                        }
+                        name="newPassword"
+                        type="password"
+                        placeholder={
+                            t(
+                                "auth.newPasswordPlaceholder"
+                            )
+                        }
+                        value={
+                            formData.newPassword
+                        }
+                        onChange={handleChange}
+                    />
+
+
+                    <Input
+                        label={
+                            t(
+                                "auth.confirmPassword"
+                            )
+                        }
+                        name="confirmPassword"
+                        type="password"
+                        placeholder={
+                            t(
+                                "auth.confirmPasswordPlaceholder"
+                            )
+                        }
+                        value={
+                            formData.confirmPassword
+                        }
+                        onChange={handleChange}
+                    />
+
+
+                    <Button
+                        onClick={
+                            handleResetPassword
+                        }
+                        disabled={loading}
+                    >
+
+                        {
+                            loading
+                                ? t("auth.pleaseWait")
+                                : t("auth.resetPassword")
+                        }
+
+                    </Button>
+
+                </>
+
+            )}
 
         </div>
 
     );
 
 }
+
 
 export default LoginForm;

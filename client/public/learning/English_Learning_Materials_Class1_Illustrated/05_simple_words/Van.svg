@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+<rect width="1200" height="800" rx="40" fill="#F7F8FF"/>
+<rect x="28" y="28" width="1144" height="744" rx="32" fill="none" stroke="#6366F1" stroke-width="5" opacity=".35"/>
+<text x="90" y="155" font-family="Arial, sans-serif" font-size="120" font-weight="800" fill="#6366F1">V</text>
+<text x="90" y="225" font-family="Arial, sans-serif" font-size="42" font-weight="700" fill="#263044">Van</text>
+<g transform="translate(520,120)">
+<path d="M120 260 L205 150 H410 L500 260 V470 H120Z" fill="#38BDF8"/>
+<path d="M210 175 H395 L445 260 H175Z" fill="#BAE6FD"/>
+<circle cx="210" cy="470" r="55" fill="#263044"/><circle cx="410" cy="470" r="55" fill="#263044"/>
+<circle cx="210" cy="470" r="25" fill="#CBD5E1"/><circle cx="410" cy="470" r="25" fill="#CBD5E1"/>
+</g>
+</svg>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+<rect width="1200" height="800" rx="40" fill="#F7F8FF"/>
+<rect x="28" y="28" width="1144" height="744" rx="32" fill="none" stroke="#6366F1" stroke-width="5" opacity=".35"/>
+<text x="90" y="155" font-family="Arial, sans-serif" font-size="120" font-weight="800" fill="#6366F1">I</text>
+<text x="90" y="225" font-family="Arial, sans-serif" font-size="42" font-weight="700" fill="#263044">I is a vowel</text>
+<g transform="translate(520,120)">
+<path d="M220 260 Q300 160 380 260 L330 330 L270 330Z" fill="#F9A8D4"/>
+<path d="M270 330 L330 330 L365 520 L235 520Z" fill="#D97706"/>
+<path d="M235 400 L365 400 M245 440 L355 440" stroke="#B45309" stroke-width="12"/>
+<circle cx="300" cy="205" r="65" fill="#FBCFE8"/>
+</g>
+</svg>

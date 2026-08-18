@@ -1,27 +1,37 @@
-import { useNavigate } from "react-router-dom";
+import {
+    useNavigate
+} from "react-router-dom";
 
 import "./Landing.css";
 
-import Navbar from "../../components/Navbar/Navbar";
+import Header from "../../components/Header/Header";
 import Hero from "../../components/Hero/Hero";
 import Features from "../../components/Features/Features";
 import Footer from "../../components/Footer/Footer";
 
+
 function Landing() {
 
-    const navigate = useNavigate();
+    const navigate =
+        useNavigate();
+
 
     return (
 
         <div className="landing">
 
-            <Navbar />
+            <Header />
+
 
             <Hero
-                onStart={() => navigate("/login")}
+                onStart={() =>
+                    navigate("/login")
+                }
             />
 
+
             <Features />
+
 
             <Footer />
 
@@ -30,5 +40,6 @@ function Landing() {
     );
 
 }
+
 
 export default Landing;

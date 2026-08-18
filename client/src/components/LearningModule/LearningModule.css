@@ -1,0 +1,719 @@
+.learningModulePage {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    background:
+        var(
+            --bg-primary,
+            #f7f8fc
+        );
+
+    color:
+        var(
+            --text-primary,
+            #202938
+        );
+
+}
+
+
+/* ==========================================
+   MAIN
+========================================== */
+
+.learningModuleMain {
+
+    flex: 1;
+
+    width: 100%;
+
+    padding:
+        55px 40px 80px;
+
+}
+
+
+.learningModuleContainer {
+
+    width: 100%;
+
+    max-width: 1250px;
+
+    margin: 0 auto;
+
+}
+
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.learningModuleHeader {
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    gap: 40px;
+
+    margin-bottom: 35px;
+
+}
+
+
+.learningEyebrow {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    color:
+        var(
+            --accent-color,
+            #6366f1
+        );
+
+}
+
+
+.learningModuleHeader h1 {
+
+    margin: 0;
+
+    font-size: 48px;
+
+    line-height: 1.05;
+
+    font-weight: 800;
+
+}
+
+
+.learningModuleHeader p {
+
+    margin:
+        10px 0 0;
+
+    font-size: 18px;
+
+    color:
+        var(
+            --text-secondary,
+            #64748b
+        );
+
+}
+
+
+/* ==========================================
+   PROGRESS
+========================================== */
+
+.learningProgressBox {
+
+    width: 250px;
+
+    flex-shrink: 0;
+
+}
+
+
+.learningProgressBox > span {
+
+    display: block;
+
+    margin-bottom: 10px;
+
+    text-align: right;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    color:
+        var(
+            --text-secondary,
+            #64748b
+        );
+
+}
+
+
+.learningProgressTrack {
+
+    width: 100%;
+
+    height: 9px;
+
+    overflow: hidden;
+
+    border-radius: 999px;
+
+    background:
+        var(
+            --progress-background,
+            #e4e7ef
+        );
+
+}
+
+
+.learningProgressFill {
+
+    height: 100%;
+
+    border-radius: inherit;
+
+    background:
+        var(
+            --accent-color,
+            #6366f1
+        );
+
+    transition:
+        width 0.3s ease;
+
+}
+
+
+/* ==========================================
+   LEARNING CARD
+========================================== */
+
+.learningCard {
+
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(400px, 1.1fr)
+        minmax(300px, 0.9fr);
+
+    min-height: 540px;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        var(
+            --border-color,
+            #dfe3ee
+        );
+
+    border-radius: 32px;
+
+    background:
+        var(
+            --card-background,
+            #ffffff
+        );
+
+    box-shadow:
+        0 18px 45px
+        rgba(
+            31,
+            41,
+            55,
+            0.08
+        );
+
+}
+
+
+/* ==========================================
+   IMAGE SECTION
+========================================== */
+
+.learningImageSection {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 540px;
+
+    padding: 45px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(99, 102, 241, 0.08),
+            rgba(99, 102, 241, 0.02)
+        );
+
+}
+
+
+.learningImage {
+
+    display: block;
+
+    width: 100%;
+
+    max-width: 560px;
+
+    max-height: 440px;
+
+    object-fit: contain;
+
+}
+
+
+/* ==========================================
+   CONTENT
+========================================== */
+
+.learningContent {
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding: 55px;
+
+}
+
+
+.lessonNumber {
+
+    margin-bottom: 14px;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+    color:
+        var(
+            --accent-color,
+            #6366f1
+        );
+
+}
+
+
+.learningContent h2 {
+
+    margin: 0 0 18px;
+
+    font-size: 38px;
+
+    line-height: 1.15;
+
+    font-weight: 800;
+
+}
+
+
+.learningContent p {
+
+    margin: 0;
+
+    font-size: 21px;
+
+    line-height: 1.7;
+
+    color:
+        var(
+            --text-secondary,
+            #64748b
+        );
+
+}
+
+
+/* ==========================================
+   SPEAKER
+========================================== */
+
+.learningSpeakerButton {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    width: fit-content;
+
+    margin-top: 32px;
+
+    padding:
+        13px 22px;
+
+    border: none;
+
+    border-radius: 15px;
+
+    background:
+        var(
+            --accent-color,
+            #6366f1
+        );
+
+    color: #ffffff;
+
+    font-size: 15px;
+
+    font-weight: 750;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+
+}
+
+
+.learningSpeakerButton:hover {
+
+    transform:
+        translateY(-2px);
+
+    opacity: 0.92;
+
+}
+
+
+.speakerIcon {
+
+    font-size: 18px;
+
+}
+
+
+/* ==========================================
+   NAVIGATION
+========================================== */
+
+.learningNavigation {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-top: 28px;
+
+}
+
+
+.learningNavButton {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    min-width: 130px;
+
+    padding:
+        13px 20px;
+
+    border:
+        1px solid
+        var(
+            --border-color,
+            #dfe3ee
+        );
+
+    border-radius: 14px;
+
+    background:
+        var(
+            --card-background,
+            #ffffff
+        );
+
+    color:
+        var(
+            --text-primary,
+            #202938
+        );
+
+    font-size: 14px;
+
+    font-weight: 750;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease;
+
+}
+
+
+.learningNavButton:hover:not(:disabled) {
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+.learningNext {
+
+    border-color:
+        var(
+            --accent-color,
+            #6366f1
+        );
+
+    background:
+        var(
+            --accent-color,
+            #6366f1
+        );
+
+    color: #ffffff;
+
+}
+
+
+.learningNavButton:disabled {
+
+    opacity: 0.35;
+
+    cursor: not-allowed;
+
+}
+
+
+/* ==========================================
+   DOTS
+========================================== */
+
+.learningDots {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+}
+
+
+.learningDot {
+
+    width: 9px;
+
+    height: 9px;
+
+    padding: 0;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background:
+        var(
+            --border-color,
+            #cbd5e1
+        );
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+
+}
+
+
+.learningDot.active {
+
+    width: 11px;
+
+    height: 11px;
+
+    background:
+        var(
+            --accent-color,
+            #6366f1
+        );
+
+    transform:
+        scale(1.15);
+
+}
+
+
+/* ==========================================
+   DARK THEME
+========================================== */
+
+[data-theme="dark"] .learningImageSection {
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(99, 102, 241, 0.13),
+            rgba(99, 102, 241, 0.04)
+        );
+
+}
+
+
+[data-theme="dark"] .learningCard {
+
+    box-shadow:
+        0 18px 45px
+        rgba(
+            0,
+            0,
+            0,
+            0.25
+        );
+
+}
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 900px) {
+
+    .learningModuleMain {
+
+        padding:
+            40px 22px 60px;
+
+    }
+
+
+    .learningModuleHeader {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+    }
+
+
+    .learningProgressBox {
+
+        width: 100%;
+
+    }
+
+
+    .learningProgressBox > span {
+
+        text-align: left;
+
+    }
+
+
+    .learningCard {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .learningImageSection {
+
+        min-height: 400px;
+
+    }
+
+
+    .learningContent {
+
+        padding: 40px;
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .learningModuleHeader h1 {
+
+        font-size: 38px;
+
+    }
+
+
+    .learningCard {
+
+        border-radius: 24px;
+
+    }
+
+
+    .learningImageSection {
+
+        min-height: 300px;
+
+        padding: 25px;
+
+    }
+
+
+    .learningContent {
+
+        padding: 30px;
+
+    }
+
+
+    .learningContent h2 {
+
+        font-size: 30px;
+
+    }
+
+
+    .learningContent p {
+
+        font-size: 18px;
+
+    }
+
+
+    .learningNavigation {
+
+        gap: 12px;
+
+    }
+
+
+    .learningNavButton {
+
+        min-width: 105px;
+
+        padding:
+            12px 14px;
+
+    }
+
+}

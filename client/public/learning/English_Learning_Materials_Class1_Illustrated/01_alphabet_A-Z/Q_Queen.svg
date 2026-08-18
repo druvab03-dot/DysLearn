@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+<rect width="1200" height="800" rx="40" fill="#F7F8FF"/>
+<rect x="28" y="28" width="1144" height="744" rx="32" fill="none" stroke="#6366F1" stroke-width="5" opacity=".35"/>
+<text x="90" y="155" font-family="Arial, sans-serif" font-size="120" font-weight="800" fill="#6366F1">Q</text>
+<text x="90" y="225" font-family="Arial, sans-serif" font-size="42" font-weight="700" fill="#263044">Q for Queen</text>
+<g transform="translate(520,120)">
+<circle cx="315" cy="210" r="75" fill="#F3C6A5"/>
+<path d="M245 145 L265 75 L315 120 L365 75 L385 145Z" fill="#FACC15" stroke="#CA8A04" stroke-width="8"/>
+<path d="M230 300 Q315 245 400 300 L455 520 L175 520Z" fill="#8B5CF6"/>
+<circle cx="290" cy="205" r="9" fill="#263044"/><circle cx="340" cy="205" r="9" fill="#263044"/>
+</g>
+</svg>

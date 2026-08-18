@@ -1,0 +1,186 @@
+{
+    "global": {
+        "home": "ಮುಖಪುಟ",
+        "about": "ಬಗ್ಗೆ",
+        "help": "ಸಹಾಯ",
+        "profile": "ಪ್ರೊಫೈಲ್",
+        "logout": "ಲಾಗ್ ಔಟ್",
+        "parentDashboard": "ಪೋಷಕರ ಡ್ಯಾಶ್‌ಬೋರ್ಡ್"
+    },
+
+    "landing": {
+        "heroTitleLine1": "ಪ್ರತಿ ಮಗುವಿಗೂ ಶಕ್ತಿ ನೀಡುವುದು",
+        "heroTitleLine2": "ಮಿತಿಗಳಿಲ್ಲದೆ ಕಲಿಯಲು",
+        "heroDescription": "ಪ್ರತಿ ಮಗುವಿಗೂ ಶಿಕ್ಷಣವನ್ನು ಸಂವಾದಾತ್ಮಕ, ಬಹುಭಾಷಾ ಮತ್ತು ಸುಲಭವಾಗಿ ಲಭ್ಯವಾಗುವಂತೆ ವಿನ್ಯಾಸಗೊಳಿಸಿದ AI ಆಧಾರಿತ ಕಲಿಕಾ ವೇದಿಕೆ.",
+        "startLearning": "ಕಲಿಕೆ ಪ್ರಾರಂಭಿಸಿ",
+
+        "featuresTitle": "ನಿಮ್ಮ ಮಗುವಿಗೆ ಉತ್ತಮವಾಗಿ ಕಲಿಯಲು ಬೇಕಾದ ಎಲ್ಲವೂ",
+
+        "handwritingTitle": "AI ಕೈಬರಹ ವಿಶ್ಲೇಷಣೆ",
+        "handwritingDescription": "ಮಗುವಿನ ಕಲಿಕೆಯ ಮಟ್ಟವನ್ನು ಅರ್ಥಮಾಡಿಕೊಳ್ಳಲು ಕೈಬರಹದ ಮಾದರಿಗಳನ್ನು ವಿಶ್ಲೇಷಿಸಿ.",
+
+        "multilingualTitle": "ಬಹುಭಾಷಾ ಕಲಿಕೆ",
+        "multilingualDescription": "ಒಂದೇ ವೇದಿಕೆಯ ಮೂಲಕ ಹಲವು ಭಾಷೆಗಳಲ್ಲಿ ಸುಲಭವಾಗಿ ಕಲಿಯಿರಿ.",
+
+        "parentDashboardTitle": "ಪೋಷಕರ ಡ್ಯಾಶ್‌ಬೋರ್ಡ್",
+        "parentDashboardDescription": "ನಿಮ್ಮ ಮಗುವಿನ ಕಲಿಕೆಯ ಪ್ರಗತಿ ಮತ್ತು ಕಾರ್ಯಕ್ಷಮತೆಯನ್ನು ಗಮನಿಸಿ.",
+
+        "interactiveTitle": "ಸಂವಾದಾತ್ಮಕ ಕಲಿಕೆ",
+        "interactiveDescription": "ಚಿಕ್ಕ ಮಕ್ಕಳಿಗಾಗಿ ವಿನ್ಯಾಸಗೊಳಿಸಿದ ಆಟಗಳು, ರಸಪ್ರಶ್ನೆಗಳು ಮತ್ತು ಆಸಕ್ತಿದಾಯಕ ಪಾಠಗಳು."
+    },
+
+    "dashboard": {
+        "chooseClass": "ತರಗತಿಯನ್ನು ಆಯ್ಕೆಮಾಡಿ",
+        "class": "ತರಗತಿ",
+        "chooseClassDescription": "ಕಲಿಕೆಯನ್ನು ಪ್ರಾರಂಭಿಸಲು ನಿಮ್ಮ ತರಗತಿಯನ್ನು ಆಯ್ಕೆಮಾಡಿ",
+        "classLabel": "ತರಗತಿ",
+        "startLearning": "ಕಲಿಕೆ ಪ್ರಾರಂಭಿಸಿ",
+        "recentActivity": "ಇತ್ತೀಚಿನ ಚಟುವಟಿಕೆ",
+        "keepLearning": "ಕಲಿಕೆಯನ್ನು ಮುಂದುವರಿಸಿ",
+        "learningJourney": "ನಿಮ್ಮ ಕಲಿಕೆಯ ಪ್ರಯಾಣ ಇಲ್ಲಿಂದ ಪ್ರಾರಂಭವಾಗುತ್ತದೆ",
+        "selectClassMessage": "ಕಲಿಕೆಯನ್ನು ಪ್ರಾರಂಭಿಸಲು ಮೇಲಿನ ತರಗತಿಯನ್ನು ಆಯ್ಕೆಮಾಡಿ"
+    },
+
+    "classDashboard": {
+        "learning": "ಕಲಿಕೆ",
+        "chooseSubject": "ಕಲಿಕೆಯನ್ನು ಪ್ರಾರಂಭಿಸಲು ವಿಷಯವನ್ನು ಆಯ್ಕೆಮಾಡಿ",
+
+        "english": "ಇಂಗ್ಲಿಷ್",
+        "kannada": "ಕನ್ನಡ",
+        "mathematics": "ಗಣಿತ",
+        "science": "ವಿಜ್ಞಾನ",
+        "gk": "ಸಾಮಾನ್ಯ ಜ್ಞಾನ",
+
+        "englishDescription": "ಅಕ್ಷರಗಳು, ಪದಗಳು, ಓದು ಮತ್ತು ಬರವಣಿಗೆಯನ್ನು ಕಲಿಯಿರಿ.",
+        "kannadaDescription": "ಕನ್ನಡ ಅಕ್ಷರಗಳು, ಪದಗಳು ಮತ್ತು ಓದುವಿಕೆಯನ್ನು ಕಲಿಯಿರಿ.",
+        "mathematicsDescription": "ಸಂಖ್ಯೆಗಳು, ಎಣಿಕೆ ಮತ್ತು ಮೂಲಭೂತ ಗಣಿತವನ್ನು ಅನ್ವೇಷಿಸಿ.",
+        "scienceDescription": "ಸರಳ ಪರಿಕಲ್ಪನೆಗಳ ಮೂಲಕ ನಿಮ್ಮ ಸುತ್ತಲಿನ ಜಗತ್ತನ್ನು ತಿಳಿದುಕೊಳ್ಳಿ.",
+        "gkDescription": "ಪ್ರಾಣಿಗಳು, ಪ್ರಕೃತಿ, ಸ್ಥಳಗಳು ಮತ್ತು ದೈನಂದಿನ ಜೀವನದ ಬಗ್ಗೆ ಕಲಿಯಿರಿ.",
+
+        "startLearning": "ಕಲಿಕೆ ಪ್ರಾರಂಭಿಸಿ",
+        "progress": "ಪ್ರಗತಿ",
+        "lessons": "ಪಾಠಗಳು",
+        "remaining": "ಉಳಿದಿವೆ"
+    },
+
+    "auth": {
+        "login": "ಲಾಗಿನ್",
+        "createAccount": "ಖಾತೆ ರಚಿಸಿ",
+        "creatingAccount": "ಖಾತೆ ರಚಿಸಲಾಗುತ್ತಿದೆ...",
+        "parent": "ಪೋಷಕರು",
+
+        "fullName": "ಪೂರ್ಣ ಹೆಸರು",
+        "enterFullName": "ನಿಮ್ಮ ಪೂರ್ಣ ಹೆಸರನ್ನು ನಮೂದಿಸಿ",
+
+        "email": "ಇಮೇಲ್",
+        "enterEmail": "ನಿಮ್ಮ ಇಮೇಲ್ ನಮೂದಿಸಿ",
+
+        "phoneNumber": "ಫೋನ್ ಸಂಖ್ಯೆ",
+        "enterPhoneNumber": "ನಿಮ್ಮ ಫೋನ್ ಸಂಖ್ಯೆಯನ್ನು ನಮೂದಿಸಿ",
+
+        "emailOrPhone": "ಇಮೇಲ್ ಅಥವಾ ಫೋನ್ ಸಂಖ್ಯೆ",
+        "enterEmailOrPhone": "ಇಮೇಲ್ ಅಥವಾ ಫೋನ್ ಸಂಖ್ಯೆಯನ್ನು ನಮೂದಿಸಿ",
+
+        "password": "ಪಾಸ್‌ವರ್ಡ್",
+        "enterPassword": "ಪಾಸ್‌ವರ್ಡ್ ನಮೂದಿಸಿ",
+        "createPassword": "ಪಾಸ್‌ವರ್ಡ್ ರಚಿಸಿ",
+
+        "confirmPassword": "ಪಾಸ್‌ವರ್ಡ್ ದೃಢೀಕರಿಸಿ",
+        "confirmPasswordPlaceholder": "ಪಾಸ್‌ವರ್ಡ್ ದೃಢೀಕರಿಸಿ",
+
+        "newPassword": "ಹೊಸ ಪಾಸ್‌ವರ್ಡ್",
+        "newPasswordPlaceholder": "ಹೊಸ ಪಾಸ್‌ವರ್ಡ್ ನಮೂದಿಸಿ",
+
+        "show": "ತೋರಿಸಿ",
+        "hide": "ಮರೆಮಾಡಿ",
+
+        "loginWithOTP": "OTP ಮೂಲಕ ಲಾಗಿನ್ ಮಾಡಿ",
+        "backToPasswordLogin": "ಪಾಸ್‌ವರ್ಡ್ ಲಾಗಿನ್‌ಗೆ ಹಿಂತಿರುಗಿ",
+
+        "forgotPassword": "ಪಾಸ್‌ವರ್ಡ್ ಮರೆತಿರಾ?",
+        "backToLogin": "ಲಾಗಿನ್‌ಗೆ ಹಿಂತಿರುಗಿ",
+
+        "sendOTP": "OTP ಕಳುಹಿಸಿ",
+        "resendOTP": "OTP ಮರುಕಳುಹಿಸಿ",
+        "verifyOTP": "OTP ಪರಿಶೀಲಿಸಿ",
+        "sendResetOTP": "ರೀಸೆಟ್ OTP ಕಳುಹಿಸಿ",
+
+        "enterOTP": "OTP ನಮೂದಿಸಿ",
+        "verificationCode": "ಪರಿಶೀಲನಾ ಕೋಡ್",
+        "otpPlaceholder": "6 ಅಂಕಿಯ OTP ನಮೂದಿಸಿ",
+
+        "resetPassword": "ಪಾಸ್‌ವರ್ಡ್ ಮರುಹೊಂದಿಸಿ",
+        "loggingIn": "ಲಾಗಿನ್ ಆಗುತ್ತಿದೆ...",
+        "addPhoto": "ಫೋಟೋ ಸೇರಿಸಿ",
+
+        "verified": "ಪರಿಶೀಲಿಸಲಾಗಿದೆ",
+        "verifying": "ಪರಿಶೀಲಿಸಲಾಗುತ್ತಿದೆ...",
+        "pleaseWait": "ದಯವಿಟ್ಟು ಕಾಯಿರಿ...",
+
+        "otpSent": "OTP ಯಶಸ್ವಿಯಾಗಿ ಕಳುಹಿಸಲಾಗಿದೆ",
+        "verifiedSuccessfully": "ಯಶಸ್ವಿಯಾಗಿ ಪರಿಶೀಲಿಸಲಾಗಿದೆ",
+        "passwordUpdated": "ಪಾಸ್‌ವರ್ಡ್ ಯಶಸ್ವಿಯಾಗಿ ನವೀಕರಿಸಲಾಗಿದೆ",
+
+        "fillAllFields": "ದಯವಿಟ್ಟು ಎಲ್ಲಾ ಕ್ಷೇತ್ರಗಳನ್ನು ಭರ್ತಿ ಮಾಡಿ.",
+        "verifyEmail": "ದಯವಿಟ್ಟು ನಿಮ್ಮ ಇಮೇಲ್ ಪರಿಶೀಲಿಸಿ.",
+        "verifyPhone": "ದಯವಿಟ್ಟು ನಿಮ್ಮ ಫೋನ್ ಸಂಖ್ಯೆಯನ್ನು ಪರಿಶೀಲಿಸಿ.",
+        "passwordsDoNotMatch": "ಪಾಸ್‌ವರ್ಡ್‌ಗಳು ಹೊಂದಿಕೆಯಾಗುತ್ತಿಲ್ಲ.",
+
+        "passwordRequirements": "ಪಾಸ್‌ವರ್ಡ್ ಕನಿಷ್ಠ 8 ಅಕ್ಷರಗಳನ್ನು ಹೊಂದಿರಬೇಕು ಮತ್ತು ಒಂದು ದೊಡ್ಡ ಅಕ್ಷರ, ಒಂದು ಸಣ್ಣ ಅಕ್ಷರ, ಒಂದು ಸಂಖ್ಯೆ ಹಾಗೂ ಒಂದು ವಿಶೇಷ ಅಕ್ಷರವನ್ನು ಒಳಗೊಂಡಿರಬೇಕು.",
+
+        "enterEmailFirst": "ಮೊದಲು ನಿಮ್ಮ ಇಮೇಲ್ ನಮೂದಿಸಿ",
+        "enterPhoneFirst": "ಮೊದಲು ನಿಮ್ಮ ಫೋನ್ ಸಂಖ್ಯೆಯನ್ನು ನಮೂದಿಸಿ",
+        "enterOTPError": "OTP ನಮೂದಿಸಿ",
+
+        "loginFailed": "ಲಾಗಿನ್ ವಿಫಲವಾಗಿದೆ",
+        "signupFailed": "ಖಾತೆ ರಚನೆ ವಿಫಲವಾಗಿದೆ",
+        "unableToSendOTP": "OTP ಕಳುಹಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ",
+        "invalidOTP": "ಅಮಾನ್ಯ OTP",
+        "resetFailed": "ಪಾಸ್‌ವರ್ಡ್ ಮರುಹೊಂದಿಸುವಿಕೆ ವಿಫಲವಾಗಿದೆ"
+    },
+
+    "footer": {
+        "tagline": "ಪ್ರತಿ ಮಗುವಿಗೂ ಮಿತಿಗಳಿಲ್ಲದೆ ಕಲಿಯಲು ಶಕ್ತಿ ನೀಡುವುದು.",
+        "copyright": "© 2026 DysLearn. ಎಲ್ಲಾ ಹಕ್ಕುಗಳನ್ನು ಕಾಯ್ದಿರಿಸಲಾಗಿದೆ."
+    },
+
+    "child": {
+        "parentDashboard": "ಪೋಷಕರ ಡ್ಯಾಶ್‌ಬೋರ್ಡ್",
+        "manageChildren": "ನಿಮ್ಮ ಮಕ್ಕಳ ಕಲಿಕಾ ಪ್ರೊಫೈಲ್‌ಗಳನ್ನು ನಿರ್ವಹಿಸಿ.",
+        "addChild": "ಮಗುವನ್ನು ಸೇರಿಸಿ",
+        "addDescription": "ನಿಮ್ಮ ಮಗುವಿನ ಹೆಸರು ಮತ್ತು ಕೈಬರಹದ ಮಾದರಿಯನ್ನು ಸೇರಿಸಿ.",
+        "childName": "ಮಗುವಿನ ಹೆಸರು",
+        "namePlaceholder": "ಮಗುವಿನ ಹೆಸರನ್ನು ನಮೂದಿಸಿ",
+        "handwritingSample": "ಕೈಬರಹದ ಮಾದರಿ",
+        "chooseImage": "ಚಿತ್ರವನ್ನು ಆಯ್ಕೆಮಾಡಿ",
+        "noFileSelected": "ಯಾವುದೇ ಚಿತ್ರ ಆಯ್ಕೆಮಾಡಲಾಗಿಲ್ಲ",
+        "imageHelp": "JPG, PNG ಅಥವಾ WEBP. ಗರಿಷ್ಠ 5 MB.",
+        "cancel": "ರದ್ದುಮಾಡಿ",
+        "adding": "ಸೇರಿಸಲಾಗುತ್ತಿದೆ...",
+        "enterNameError": "ನಿಮ್ಮ ಮಗುವಿನ ಹೆಸರನ್ನು ನಮೂದಿಸಿ.",
+        "handwritingRequired": "ದಯವಿಟ್ಟು ಕೈಬರಹದ ಚಿತ್ರವನ್ನು ಆಯ್ಕೆಮಾಡಿ.",
+        "addFailed": "ಮಗುವನ್ನು ಸೇರಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ.",
+        "loadFailed": "ಮಕ್ಕಳ ಮಾಹಿತಿಯನ್ನು ಲೋಡ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ.",
+        "loadingChildren": "ಮಕ್ಕಳ ಮಾಹಿತಿಯನ್ನು ಲೋಡ್ ಮಾಡಲಾಗುತ್ತಿದೆ...",
+        "noChildren": "ಇನ್ನೂ ಯಾವುದೇ ಮಕ್ಕಳನ್ನು ಸೇರಿಸಲಾಗಿಲ್ಲ",
+        "noChildrenDescription": "ನಿಮ್ಮ ಮೊದಲ ಮಗುವನ್ನು ಸೇರಿಸಿ ಅವರ ಕಲಿಕಾ ಪ್ರೊಫೈಲ್ ರಚಿಸಿ.",
+        "addFirstChild": "ನಿಮ್ಮ ಮೊದಲ ಮಗುವನ್ನು ಸೇರಿಸಿ",
+        "analysisPending": "ವಿಶ್ಲೇಷಣೆ ಬಾಕಿಯಿದೆ",
+        "analysisComplete": "ವಿಶ್ಲೇಷಣೆ ಪೂರ್ಣಗೊಂಡಿದೆ",
+        "viewDetails": "ವಿವರಗಳನ್ನು ವೀಕ್ಷಿಸಿ",
+        "remove": "ತೆಗೆದುಹಾಕಿ",
+        "deleteConfirm": "ನಿಮ್ಮ ಖಾತೆಯಿಂದ {{name}} ಅವರನ್ನು ತೆಗೆದುಹಾಕಬೇಕೇ?",
+        "deleteFailed": "ಮಗುವನ್ನು ತೆಗೆದುಹಾಕಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ.",
+        "startLearning": "ಕಲಿಕೆ ಪ್ರಾರಂಭಿಸಿ",
+        "handwritingSampleLabel": "ಕೈಬರಹದ ಮಾದರಿ",
+        "predictedCategory": "ಊಹಿಸಲಾದ ವರ್ಗ",
+        "gradCamHeatmap": "Grad-CAM ಹೀಟ್‌ಮ್ಯಾಪ್",
+        "gradCamExplanation": "Grad-CAM ವಿವರಣೆ",
+        "analyzingHandwriting": "ಕೈಬರಹವನ್ನು ವಿಶ್ಲೇಷಿಸಲಾಗುತ್ತಿದೆ...",
+        "reanalyzeHandwriting": "ಕೈಬರಹವನ್ನು ಮರು-ವಿಶ್ಲೇಷಿಸಿ",
+        "submitForAnalysis": "ವಿಶ್ಲೇಷಣೆಗಾಗಿ ಸಲ್ಲಿಸಿ",
+        "supportNeeded": "ಬೆಂಬಲ ಅಗತ್ಯವಿದೆ",
+        "developingWell": "ಉತ್ತಮವಾಗಿ ಅಭಿವೃದ್ಧಿಯಾಗುತ್ತಿದೆ",
+        "progressingWell": "ಉತ್ತಮವಾಗಿ ಪ್ರಗತಿ ಸಾಧಿಸುತ್ತಿದೆ"
+    }
+}

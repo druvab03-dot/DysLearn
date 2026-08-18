@@ -1,27 +1,62 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import {
+    createContext,
+    useContext,
+    useEffect,
+    useState
+} from "react";
+
 
 const ThemeContext = createContext();
 
+
 export function ThemeProvider({ children }) {
 
-    const [theme, setTheme] = useState("light");
+    const [theme, setTheme] = useState(() => {
+
+        const savedTheme =
+            localStorage.getItem("theme");
+
+        return savedTheme || "light";
+
+    });
+
 
     useEffect(() => {
 
-        document.body.setAttribute("data-theme", theme);
+        document.body.setAttribute(
+            "data-theme",
+            theme
+        );
+
+
+        localStorage.setItem(
+            "theme",
+            theme
+        );
 
     }, [theme]);
 
+
     const toggleTheme = () => {
 
-        setTheme(prev => prev === "light" ? "dark" : "light");
+        setTheme((previousTheme) =>
+
+            previousTheme === "light"
+                ? "dark"
+                : "light"
+
+        );
 
     };
+
 
     return (
 
         <ThemeContext.Provider
-            value={{ theme, toggleTheme }}
+            value={{
+                theme,
+                toggleTheme
+            }}
         >
 
             {children}
@@ -32,7 +67,8 @@ export function ThemeProvider({ children }) {
 
 }
 
-export function useTheme(){
+
+export function useTheme() {
 
     return useContext(ThemeContext);
 

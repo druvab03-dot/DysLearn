@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+<rect width="1200" height="800" rx="40" fill="#F7F8FF"/>
+<rect x="28" y="28" width="1144" height="744" rx="32" fill="none" stroke="#6366F1" stroke-width="5" opacity=".35"/>
+<text x="90" y="155" font-family="Arial, sans-serif" font-size="120" font-weight="800" fill="#6366F1">A</text>
+<text x="90" y="225" font-family="Arial, sans-serif" font-size="42" font-weight="700" fill="#263044">A for Apple</text>
+<g transform="translate(520,120)">
+<path d="M330 120 C300 70 315 30 350 15" fill="none" stroke="#5B3A29" stroke-width="18" stroke-linecap="round"/>
+<path d="M350 38 C395 0 450 18 465 55 C420 75 380 68 350 38Z" fill="#55A83A"/>
+<path d="M205 170 C160 260 175 455 300 520 C425 455 440 260 395 170 C355 95 245 95 205 170Z" fill="#E53935"/>
+<ellipse cx="270" cy="250" rx="25" ry="55" fill="#FF7777" opacity=".65"/>
+</g>
+</svg>

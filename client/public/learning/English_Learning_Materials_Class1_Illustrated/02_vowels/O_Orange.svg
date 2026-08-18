@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+<rect width="1200" height="800" rx="40" fill="#F7F8FF"/>
+<rect x="28" y="28" width="1144" height="744" rx="32" fill="none" stroke="#6366F1" stroke-width="5" opacity=".35"/>
+<text x="90" y="155" font-family="Arial, sans-serif" font-size="120" font-weight="800" fill="#6366F1">O</text>
+<text x="90" y="225" font-family="Arial, sans-serif" font-size="42" font-weight="700" fill="#263044">O is a vowel</text>
+<g transform="translate(520,120)">
+<circle cx="315" cy="315" r="180" fill="#F97316"/>
+<path d="M315 135 Q350 80 410 100" fill="none" stroke="#4D7C0F" stroke-width="18" stroke-linecap="round"/>
+<ellipse cx="395" cy="115" rx="65" ry="30" fill="#65A30D" transform="rotate(-15 395 115)"/>
+<circle cx="255" cy="250" r="28" fill="#FDBA74" opacity=".5"/>
+</g>
+</svg>

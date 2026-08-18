@@ -1,6 +1,8 @@
 import "./Input.css";
 
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
+
 
 function Input({
     label,
@@ -14,25 +16,43 @@ function Input({
     disabled = false,
     autoComplete = "off",
 }) {
-    const [showPassword, setShowPassword] = useState(false);
 
-    const isPassword = type === "password";
+    const { t } = useTranslation();
+
+    const [showPassword, setShowPassword] =
+        useState(false);
+
+    const isPassword =
+        type === "password";
+
 
     return (
+
         <div className="inputGroup">
 
             {label && (
+
                 <label htmlFor={name}>
+
                     {label}
-                    {required && <span className="requiredMark">*</span>}
+
+                    {required && (
+                        <span className="requiredMark">
+                            *
+                        </span>
+                    )}
+
                 </label>
+
             )}
+
 
             <div
                 className={`inputWrapper ${
                     error ? "inputError" : ""
                 }`}
             >
+
                 <input
                     id={name}
                     name={name}
@@ -50,27 +70,45 @@ function Input({
                     autoComplete={autoComplete}
                 />
 
+
                 {isPassword && (
+
                     <button
                         type="button"
                         className="togglePassword"
                         onClick={() =>
-                            setShowPassword(!showPassword)
+                            setShowPassword(
+                                !showPassword
+                            )
                         }
                     >
-                        {showPassword ? "Hide" : "Show"}
+
+                        {
+                            showPassword
+                                ? t("auth.hide")
+                                : t("auth.show")
+                        }
+
                     </button>
+
                 )}
+
             </div>
 
+
             {error && (
+
                 <p className="inputErrorText">
                     {error}
                 </p>
+
             )}
 
         </div>
+
     );
+
 }
+
 
 export default Input;

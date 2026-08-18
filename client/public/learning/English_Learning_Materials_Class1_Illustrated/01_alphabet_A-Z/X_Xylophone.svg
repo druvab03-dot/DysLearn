@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+<rect width="1200" height="800" rx="40" fill="#F7F8FF"/>
+<rect x="28" y="28" width="1144" height="744" rx="32" fill="none" stroke="#6366F1" stroke-width="5" opacity=".35"/>
+<text x="90" y="155" font-family="Arial, sans-serif" font-size="120" font-weight="800" fill="#6366F1">X</text>
+<text x="90" y="225" font-family="Arial, sans-serif" font-size="42" font-weight="700" fill="#263044">X for Xylophone</text>
+<g transform="translate(520,120)">
+<path d="M130 220 L500 400 L465 460 L95 280Z" fill="#475569"/>
+<g stroke-width="30">
+<path d="M155 235 L215 265" stroke="#EF4444"/><path d="M220 270 L280 300" stroke="#F59E0B"/>
+<path d="M285 305 L345 335" stroke="#22C55E"/><path d="M350 340 L410 370" stroke="#3B82F6"/><path d="M415 375 L475 405" stroke="#A855F7"/>
+</g>
+<g stroke="#475569" stroke-width="10"><path d="M190 280 L150 520"/><path d="M430 390 L390 630"/></g>
+</g>
+</svg>

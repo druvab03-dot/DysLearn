@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+<rect width="1200" height="800" rx="40" fill="#F7F8FF"/>
+<rect x="28" y="28" width="1144" height="744" rx="32" fill="none" stroke="#6366F1" stroke-width="5" opacity=".35"/>
+<text x="90" y="155" font-family="Arial, sans-serif" font-size="120" font-weight="800" fill="#6366F1">S</text>
+<text x="90" y="225" font-family="Arial, sans-serif" font-size="42" font-weight="700" fill="#263044">S for Sun</text>
+<g transform="translate(520,120)">
+<circle cx="315" cy="315" r="130" fill="#FACC15"/>
+<g stroke="#F59E0B" stroke-width="22" stroke-linecap="round">
+<path d="M315 80 V25"/><path d="M315 605 V550"/><path d="M80 315 H25"/><path d="M605 315 H550"/>
+<path d="M150 150 L110 110"/><path d="M480 480 L520 520"/><path d="M480 150 L520 110"/><path d="M150 480 L110 520"/>
+</g>
+<circle cx="270" cy="290" r="10" fill="#7C2D12"/><circle cx="360" cy="290" r="10" fill="#7C2D12"/>
+<path d="M270 350 Q315 390 360 350" fill="none" stroke="#7C2D12" stroke-width="10"/>
+</g>
+</svg>

@@ -1,7 +1,15 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
+
 import "./VerificationInput.css";
 
 import Input from "../Input/Input";
+
+import {
+    sendSignupOTP,
+    verifySignupOTP
+} from "../../services/authService";
+
 
 function VerificationInput({
     label,
@@ -10,35 +18,177 @@ function VerificationInput({
     type = "text",
     value,
     onChange,
+    verificationType,
+    onVerified
 }) {
 
-    const [showOTP, setShowOTP] = useState(false);
-    const [verified, setVerified] = useState(false);
-    const [otp, setOtp] = useState("");
+    const { t } = useTranslation();
 
-    const handleSendOTP = () => {
 
-        // TODO:
-        // Backend API
-        // Send Email / Phone OTP
+    const [showOTP, setShowOTP] =
+        useState(false);
 
-        setShowOTP(true);
+    const [verified, setVerified] =
+        useState(false);
 
-    };
+    const [otp, setOtp] =
+        useState("");
 
-    const handleVerifyOTP = () => {
+    const [loading, setLoading] =
+        useState(false);
 
-        // TODO:
-        // Verify OTP from backend
+    const [error, setError] =
+        useState("");
 
-        if (otp.trim() === "") {
-            alert("Enter OTP");
+    const [message, setMessage] =
+        useState("");
+
+
+    const handleSendOTP = async () => {
+
+        if (!value?.trim()) {
+
+            setError(
+                verificationType === "email"
+                    ? t("auth.enterEmailFirst")
+                    : t("auth.enterPhoneFirst")
+            );
+
             return;
+
         }
 
-        setVerified(true);
+
+        try {
+
+            setLoading(true);
+
+            setError("");
+
+            setMessage("");
+
+
+            const data =
+                await sendSignupOTP(
+                    value.trim(),
+                    verificationType
+                );
+
+
+            setShowOTP(true);
+
+
+            setMessage(
+                data.message ||
+                t("auth.otpSent")
+            );
+
+
+        } catch (error) {
+
+            setError(
+                error.response?.data?.message ||
+                t("auth.unableToSendOTP")
+            );
+
+
+        } finally {
+
+            setLoading(false);
+
+        }
 
     };
+
+
+    const handleVerifyOTP = async () => {
+
+        if (!otp.trim()) {
+
+            setError(
+                t("auth.enterOTPError")
+            );
+
+            return;
+
+        }
+
+
+        try {
+
+            setLoading(true);
+
+            setError("");
+
+            setMessage("");
+
+
+            const data =
+                await verifySignupOTP(
+                    value.trim(),
+                    otp.trim(),
+                    verificationType
+                );
+
+
+            setVerified(true);
+
+            setShowOTP(false);
+
+
+            setMessage(
+                data.message ||
+                t("auth.verifiedSuccessfully")
+            );
+
+
+            if (onVerified) {
+                onVerified(true);
+            }
+
+
+        } catch (error) {
+
+            setError(
+                error.response?.data?.message ||
+                t("auth.invalidOTP")
+            );
+
+
+        } finally {
+
+            setLoading(false);
+
+        }
+
+    };
+
+
+    const handleMainInputChange = (e) => {
+
+        if (verified) {
+
+            setVerified(false);
+
+            if (onVerified) {
+                onVerified(false);
+            }
+
+        }
+
+
+        setShowOTP(false);
+
+        setOtp("");
+
+        setError("");
+
+        setMessage("");
+
+        onChange(e);
+
+    };
+
 
     return (
 
@@ -54,10 +204,14 @@ function VerificationInput({
                         type={type}
                         placeholder={placeholder}
                         value={value}
-                        onChange={onChange}
+                        onChange={
+                            handleMainInputChange
+                        }
+                        disabled={loading}
                     />
 
                 </div>
+
 
                 {!verified ? (
 
@@ -65,9 +219,16 @@ function VerificationInput({
                         type="button"
                         className="verifyBtn"
                         onClick={handleSendOTP}
+                        disabled={loading}
                     >
 
-                        {showOTP ? "Resend OTP" : "Send OTP"}
+                        {
+                            loading
+                                ? t("auth.pleaseWait")
+                                : showOTP
+                                    ? t("auth.resendOTP")
+                                    : t("auth.sendOTP")
+                        }
 
                     </button>
 
@@ -79,7 +240,7 @@ function VerificationInput({
                         disabled
                     >
 
-                        ✓ Verified
+                        {t("auth.verified")}
 
                     </button>
 
@@ -87,28 +248,64 @@ function VerificationInput({
 
             </div>
 
+
             {showOTP && !verified && (
 
                 <div className="otpSection">
 
                     <Input
-                        label="Verification Code"
-                        placeholder="Enter OTP"
+                        label={
+                            t("auth.verificationCode")
+                        }
+                        name={`${name}OTP`}
+                        placeholder={
+                            t("auth.otpPlaceholder")
+                        }
                         value={otp}
-                        onChange={(e) => setOtp(e.target.value)}
+                        onChange={(e) => {
+
+                            setOtp(e.target.value);
+
+                            setError("");
+
+                        }}
                     />
+
 
                     <button
                         type="button"
                         className="verifyOTPBtn"
                         onClick={handleVerifyOTP}
+                        disabled={loading}
                     >
 
-                        Verify OTP
+                        {
+                            loading
+                                ? t("auth.verifying")
+                                : t("auth.verifyOTP")
+                        }
 
                     </button>
 
                 </div>
+
+            )}
+
+
+            {error && (
+
+                <p className="verificationError">
+                    {error}
+                </p>
+
+            )}
+
+
+            {message && (
+
+                <p className="verificationSuccess">
+                    {message}
+                </p>
 
             )}
 
@@ -117,5 +314,6 @@ function VerificationInput({
     );
 
 }
+
 
 export default VerificationInput;

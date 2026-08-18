@@ -1,0 +1,410 @@
+.modalOverlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 2000;
+
+    padding: 24px;
+
+    background: rgba(0, 0, 0, 0.45);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+.addChildModal {
+
+    width: 100%;
+
+    max-width: 520px;
+
+    padding: 28px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 20px;
+
+    background: var(--surface);
+
+    box-shadow: var(--shadow);
+
+    color: var(--text);
+
+}
+
+
+/* ================= Header ================= */
+
+.modalHeader {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 26px;
+
+}
+
+
+.modalHeader h2 {
+
+    margin: 0 0 6px;
+
+    color: var(--text);
+
+    font-size: 24px;
+
+}
+
+
+.modalHeader p {
+
+    margin: 0;
+
+    color: var(--text-light);
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+}
+
+
+.modalCloseButton {
+
+    width: 36px;
+
+    height: 36px;
+
+    flex-shrink: 0;
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    background: var(--surface);
+
+    color: var(--text);
+
+    font-size: 22px;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition: var(--transition);
+
+}
+
+
+.modalCloseButton:hover {
+
+    border-color: var(--primary);
+
+    color: var(--primary);
+
+}
+
+
+/* ================= Form ================= */
+
+.addChildForm {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 22px;
+
+}
+
+
+.childFormGroup {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 9px;
+
+}
+
+
+.childFormGroup > label {
+
+    color: var(--text);
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+}
+
+
+.childFormGroup > input {
+
+    width: 100%;
+
+    padding: 13px 14px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 11px;
+
+    outline: none;
+
+    background: var(--background);
+
+    color: var(--text);
+
+    font-size: 14px;
+
+    transition: var(--transition);
+
+}
+
+
+.childFormGroup > input:focus {
+
+    border-color: var(--primary);
+
+}
+
+
+/* ================= File Upload ================= */
+
+.fileUploadBox {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    min-height: 48px;
+
+}
+
+
+.fileUploadBox input {
+
+    display: none;
+
+}
+
+
+.fileUploadButton {
+
+    flex-shrink: 0;
+
+    padding: 11px 16px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    background: var(--surface-2);
+
+    color: var(--text);
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: var(--transition);
+
+}
+
+
+.fileUploadButton:hover {
+
+    border-color: var(--primary);
+
+    color: var(--primary);
+
+}
+
+
+.selectedFileName {
+
+    min-width: 0;
+
+    overflow: hidden;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+
+    color: var(--text-light);
+
+    font-size: 13px;
+
+}
+
+
+.fileHelp {
+
+    margin: 0;
+
+    color: var(--text-light);
+
+    font-size: 12px;
+
+}
+
+
+/* ================= Error ================= */
+
+.addChildError {
+
+    padding: 11px 13px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    background: var(--surface-2);
+
+    color: var(--text);
+
+    font-size: 13px;
+
+}
+
+
+/* ================= Actions ================= */
+
+.modalActions {
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    margin-top: 4px;
+
+}
+
+
+.cancelChildButton,
+.addChildButton {
+
+    min-height: 42px;
+
+    padding: 0 18px;
+
+    border-radius: 10px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: var(--transition);
+
+}
+
+
+.cancelChildButton {
+
+    border: 1px solid var(--border);
+
+    background: var(--surface);
+
+    color: var(--text);
+
+}
+
+
+.cancelChildButton:hover {
+
+    background: var(--surface-2);
+
+}
+
+
+.addChildButton {
+
+    border: 1px solid var(--primary);
+
+    background: var(--primary);
+
+    color: #ffffff;
+
+}
+
+
+.addChildButton:hover {
+
+    background: var(--primary-dark);
+
+}
+
+
+.cancelChildButton:disabled,
+.addChildButton:disabled {
+
+    opacity: 0.6;
+
+    cursor: not-allowed;
+
+}
+
+
+/* ================= Mobile ================= */
+
+@media (max-width: 600px) {
+
+    .modalOverlay {
+
+        padding: 14px;
+
+    }
+
+
+    .addChildModal {
+
+        padding: 22px 18px;
+
+    }
+
+
+    .fileUploadBox {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+    }
+
+
+    .modalActions {
+
+        flex-direction: column-reverse;
+
+    }
+
+
+    .cancelChildButton,
+    .addChildButton {
+
+        width: 100%;
+
+    }
+
+}

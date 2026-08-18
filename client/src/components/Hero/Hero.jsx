@@ -1,27 +1,37 @@
 import "./Hero.css";
 
+import { useTranslation } from "react-i18next";
+
+
 function Hero({ onStart }) {
 
-    return(
+    const { t } =
+        useTranslation();
+
+
+    return (
 
         <section className="hero">
 
             <h1>
-                Empowering Every Child
+
+                {t("landing.heroTitleLine1")}
+
                 <br />
-                To Learn Without Limits
+
+                {t("landing.heroTitleLine2")}
+
             </h1>
 
             <p>
-                AI-powered learning platform designed to make education
-                interactive, multilingual, and accessible for every child.
+                {t("landing.heroDescription")}
             </p>
 
             <button
                 className="heroButton"
                 onClick={onStart}
             >
-                Start Learning
+                {t("landing.startLearning")}
             </button>
 
         </section>
@@ -29,5 +39,6 @@ function Hero({ onStart }) {
     );
 
 }
+
 
 export default Hero;

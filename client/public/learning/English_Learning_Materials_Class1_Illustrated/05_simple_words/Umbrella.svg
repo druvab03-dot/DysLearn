@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+<rect width="1200" height="800" rx="40" fill="#F7F8FF"/>
+<rect x="28" y="28" width="1144" height="744" rx="32" fill="none" stroke="#6366F1" stroke-width="5" opacity=".35"/>
+<text x="90" y="155" font-family="Arial, sans-serif" font-size="120" font-weight="800" fill="#6366F1">U</text>
+<text x="90" y="225" font-family="Arial, sans-serif" font-size="42" font-weight="700" fill="#263044">Umbrella</text>
+<g transform="translate(520,120)">
+<path d="M100 300 Q300 80 500 300Z" fill="#60A5FA"/>
+<path d="M200 300 Q300 210 400 300" fill="#F472B6"/>
+<path d="M300 300 V535 Q300 600 360 600 Q410 600 410 550" fill="none" stroke="#475569" stroke-width="18" stroke-linecap="round"/>
+</g>
+</svg>

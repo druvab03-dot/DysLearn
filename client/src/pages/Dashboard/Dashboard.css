@@ -1,275 +1,787 @@
-.dashboard{
+.dashboardPage {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 
-    display:flex;
+    background: var(
+        --background-color,
+        var(
+            --bg-color,
+            transparent
+        )
+    );
 
-    min-height:100vh;
-
-    background:var(--background);
-
-    color:var(--text);
-
+    color: var(
+        --text-color,
+        var(
+            --text-primary,
+            inherit
+        )
+    );
 }
 
-/* ================= Sidebar ================= */
 
-.sidebar{
+.dashboardMain {
+    flex: 1;
+    width: 100%;
 
-    width:250px;
-
-    background:var(--surface);
-
-    border-right:1px solid var(--border);
-
-    padding:30px;
-
-    transition:var(--transition);
-
+    padding: 48px 32px 64px;
 }
 
-.logo{
 
-    color:var(--primary);
+.classSection {
+    width: 100%;
+    max-width: 1200px;
 
-    margin-bottom:50px;
-
-    font-size:28px;
-
-    font-weight:700;
-
+    margin: 0 auto;
 }
 
-.sidebar ul{
 
-    list-style:none;
+/* ==========================================
+   HEADING
+========================================== */
 
+.classHeading {
+    text-align: center;
+
+    margin-bottom: 38px;
 }
 
-.sidebar li{
 
-    margin:22px 0;
+.classTitle {
+    margin: 0;
 
-    color:var(--text-light);
+    color: var(
+        --text-color,
+        var(
+            --text-primary,
+            inherit
+        )
+    );
 
-    font-size:17px;
+    font-size: clamp(
+        2rem,
+        4vw,
+        3rem
+    );
 
-    cursor:pointer;
+    font-weight: 800;
 
-    transition:var(--transition);
-
+    letter-spacing: -1px;
 }
 
-.sidebar li:hover{
 
-    color:var(--primary);
+.classSubtitle {
+    margin: 10px 0 0;
 
+    color: var(
+        --text-secondary,
+        var(
+            --muted-text,
+            currentColor
+        )
+    );
+
+    font-size: 1rem;
+
+    opacity: 0.7;
 }
 
-/* ================= Main ================= */
 
-.mainContent{
+/* ==========================================
+   CLASS GRID
+========================================== */
 
-    flex:1;
+.classGrid {
+    display: grid;
 
-    padding:40px;
+    grid-template-columns:
+        repeat(6, 1fr);
 
+    gap: 20px;
 }
 
-/* ================= Header ================= */
 
-.header{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    margin-bottom:40px;
-
+.classCard:nth-child(1),
+.classCard:nth-child(2),
+.classCard:nth-child(3) {
+    grid-column: span 2;
 }
 
-.header h1{
 
-    color:var(--text);
-
+.classCard:nth-child(4) {
+    grid-column: 2 / span 2;
 }
 
-.profile{
 
-    display:flex;
-
-    align-items:center;
-
-    gap:12px;
-
+.classCard:nth-child(5) {
+    grid-column: 4 / span 2;
 }
 
-.profileCircle{
 
-    width:45px;
+/* ==========================================
+   CLASS CARDS
+========================================== */
 
-    height:45px;
+.classCard {
+    position: relative;
 
-    border-radius:50%;
+    min-height: 270px;
 
-    background:var(--primary);
+    border: 1px solid
+        var(
+            --border-color,
+            rgba(128, 128, 128, 0.18)
+        );
 
-    color:#ffffff;
+    border-radius: 28px;
 
-    display:flex;
+    overflow: hidden;
 
-    justify-content:center;
+    isolation: isolate;
 
-    align-items:center;
+    cursor: pointer;
 
-    font-weight:600;
+    text-align: left;
 
+    padding: 0;
+
+    color: var(
+        --text-color,
+        var(
+            --text-primary,
+            inherit
+        )
+    );
+
+    box-shadow:
+        0 12px 30px
+        var(
+            --shadow-color,
+            rgba(0, 0, 0, 0.08)
+        );
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
 }
 
-/* ================= Cards ================= */
 
-.languageCards{
+/* ==========================================
+   THEME-COMPATIBLE CARD BACKGROUNDS
+========================================== */
 
-    display:grid;
-
-    grid-template-columns:repeat(3,1fr);
-
-    gap:25px;
-
-    margin-bottom:40px;
-
+.classCard1 {
+    background:
+        linear-gradient(
+            135deg,
+            color-mix(
+                in srgb,
+                var(--primary-color, #4f8cff) 14%,
+                var(--card-background, transparent)
+            ),
+            var(--card-background, transparent)
+        );
 }
 
-.langCard{
 
-    background:var(--surface);
-
-    border:1px solid var(--border);
-
-    border-radius:24px;
-
-    padding:30px;
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:center;
-
-    align-items:center;
-
-    box-shadow:var(--shadow);
-
-    cursor:pointer;
-
-    transition:var(--transition);
-
+.classCard2 {
+    background:
+        linear-gradient(
+            135deg,
+            color-mix(
+                in srgb,
+                var(--secondary-color, #f0a64b) 14%,
+                var(--card-background, transparent)
+            ),
+            var(--card-background, transparent)
+        );
 }
 
-.langCard:hover{
 
-    transform:translateY(-6px);
-
+.classCard3 {
+    background:
+        linear-gradient(
+            135deg,
+            color-mix(
+                in srgb,
+                var(--accent-color, #8b6cff) 14%,
+                var(--card-background, transparent)
+            ),
+            var(--card-background, transparent)
+        );
 }
 
-.langCard h1{
 
-    font-size:64px;
-
-    color:var(--primary);
-
-    margin-bottom:15px;
-
+.classCard4 {
+    background:
+        linear-gradient(
+            135deg,
+            color-mix(
+                in srgb,
+                var(--success-color, #4caf7d) 14%,
+                var(--card-background, transparent)
+            ),
+            var(--card-background, transparent)
+        );
 }
 
-.langCard p{
 
-    color:var(--text-light);
-
-    font-size:18px;
-
-    font-weight:600;
-
+.classCard5 {
+    background:
+        linear-gradient(
+            135deg,
+            color-mix(
+                in srgb,
+                var(--warning-color, #e8799b) 14%,
+                var(--card-background, transparent)
+            ),
+            var(--card-background, transparent)
+        );
 }
 
-/* ================= Game ================= */
 
-.gameCard{
+/* ==========================================
+   LARGE BACKGROUND NUMBER
+========================================== */
 
-    background:var(--surface);
+.classBackgroundNumber {
+    position: absolute;
 
-    border:1px solid var(--border);
+    top: -25px;
+    right: -5px;
 
-    border-radius:24px;
+    font-size: 13rem;
 
-    padding:35px;
+    line-height: 1;
 
-    box-shadow:var(--shadow);
+    font-weight: 900;
 
+    color: var(
+        --text-color,
+        currentColor
+    );
+
+    opacity: 0.07;
+
+    transform: rotate(12deg);
+
+    z-index: -1;
+
+    pointer-events: none;
+
+    user-select: none;
+
+    transition:
+        transform 0.35s ease,
+        opacity 0.35s ease;
 }
 
-.gameCard h2{
 
-    color:var(--text);
+/* ==========================================
+   BACKGROUND OBJECTS
+========================================== */
 
-    margin-bottom:15px;
+.classBackgroundObjects {
+    position: absolute;
 
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 0;
 }
 
-.gameCard p{
 
-    color:var(--text-light);
+.backgroundObject {
+    position: absolute;
 
-    margin-bottom:25px;
+    font-size: 1.7rem;
 
+    font-weight: 800;
+
+    color: var(
+        --text-color,
+        currentColor
+    );
+
+    opacity: 0.10;
+
+    user-select: none;
+
+    transition:
+        transform 0.35s ease,
+        opacity 0.35s ease;
 }
 
-.gameCard button{
 
-    padding:14px 28px;
+.object1 {
+    top: 15%;
+    right: 13%;
 
-    border:none;
-
-    border-radius:12px;
-
-    background:var(--primary);
-
-    color:#ffffff;
-
-    cursor:pointer;
-
-    transition:var(--transition);
-
+    transform: rotate(-12deg);
 }
 
-.gameCard button:hover{
 
-    background:var(--primary-dark);
+.object2 {
+    top: 55%;
+    right: 20%;
 
+    transform: rotate(15deg);
 }
 
-@media(max-width:992px){
 
-    .dashboard{
+.object3 {
+    bottom: 12%;
+    left: 13%;
 
-        flex-direction:column;
+    transform: rotate(-8deg);
+}
 
+
+.object4 {
+    top: 32%;
+    left: 45%;
+
+    transform: rotate(12deg);
+}
+
+
+.object5 {
+    bottom: 18%;
+    right: 8%;
+
+    transform: rotate(-15deg);
+}
+
+
+.object6 {
+    top: 10%;
+    right: 38%;
+
+    transform: rotate(8deg);
+}
+
+
+/* ==========================================
+   CARD CONTENT
+========================================== */
+
+.classCardContent {
+    position: relative;
+
+    z-index: 2;
+
+    height: 100%;
+
+    padding: 32px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-end;
+
+    align-items: flex-start;
+}
+
+
+.classSmallLabel {
+    margin-bottom: 2px;
+
+    color: var(
+        --text-secondary,
+        var(
+            --muted-text,
+            currentColor
+        )
+    );
+
+    font-size: 0.75rem;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    opacity: 0.7;
+}
+
+
+.classNumber {
+    font-size: 3.5rem;
+
+    line-height: 1;
+
+    font-weight: 900;
+
+    margin-bottom: 6px;
+
+    color: var(
+        --text-color,
+        var(
+            --text-primary,
+            inherit
+        )
+    );
+}
+
+
+.classLabel {
+    font-size: 1.2rem;
+
+    font-weight: 700;
+
+    color: var(
+        --text-color,
+        var(
+            --text-primary,
+            inherit
+        )
+    );
+}
+
+
+/* ==========================================
+   START LEARNING
+========================================== */
+
+.startLearning {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top: 20px;
+
+    padding: 10px 16px;
+
+    border: 1px solid
+        var(
+            --border-color,
+            rgba(128, 128, 128, 0.18)
+        );
+
+    border-radius: 999px;
+
+    background:
+        var(
+            --surface-color,
+            rgba(255, 255, 255, 0.45)
+        );
+
+    color: var(
+        --text-color,
+        var(
+            --text-primary,
+            inherit
+        )
+    );
+
+    backdrop-filter: blur(8px);
+
+    font-size: 0.9rem;
+
+    font-weight: 700;
+}
+
+
+.arrow {
+    font-size: 1.1rem;
+
+    transition:
+        transform 0.2s ease;
+}
+
+
+/* ==========================================
+   HOVER
+========================================== */
+
+.classCard:hover {
+    transform:
+        translateY(-7px);
+
+    border-color:
+        var(
+            --primary-color,
+            rgba(128, 128, 128, 0.3)
+        );
+
+    box-shadow:
+        0 20px 40px
+        var(
+            --shadow-color,
+            rgba(0, 0, 0, 0.13)
+        );
+}
+
+
+.classCard:hover
+.classBackgroundNumber {
+    transform:
+        rotate(12deg)
+        scale(1.06);
+
+    opacity: 0.11;
+}
+
+
+.classCard:hover
+.backgroundObject {
+    transform:
+        scale(1.15)
+        rotate(0deg);
+
+    opacity: 0.16;
+}
+
+
+.classCard:hover
+.arrow {
+    transform:
+        translateX(5px);
+}
+
+
+/* ==========================================
+   RECENT ACTIVITY
+========================================== */
+
+.recentActivity {
+    margin-top: 48px;
+
+    padding: 28px;
+
+    border-radius: 24px;
+
+    background:
+        var(
+            --card-background,
+            var(
+                --surface-color,
+                transparent
+            )
+        );
+
+    border: 1px solid
+        var(
+            --border-color,
+            rgba(128, 128, 128, 0.18)
+        );
+
+    color: var(
+        --text-color,
+        var(
+            --text-primary,
+            inherit
+        )
+    );
+
+    box-shadow:
+        0 8px 24px
+        var(
+            --shadow-color,
+            rgba(0, 0, 0, 0.05)
+        );
+}
+
+
+.recentActivityHeader {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 20px;
+}
+
+
+.recentActivityHeader h2 {
+    margin: 0;
+
+    color: var(
+        --text-color,
+        var(
+            --text-primary,
+            inherit
+        )
+    );
+
+    font-size: 1.25rem;
+}
+
+
+.recentActivityHeader span {
+    color: var(
+        --text-secondary,
+        var(
+            --muted-text,
+            currentColor
+        )
+    );
+
+    font-size: 0.85rem;
+
+    opacity: 0.7;
+}
+
+
+.activityEmpty {
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    padding: 18px;
+
+    border-radius: 18px;
+
+    background:
+        color-mix(
+            in srgb,
+            var(
+                --text-color,
+                currentColor
+            ) 4%,
+            transparent
+        );
+}
+
+
+.activityIcon {
+    width: 46px;
+    height: 46px;
+
+    border-radius: 14px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 1.5rem;
+
+    font-weight: 700;
+
+    background:
+        color-mix(
+            in srgb,
+            var(
+                --primary-color,
+                currentColor
+            ) 12%,
+            transparent
+        );
+
+    color:
+        var(
+            --primary-color,
+            currentColor
+        );
+}
+
+
+.activityEmpty h3 {
+    margin: 0 0 4px;
+
+    color: var(
+        --text-color,
+        var(
+            --text-primary,
+            inherit
+        )
+    );
+
+    font-size: 0.98rem;
+}
+
+
+.activityEmpty p {
+    margin: 0;
+
+    color: var(
+        --text-secondary,
+        var(
+            --muted-text,
+            currentColor
+        )
+    );
+
+    font-size: 0.85rem;
+
+    opacity: 0.7;
+}
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 900px) {
+
+    .classGrid {
+        grid-template-columns:
+            repeat(2, 1fr);
     }
 
-    .sidebar{
-
-        width:100%;
-
-        border-right:none;
-
-        border-bottom:1px solid var(--border);
-
+    .classCard:nth-child(1),
+    .classCard:nth-child(2),
+    .classCard:nth-child(3),
+    .classCard:nth-child(4),
+    .classCard:nth-child(5) {
+        grid-column: span 1;
     }
 
-    .languageCards{
+}
 
-        grid-template-columns:1fr;
 
+@media (max-width: 600px) {
+
+    .dashboardMain {
+        padding:
+            32px 18px 48px;
+    }
+
+    .classGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .classCard:nth-child(1),
+    .classCard:nth-child(2),
+    .classCard:nth-child(3),
+    .classCard:nth-child(4),
+    .classCard:nth-child(5) {
+        grid-column: span 1;
+    }
+
+    .classCard {
+        min-height: 230px;
+    }
+
+    .classBackgroundNumber {
+        font-size: 10rem;
+
+        top: -20px;
+        right: -5px;
+
+        transform: rotate(12deg);
+    }
+
+    .classCardContent {
+        padding: 26px;
+    }
+
+    .recentActivityHeader {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 5px;
     }
 
 }

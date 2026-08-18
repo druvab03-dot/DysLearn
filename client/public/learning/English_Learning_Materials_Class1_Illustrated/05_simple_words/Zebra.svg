@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+<rect width="1200" height="800" rx="40" fill="#F7F8FF"/>
+<rect x="28" y="28" width="1144" height="744" rx="32" fill="none" stroke="#6366F1" stroke-width="5" opacity=".35"/>
+<text x="90" y="155" font-family="Arial, sans-serif" font-size="120" font-weight="800" fill="#6366F1">Z</text>
+<text x="90" y="225" font-family="Arial, sans-serif" font-size="42" font-weight="700" fill="#263044">Zebra</text>
+<g transform="translate(520,120)">
+<ellipse cx="315" cy="330" rx="180" ry="135" fill="#F8FAFC" stroke="#263044" stroke-width="10"/>
+<path d="M190 230 L230 430 M250 205 L290 455 M315 200 L345 455 M380 215 L405 430" stroke="#263044" stroke-width="24"/>
+<circle cx="470" cy="270" r="65" fill="#F8FAFC" stroke="#263044" stroke-width="10"/>
+<circle cx="490" cy="255" r="9" fill="#263044"/>
+</g>
+</svg>

@@ -1,0 +1,717 @@
+/* =========================================================
+   CLASS DASHBOARD
+========================================================= */
+
+.classDashboardPage {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    background: var(--bg-primary, #f7f8fc);
+    color: var(--text-primary, #1f2937);
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.classDashboardMain {
+    flex: 1;
+    width: 100%;
+
+    padding: 60px 4% 80px;
+}
+
+.classDashboardSection {
+    width: 100%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.classDashboardHeader {
+    margin-bottom: 35px;
+}
+
+.classDashboardEyebrow {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    color: var(--accent-color, #6366f1);
+}
+
+.classDashboardHeader h1 {
+    margin: 0;
+
+    font-size: clamp(40px, 5vw, 58px);
+    line-height: 1.1;
+
+    font-weight: 800;
+
+    color: var(--text-primary, #1f2937);
+}
+
+.classDashboardHeader p {
+    margin: 10px 0 0;
+
+    font-size: 18px;
+    line-height: 1.5;
+
+    color: var(--text-secondary, #64748b);
+}
+
+
+/* =========================================================
+   SUBJECT LIST
+========================================================= */
+
+.classDashboardPage .subjectList {
+    width: 100%;
+
+    display: flex !important;
+    flex-direction: column !important;
+
+    gap: 22px;
+
+    margin: 0;
+    padding: 0;
+}
+
+
+/* =========================================================
+   SUBJECT CARD
+========================================================= */
+
+.classDashboardPage .subjectCard {
+    position: relative;
+
+    width: 100% !important;
+    min-width: 100%;
+
+    min-height: 220px;
+
+    display: grid !important;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        300px;
+
+    flex: none;
+
+    overflow: hidden;
+
+    margin: 0;
+    padding: 0;
+
+    border: 1px solid
+        var(--border-color, #dfe3ee);
+
+    border-radius: 28px;
+
+    cursor: pointer;
+
+    text-align: left;
+
+    color:
+        var(--text-primary, #1f2937);
+
+    box-shadow:
+        0 12px 30px
+        rgba(30, 41, 59, 0.07);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+/* =========================================================
+   SUBJECT BACKGROUNDS
+========================================================= */
+
+.classDashboardPage .subject-english {
+    background:
+        linear-gradient(
+            135deg,
+            #eef0ff 0%,
+            #f8f9ff 100%
+        );
+}
+
+.classDashboardPage .subject-kannada {
+    background:
+        linear-gradient(
+            135deg,
+            #fff2df 0%,
+            #fffaf3 100%
+        );
+}
+
+.classDashboardPage .subject-mathematics {
+    background:
+        linear-gradient(
+            135deg,
+            #eaf8f0 0%,
+            #f7fcf9 100%
+        );
+}
+
+.classDashboardPage .subject-science {
+    background:
+        linear-gradient(
+            135deg,
+            #eaf6ff 0%,
+            #f7fcff 100%
+        );
+}
+
+.classDashboardPage .subject-gk {
+    background:
+        linear-gradient(
+            135deg,
+            #f5ecff 0%,
+            #fcf8ff 100%
+        );
+}
+
+
+/* =========================================================
+   SUBJECT RELATED BACKGROUND
+========================================================= */
+
+.classDashboardPage .subjectCard::before {
+    position: absolute;
+
+    z-index: 0;
+
+    top: -20px;
+    right: 30px;
+
+    font-size: 110px;
+    line-height: 1;
+
+    font-weight: 900;
+
+    letter-spacing: 6px;
+
+    white-space: pre;
+
+    opacity: 0.055;
+
+    pointer-events: none;
+}
+
+
+/* English */
+
+.classDashboardPage .subject-english::before {
+    content:
+        "ABC\A"
+        "BOOK";
+}
+
+
+/* Kannada */
+
+.classDashboardPage .subject-kannada::before {
+    content:
+        "ಅ ಆ ಇ\A"
+        "ಪದ";
+}
+
+
+/* Mathematics */
+
+.classDashboardPage .subject-mathematics::before {
+    content:
+        "123\A"
+        "+ − × ÷";
+}
+
+
+/* Science */
+
+.classDashboardPage .subject-science::before {
+    content:
+        "SCIENCE\A"
+        "BIO • PHYS • CHEM";
+}
+
+
+/* GK */
+
+.classDashboardPage .subject-gk::before {
+    content:
+        "WORLD\A"
+        "INDIA • ?";
+}
+
+
+/* =========================================================
+   DECORATIVE CIRCLE
+========================================================= */
+
+.classDashboardPage .subjectCard::after {
+    content: "";
+
+    position: absolute;
+
+    z-index: 0;
+
+    right: 170px;
+    bottom: -75px;
+
+    width: 170px;
+    height: 170px;
+
+    border: 18px solid currentColor;
+
+    border-radius: 50%;
+
+    opacity: 0.035;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   SUBJECT ICON
+========================================================= */
+
+.classDashboardPage .subjectIcon {
+    position: absolute;
+
+    top: 28px;
+    left: 30px;
+
+    z-index: 3;
+
+    width: 78px;
+    height: 78px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 22px;
+
+    background:
+        rgba(255, 255, 255, 0.78);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.9);
+
+    box-shadow:
+        0 8px 20px
+        rgba(30, 41, 59, 0.06);
+
+    font-size: 30px;
+    font-weight: 800;
+
+    backdrop-filter: blur(6px);
+}
+
+
+/* Subject icon colours */
+
+.classDashboardPage .subject-english .subjectIcon {
+    color: #6366f1;
+}
+
+.classDashboardPage .subject-kannada .subjectIcon {
+    color: #d97706;
+}
+
+.classDashboardPage .subject-mathematics .subjectIcon {
+    color: #16a34a;
+}
+
+.classDashboardPage .subject-science .subjectIcon {
+    color: #0284c7;
+}
+
+.classDashboardPage .subject-gk .subjectIcon {
+    color: #9333ea;
+}
+
+
+/* =========================================================
+   SUBJECT CONTENT
+========================================================= */
+
+.classDashboardPage .subjectContent {
+    position: relative;
+
+    z-index: 2;
+
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding:
+        35px
+        45px
+        35px
+        135px;
+}
+
+
+.classDashboardPage .subjectContent h2 {
+    margin: 0 0 8px;
+
+    font-size: 28px;
+    line-height: 1.2;
+
+    font-weight: 800;
+
+    color:
+        var(--text-primary, #1f2937);
+}
+
+
+.classDashboardPage .subjectContent p {
+    max-width: 500px;
+
+    margin: 0;
+
+    font-size: 15px;
+    line-height: 1.6;
+
+    color:
+        var(--text-secondary, #64748b);
+}
+
+
+/* =========================================================
+   START LEARNING
+========================================================= */
+
+.classDashboardPage .subjectAction {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    width: fit-content;
+
+    margin-top: 16px;
+
+    font-size: 15px;
+    font-weight: 800;
+
+    color:
+        var(--accent-color, #6366f1);
+}
+
+
+.classDashboardPage .subjectAction > span {
+    transition:
+        transform 0.2s ease;
+}
+
+
+.classDashboardPage .subjectCard:hover
+.subjectAction > span {
+    transform: translateX(5px);
+}
+
+
+/* =========================================================
+   PROGRESS
+========================================================= */
+
+.classDashboardPage .subjectProgress {
+    position: relative;
+
+    z-index: 3;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding: 35px;
+
+    background:
+        rgba(255, 255, 255, 0.28);
+
+    border-left:
+        1px solid
+        rgba(100, 116, 139, 0.13);
+
+    backdrop-filter: blur(5px);
+}
+
+
+/* =========================================================
+   PROGRESS HEADER
+========================================================= */
+
+.classDashboardPage .progressHeader {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 12px;
+}
+
+.classDashboardPage .progressHeader span {
+    font-size: 14px;
+    font-weight: 700;
+
+    color:
+        var(--text-secondary, #64748b);
+}
+
+.classDashboardPage .progressHeader strong {
+    font-size: 24px;
+    font-weight: 800;
+
+    color:
+        var(--text-primary, #1f2937);
+}
+
+
+/* =========================================================
+   PROGRESS BAR
+========================================================= */
+
+.classDashboardPage .progressTrack {
+    width: 100%;
+    height: 9px;
+
+    overflow: hidden;
+
+    border-radius: 999px;
+
+    background:
+        rgba(100, 116, 139, 0.14);
+}
+
+.classDashboardPage .progressFill {
+    height: 100%;
+
+    border-radius: inherit;
+
+    background:
+        var(--accent-color, #6366f1);
+
+    transition:
+        width 0.4s ease;
+}
+
+
+/* =========================================================
+   LESSONS
+========================================================= */
+
+.classDashboardPage .lessonText {
+    margin-top: 10px;
+
+    font-size: 13px;
+
+    color:
+        var(--text-secondary, #64748b);
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.classDashboardPage .subjectCard:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 18px 38px
+        rgba(30, 41, 59, 0.11);
+}
+
+
+/* =========================================================
+   DARK THEME
+========================================================= */
+
+[data-theme="dark"]
+.classDashboardPage .subject-english {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(99, 102, 241, 0.18),
+            rgba(99, 102, 241, 0.07)
+        );
+}
+
+[data-theme="dark"]
+.classDashboardPage .subject-kannada {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(217, 119, 6, 0.18),
+            rgba(217, 119, 6, 0.07)
+        );
+}
+
+[data-theme="dark"]
+.classDashboardPage .subject-mathematics {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(22, 163, 74, 0.18),
+            rgba(22, 163, 74, 0.07)
+        );
+}
+
+[data-theme="dark"]
+.classDashboardPage .subject-science {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(2, 132, 199, 0.18),
+            rgba(2, 132, 199, 0.07)
+        );
+}
+
+[data-theme="dark"]
+.classDashboardPage .subject-gk {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(147, 51, 234, 0.18),
+            rgba(147, 51, 234, 0.07)
+        );
+}
+
+[data-theme="dark"]
+.classDashboardPage .subjectIcon {
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    border-color:
+        rgba(255, 255, 255, 0.12);
+}
+
+[data-theme="dark"]
+.classDashboardPage .subjectProgress {
+    background:
+        rgba(0, 0, 0, 0.12);
+
+    border-left-color:
+        rgba(255, 255, 255, 0.08);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .classDashboardPage .subjectCard {
+        grid-template-columns:
+            minmax(0, 1fr)
+            240px;
+    }
+
+    .classDashboardPage .subjectContent {
+        padding-left: 125px;
+    }
+
+    .classDashboardPage .subjectProgress {
+        padding: 28px;
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .classDashboardMain {
+        padding:
+            45px 20px 65px;
+    }
+
+    .classDashboardPage .subjectCard {
+        display: flex !important;
+        flex-direction: column;
+
+        min-height: 0;
+    }
+
+    .classDashboardPage .subjectContent {
+        min-height: 210px;
+
+        padding:
+            30px
+            25px
+            30px
+            125px;
+    }
+
+    .classDashboardPage .subjectProgress {
+        border-left: none;
+
+        border-top:
+            1px solid
+            rgba(100, 116, 139, 0.13);
+
+        padding:
+            22px 25px;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .classDashboardPage .subjectIcon {
+        width: 65px;
+        height: 65px;
+
+        top: 22px;
+        left: 22px;
+
+        font-size: 26px;
+    }
+
+    .classDashboardPage .subjectContent {
+        padding:
+            28px
+            20px
+            28px
+            105px;
+    }
+
+    .classDashboardPage .subjectContent h2 {
+        font-size: 22px;
+    }
+
+    .classDashboardPage .subjectContent p {
+        font-size: 14px;
+    }
+
+    .classDashboardPage .subjectCard::before {
+        right: -20px;
+        font-size: 75px;
+
+        opacity: 0.04;
+    }
+}
