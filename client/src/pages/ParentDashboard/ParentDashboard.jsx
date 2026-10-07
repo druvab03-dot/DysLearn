@@ -578,13 +578,26 @@ function ParentDashboard() {
                                             </h2>
 
 
+                                            {child.class && (
+
+                                                <div className="childClassBadge">
+
+                                                    <span>
+                                                        {t("child.class", "Class")} {child.class}
+                                                    </span>
+
+                                                </div>
+
+                                            )}
+
+
                                             {child.handwritingImage && (
 
                                                 <div className="handwritingPreviewCard">
 
                                                     <img
                                                         src={
-                                                            `http://localhost:5001${child.handwritingImage}`
+                                                            `${child.handwritingImage}`
                                                         }
                                                         alt={
                                                             t(
@@ -764,7 +777,7 @@ function ParentDashboard() {
 
                                                                 <img
                                                                     src={
-                                                                        `http://localhost:5001${analysisResults[
+                                                                        `${analysisResults[
                                                                             child._id
                                                                         ].heatmap_url}`
                                                                     }

@@ -1,5 +1,4 @@
-const Parent = require("../models/Parent");
-const Otp = require("../models/Otp");
+const { Parent, Otp } = require("../models/dbAdapter");
 
 const generateJWT = require("../utils/generateJWT");
 const { sendOTP } = require("../services/otpService");

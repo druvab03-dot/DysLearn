@@ -1,0 +1,8 @@
+{
+  "name": "DysLearn",
+  "description": "An AI-powered learning and handwriting assessment platform designed to support children with learning and developmental needs.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

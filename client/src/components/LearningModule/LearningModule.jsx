@@ -1,513 +1,581 @@
 import {
     useState,
-    useEffect
+    useEffect,
+    useRef
 } from "react";
-
-import {
-    useParams
-} from "react-router-dom";
-
+import { useParams, useNavigate } from "react-router-dom";
 import "./LearningModule.css";
 
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
+import {
+    CURRICULUM_DATA,
+    SUBJECT_METADATA
+} from "./curriculumData";
 
+const LANGUAGE_LOCALES = {
+    en: "en-IN",
+    hi: "hi-IN",
+    kn: "kn-IN"
+};
 
-function LearningModule({
-    subject = "English"
-}) {
+function LearningModule() {
+    const { classNumber: paramClass = "1", subject: paramSubject = "english" } = useParams();
+    const navigate = useNavigate();
 
-    const { classNumber } =
-        useParams();
+    // Active Class (1 - 5) directly derived from URL params
+    const selectedClass = ["1", "2", "3", "4", "5"].includes(paramClass) ? paramClass : "1";
 
+    // Active Subject (english, hindi, kannada, maths, evs) directly derived from URL params
+    const normalizedSubject = (paramSubject || "english").toLowerCase();
+    const selectedSubject = CURRICULUM_DATA[selectedClass]?.[normalizedSubject] ? normalizedSubject : "english";
 
-    const lessons = [
+    // Active Language Toggle (en | hi | kn)
+    const [activeLang, setActiveLang] = useState("en");
 
-        {
-            title: "A for Apple",
+    // Active Topic within selected Class & Subject
+    const [topicIndex, setTopicIndex] = useState(0);
 
-            image:
-                "/learning/English_Learning_Materials_Class1_Illustrated/01_alphabet_A-Z/A_Apple.svg",
+    // Active Unit within selected Topic
+    const [unitIndex, setUnitIndex] = useState(0);
 
-            text:
-                "A for Apple",
+    // Active Card within selected Unit (0-3 = Visual Cards, 4-7 = Font Cards)
+    const [cardIndex, setCardIndex] = useState(0);
 
-            speakText:
-                "A for Apple"
-        },
+    // Dynamic Filter for Educational Content (all | vocabulary | phonetic_sound)
+    const [contentFilter, setContentFilter] = useState("all");
 
-        {
-            title: "B for Ball",
+    // Audio Speech Synthesis
+    const [isSpeaking, setIsSpeaking] = useState(false);
+    const speechRef = useRef(null);
 
-            image:
-                "/learning/English_Learning_Materials_Class1_Illustrated/01_alphabet_A-Z/B_Ball.svg",
+    // Current subject data tree
+    const currentClassData = CURRICULUM_DATA[selectedClass] || CURRICULUM_DATA[1];
+    const currentSubjectData = currentClassData[selectedSubject] || currentClassData.english;
+    const topics = currentSubjectData.topics || [];
+    const activeTopic = topics[topicIndex] || topics[0] || { title: {}, units: [] };
+    const units = activeTopic.units || [];
 
-            text:
-                "B for Ball",
+    // Filter units based on lesson content category
+    const vocabCount = units.filter((u) => u.category === "vocabulary" || !u.category).length;
+    const phonicCount = units.filter((u) => u.category === "phonetic_sound").length;
 
-            speakText:
-                "B for Ball"
-        },
+    const displayUnits = units.filter((u) => {
+        if (contentFilter === "all") return true;
+        if (contentFilter === "vocabulary") return u.category === "vocabulary" || !u.category;
+        if (contentFilter === "phonetic_sound") return u.category === "phonetic_sound";
+        return true;
+    });
+    const effectiveUnits = displayUnits.length > 0 ? displayUnits : units;
+    const activeUnit = effectiveUnits[unitIndex] || effectiveUnits[0] || { label: "", cards: [] };
+    const cards = activeUnit.cards || [];
+    const currentCard = cards[cardIndex] || cards[0] || { en: "", hi: "", kn: "", type: "visual" };
 
-        {
-            title: "C for Cat",
+    const isVisualCard =
+        currentCard.type === "visual" &&
+        Boolean(currentCard.image_url || currentCard.imageUrl);
+    const fontStyleClass = currentCard.fontClass || "font-dyslexic";
 
-            image:
-                "/learning/English_Learning_Materials_Class1_Illustrated/01_alphabet_A-Z/C_Cat.svg",
+    // Text to display & speak based on active language
+    const currentDisplayText = currentCard[activeLang] || currentCard.en || "";
 
-            text:
-                "C for Cat",
-
-            speakText:
-                "C for Cat"
-        },
-
-        {
-            title: "D for Dog",
-
-            image:
-                "/learning/English_Learning_Materials_Class1_Illustrated/01_alphabet_A-Z/D_Dog.svg",
-
-            text:
-                "D for Dog",
-
-            speakText:
-                "D for Dog"
-        }
-
-    ];
-
-
-    const [
-        currentLesson,
-        setCurrentLesson
-    ] = useState(0);
-
-
-    const lesson =
-        lessons[currentLesson];
-
-
-    const progress =
-        (
-            (currentLesson + 1) /
-            lessons.length
-        ) * 100;
-
-
-    /* =========================
-       STOP SPEECH ON EXIT
-    ========================= */
-
-    useEffect(() => {
-
-        return () => {
-
+    /* ==========================================================================
+       Minimal Audio Text-To-Speech (Rate = 0.8)
+       Locale: en-IN, hi-IN, or kn-IN based on active language setting
+       ========================================================================== */
+    const stopSpeech = () => {
+        if (typeof window !== "undefined" && window.speechSynthesis) {
             window.speechSynthesis.cancel();
-
-        };
-
-    }, []);
-
-
-    /* =========================
-       SPEAKER
-    ========================= */
-
-    const speakContent = () => {
-
-        if (
-            !lesson ||
-            !lesson.speakText
-        ) {
-
-            return;
-
+            setIsSpeaking(false);
         }
+    };
 
+    const speakCard = () => {
+        if (typeof window === "undefined" || !window.speechSynthesis) return;
+
+        if (isSpeaking) {
+            stopSpeech();
+            return;
+        }
 
         window.speechSynthesis.cancel();
 
+        const utterance = new SpeechSynthesisUtterance(currentDisplayText);
+        utterance.rate = 0.8;
+        utterance.pitch = 1.0;
+        utterance.lang = LANGUAGE_LOCALES[activeLang] || "en-IN";
 
-        const speech =
-            new SpeechSynthesisUtterance(
-                lesson.speakText
-            );
-
-
-        speech.lang = "en-IN";
-
-        speech.rate = 0.75;
-
-        speech.pitch = 1;
-
-
-        window.speechSynthesis.speak(
-            speech
+        // Find best match voice for Indian English, Hindi, or Kannada
+        const voices = window.speechSynthesis.getVoices();
+        const preferredVoice = voices.find(
+            (v) =>
+                v.lang.toLowerCase() === utterance.lang.toLowerCase() ||
+                v.lang.toLowerCase().startsWith(activeLang)
         );
 
+        if (preferredVoice) {
+            utterance.voice = preferredVoice;
+        }
+
+        utterance.onstart = () => setIsSpeaking(true);
+        utterance.onend = () => setIsSpeaking(false);
+        utterance.onerror = () => setIsSpeaking(false);
+
+        speechRef.current = utterance;
+        window.speechSynthesis.speak(utterance);
     };
 
+    // Stop speaking on unmount
+    useEffect(() => {
+        return () => {
+            if (typeof window !== "undefined" && window.speechSynthesis) {
+                window.speechSynthesis.cancel();
+            }
+        };
+    }, []);
 
-    /* =========================
-       PREVIOUS
-    ========================= */
+    /* ==========================================================================
+       Navigation Handlers
+       ========================================================================== */
+    const handleClassChange = (newClass) => {
+        stopSpeech();
+        setContentFilter("all");
+        setTopicIndex(0);
+        setUnitIndex(0);
+        setCardIndex(0);
+        navigate(`/class/${newClass}/${selectedSubject}`);
+    };
+
+    const handleSubjectChange = (newSubject) => {
+        stopSpeech();
+        setContentFilter("all");
+        setTopicIndex(0);
+        setUnitIndex(0);
+        setCardIndex(0);
+        navigate(`/class/${selectedClass}/${newSubject}`);
+    };
+
+    const handleTopicChange = (newTopicIdx) => {
+        stopSpeech();
+        setContentFilter("all");
+        setTopicIndex(newTopicIdx);
+        setUnitIndex(0);
+        setCardIndex(0);
+    };
+
+    const handleFilterChange = (newFilter) => {
+        stopSpeech();
+        setContentFilter(newFilter);
+        setUnitIndex(0);
+        setCardIndex(0);
+    };
+
+    const handleUnitChange = (newUnitIdx) => {
+        stopSpeech();
+        setUnitIndex(newUnitIdx);
+        setCardIndex(0);
+    };
+
+    const handleCardSelect = (newCardIdx) => {
+        stopSpeech();
+        setCardIndex(newCardIdx);
+    };
 
     const handlePrevious = () => {
-
-        if (currentLesson > 0) {
-
-            window.speechSynthesis.cancel();
-
-            setCurrentLesson(
-                currentLesson - 1
-            );
-
+        stopSpeech();
+        if (cardIndex > 0) {
+            setCardIndex((prev) => prev - 1);
+        } else if (unitIndex > 0) {
+            setUnitIndex((prev) => prev - 1);
+            setCardIndex(7);
+        } else if (topicIndex > 0) {
+            const prevTopic = topics[topicIndex - 1];
+            setTopicIndex((prev) => prev - 1);
+            setUnitIndex(prevTopic.units.length - 1);
+            setCardIndex(7);
         }
-
     };
-
-
-    /* =========================
-       NEXT
-    ========================= */
 
     const handleNext = () => {
-
-        if (
-            currentLesson <
-            lessons.length - 1
-        ) {
-
-            window.speechSynthesis.cancel();
-
-            setCurrentLesson(
-                currentLesson + 1
-            );
-
+        stopSpeech();
+        if (cardIndex < 7) {
+            setCardIndex((prev) => prev + 1);
+        } else if (unitIndex < effectiveUnits.length - 1) {
+            setUnitIndex((prev) => prev + 1);
+            setCardIndex(0);
+        } else if (topicIndex < topics.length - 1) {
+            setTopicIndex((prev) => prev + 1);
+            setUnitIndex(0);
+            setCardIndex(0);
         }
-
     };
 
-
-    /* =========================
-       SELECT LESSON
-    ========================= */
-
-    const handleLessonSelect =
-        (index) => {
-
-            window.speechSynthesis.cancel();
-
-            setCurrentLesson(index);
-
+    // Keyboard navigation (Left, Right, Space/S)
+    useEffect(() => {
+        const handleKeyDown = (e) => {
+            if (e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA") return;
+            if (e.key === "ArrowLeft") {
+                e.preventDefault();
+                handlePrevious();
+            } else if (e.key === "ArrowRight") {
+                e.preventDefault();
+                handleNext();
+            } else if (e.key === " " || e.key.toLowerCase() === "s") {
+                e.preventDefault();
+                speakCard();
+            }
         };
 
+        window.addEventListener("keydown", handleKeyDown);
+        return () => window.removeEventListener("keydown", handleKeyDown);
+    });
+
+    const isFirstCard = topicIndex === 0 && unitIndex === 0 && cardIndex === 0;
+    const isLastCard =
+        topicIndex === topics.length - 1 &&
+        unitIndex === effectiveUnits.length - 1 &&
+        cardIndex === 7;
 
     return (
-
-        <div className="learningModulePage">
-
-
-            {/* =========================
-                HEADER
-            ========================= */}
-
+        <div className="learningModulePage theme-linen">
             <Header />
 
-
-            {/* =========================
-                MAIN
-            ========================= */}
-
             <main className="learningModuleMain">
-
-                <section className="learningModuleContainer">
-
-
-                    {/* =========================
-                        TOP HEADER
-                    ========================= */}
-
-                    <div className="learningModuleHeader">
-
-
-                        <div className="learningTitleArea">
-
-                            <span className="learningEyebrow">
-
-                                LEARNING
-
+                <div className="learningModuleContainer">
+                    {/* Minimal Top Bar: Navigation Breadcrumb & Multilingual Toggle */}
+                    <div className="moduleTopBar">
+                        <div className="moduleTitleBlock">
+                            <span className="moduleBadge">
+                                Class {selectedClass} • {SUBJECT_METADATA[selectedSubject]?.name || "English"}
                             </span>
-
-
-                            <h1>
-
-                                {subject}
-
-                            </h1>
-
-
-                            <p>
-
-                                Class {classNumber}
-
-                            </p>
-
-                        </div>
-
-
-                        {/* PROGRESS */}
-
-                        <div className="learningProgressBox">
-
-                            <div className="learningProgressText">
-
-                                <span>
-
-                                    Lesson{" "}
-
-                                    {currentLesson + 1}
-
-                                    {" / "}
-
-                                    {lessons.length}
-
-                                </span>
-
-                                <strong>
-
-                                    {Math.round(progress)}%
-
-                                </strong>
-
-                            </div>
-
-
-                            <div className="learningProgressTrack">
-
-                                <div
-                                    className="learningProgressFill"
-                                    style={{
-                                        width:
-                                            `${progress}%`
-                                    }}
-                                />
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    {/* =========================
-                        LEARNING CARD
-                    ========================= */}
-
-                    <article className="learningCard">
-
-
-                        {/* =========================
-                            IMAGE
-                        ========================= */}
-
-                        <div className="learningImageSection">
-
-                            <div className="learningImageBackground">
-
-                                <span>
-
-                                    {currentLesson + 1}
-
-                                </span>
-
-                            </div>
-
-
-                            <img
-                                src={
-                                    lesson.image
-                                }
-                                alt={
-                                    lesson.title
-                                }
-                                className="learningImage"
-                            />
-
-                        </div>
-
-
-                        {/* =========================
-                            CONTENT
-                        ========================= */}
-
-                        <div className="learningContent">
-
-
-                            <span className="lessonNumber">
-
-                                LESSON{" "}
-
-                                {currentLesson + 1}
-
+                            <span className="moduleTopicTitle">
+                                {activeTopic.title?.[activeLang] || activeTopic.title?.en || "Learning"}
                             </span>
+                        </div>
 
-
-                            <h2>
-
-                                {lesson.title}
-
-                            </h2>
-
-
-                            <p>
-
-                                {lesson.text}
-
-                            </p>
-
-
-                            {/* SPEAKER */}
-
+                        {/* Multilingual Selector: Minimal Top Toggle [EN | HI | KN] */}
+                        <div className="langToggleGroup" role="group" aria-label="Language selector">
                             <button
                                 type="button"
-                                className="learningSpeakerButton"
-                                onClick={
-                                    speakContent
-                                }
-                                aria-label="Listen to lesson content"
+                                className={`langToggleBtn ${activeLang === "en" ? "active" : ""}`}
+                                onClick={() => setActiveLang("en")}
+                                aria-label="English language"
                             >
-
-                                <span className="speakerIcon">
-
-                                    🔊
-
-                                </span>
-
-
-                                <span>
-
-                                    Listen
-
-                                </span>
-
+                                EN
                             </button>
-
+                            <button
+                                type="button"
+                                className={`langToggleBtn ${activeLang === "hi" ? "active" : ""}`}
+                                onClick={() => setActiveLang("hi")}
+                                aria-label="Hindi language"
+                            >
+                                HI
+                            </button>
+                            <button
+                                type="button"
+                                className={`langToggleBtn ${activeLang === "kn" ? "active" : ""}`}
+                                onClick={() => setActiveLang("kn")}
+                                aria-label="Kannada language"
+                            >
+                                KN
+                            </button>
                         </div>
-
-                    </article>
-
-
-                    {/* =========================
-                        NAVIGATION
-                    ========================= */}
-
-                    <div className="learningNavigation">
-
-
-                        {/* PREVIOUS */}
-
-                        <button
-                            type="button"
-                            className="learningNavButton learningPrevious"
-                            onClick={
-                                handlePrevious
-                            }
-                            disabled={
-                                currentLesson === 0
-                            }
-                        >
-
-                            <span>
-
-                                ←
-
-                            </span>
-
-                            Previous
-
-                        </button>
-
-
-                        {/* LESSON DOTS */}
-
-                        <div className="learningDots">
-
-                            {
-                                lessons.map(
-                                    (_, index) => (
-
-                                        <button
-                                            key={index}
-                                            type="button"
-                                            className={
-                                                `learningDot ${
-                                                    index === currentLesson
-                                                        ? "active"
-                                                        : ""
-                                                }`
-                                            }
-                                            onClick={() =>
-                                                handleLessonSelect(
-                                                    index
-                                                )
-                                            }
-                                            aria-label={
-                                                `Lesson ${index + 1}`
-                                            }
-                                        />
-
-                                    )
-                                )
-                            }
-
-                        </div>
-
-
-                        {/* NEXT */}
-
-                        <button
-                            type="button"
-                            className="learningNavButton learningNext"
-                            onClick={
-                                handleNext
-                            }
-                            disabled={
-                                currentLesson ===
-                                lessons.length - 1
-                            }
-                        >
-
-                            Next
-
-                            <span>
-
-                                →
-
-                            </span>
-
-                        </button>
-
                     </div>
 
+                    {/* Class & Subject Selector Tabs */}
+                    <div className="curriculumSelectorStrip">
+                        {/* Class Pills (1 - 5) */}
+                        <div className="classPillGroup" role="tablist" aria-label="Class selection">
+                            {["1", "2", "3", "4", "5"].map((cNum) => (
+                                <button
+                                    key={cNum}
+                                    type="button"
+                                    className={`classPillBtn ${selectedClass === cNum ? "active" : ""}`}
+                                    onClick={() => handleClassChange(cNum)}
+                                    aria-selected={selectedClass === cNum}
+                                >
+                                    Class {cNum}
+                                </button>
+                            ))}
+                        </div>
 
-                </section>
+                        {/* Subject Pills (English, Hindi, Kannada, Maths, EVS) */}
+                        <div className="subjectPillGroup" role="tablist" aria-label="Subject selection">
+                            {Object.entries(SUBJECT_METADATA).map(([sKey, sMeta]) => {
+                                const isActive = selectedSubject === sKey;
+                                const subjectLabel =
+                                    activeLang === "hi"
+                                        ? sMeta.hiName
+                                        : activeLang === "kn"
+                                        ? sMeta.knName
+                                        : sMeta.name;
 
+                                return (
+                                    <button
+                                        key={sKey}
+                                        type="button"
+                                        className={`subjectPillBtn ${isActive ? "active" : ""}`}
+                                        onClick={() => handleSubjectChange(sKey)}
+                                        aria-selected={isActive}
+                                    >
+                                        <span className="pillIcon">{sMeta.icon}</span>
+                                        <span className="pillLabel">{subjectLabel}</span>
+                                    </button>
+                                );
+                            })}
+                        </div>
+                    </div>
+
+                    {/* Topics Row (if multiple topics in subject) */}
+                    {topics.length > 1 && (
+                        <div className="topicRibbon" role="tablist" aria-label="Topics">
+                            {topics.map((t, idx) => {
+                                const isActive = idx === topicIndex;
+                                const topicName = t.title[activeLang] || t.title.en;
+                                return (
+                                    <button
+                                        key={t.id}
+                                        type="button"
+                                        className={`topicBtn ${isActive ? "active" : ""}`}
+                                        onClick={() => handleTopicChange(idx)}
+                                        aria-selected={isActive}
+                                    >
+                                        {topicName}
+                                    </button>
+                                );
+                            })}
+                        </div>
+                    )}
+
+                    {/* Curriculum Lesson Content Filter: Vocabulary vs Phonetic Sounds */}
+                    <div className="contentFilterStrip" role="group" aria-label="Curriculum content filter">
+                        <button
+                            type="button"
+                            className={`contentFilterBtn ${contentFilter === "all" ? "active" : ""}`}
+                            onClick={() => handleFilterChange("all")}
+                        >
+                            All ({units.length})
+                        </button>
+                        <button
+                            type="button"
+                            className={`contentFilterBtn ${contentFilter === "vocabulary" ? "active" : ""}`}
+                            onClick={() => handleFilterChange("vocabulary")}
+                            disabled={vocabCount === 0}
+                        >
+                            🔤 Vocabulary ({vocabCount})
+                        </button>
+                        <button
+                            type="button"
+                            className={`contentFilterBtn ${contentFilter === "phonetic_sound" ? "active" : ""}`}
+                            onClick={() => handleFilterChange("phonetic_sound")}
+                            disabled={phonicCount === 0}
+                        >
+                            🎵 Phonetics ({phonicCount})
+                        </button>
+                    </div>
+
+                    {/* Topic Units Ribbon (e.g. A-Z, Swar, Shapes, Units) */}
+                    <nav className="unitRibbonContainer" aria-label="Units ribbon">
+                        <div className="unitRibbon">
+                            {effectiveUnits.map((item, idx) => {
+                                const isSelected = idx === unitIndex;
+                                const isPhonic = item.category === "phonetic_sound";
+                                return (
+                                    <button
+                                        key={item.id}
+                                        type="button"
+                                        className={`ribbonUnitBtn ${isSelected ? "active" : ""} ${isPhonic ? "phonicItem" : ""}`}
+                                        onClick={() => handleUnitChange(idx)}
+                                        aria-label={`Unit ${item.label}`}
+                                        aria-current={isSelected ? "true" : undefined}
+                                    >
+                                        {isPhonic ? `🎵 ${item.label}` : item.label}
+                                    </button>
+                                );
+                            })}
+                        </div>
+                    </nav>
+
+                    {/* Minimal Progress Header: Active Unit & 8 Step Dots - Strictly NO Counter Text */}
+                    <div className="cardProgressHeader">
+                        <div className="progressLabel">
+                            <span className="unitHighlight">{activeUnit.label}</span>
+                            {activeUnit.category === "phonetic_sound" && (
+                                <span className="phonicHeaderTag">🎵 Phonics</span>
+                            )}
+                        </div>
+
+                        {/* Minimal Step Dots (Exactly 8 dots, NO numbers or counter text) */}
+                        <div className="cardStepPills" role="tablist" aria-label="Card steps">
+                            {cards.map((c, i) => {
+                                const isActive = i === cardIndex;
+                                return (
+                                    <button
+                                        key={c.id}
+                                        type="button"
+                                        className={`stepDot ${isActive ? "active" : ""}`}
+                                        onClick={() => handleCardSelect(i)}
+                                        aria-label={`Step ${i + 1}`}
+                                        aria-selected={isActive}
+                                    />
+                                );
+                            })}
+                        </div>
+                    </div>
+
+                    {/* ==========================================================
+                        MAIN CARD (STRICT 8-CARD PATTERN)
+                        - Visual Cards (1-4): Image + Minimal Text
+                        - Font Cards (5-8): Strictly ONLY Text (NO image container)
+                       ========================================================== */}
+                    <article className="mainCardWrapper" aria-live="polite">
+                        {isVisualCard ? (
+                            /* Visual Card Layout: High-Accuracy Image + Minimal Text */
+                            <div className="mainCardInner visualLayout">
+                                <div className="cardVisualSection">
+                                    <img
+                                        src={currentCard.image_url || currentCard.imageUrl}
+                                        alt={currentDisplayText}
+                                        className="cardHeroImage"
+                                        onError={(e) => {
+                                            const currentSrc = e.target.src || "";
+                                            if (currentSrc.includes("/learning/images/") && currentSrc.endsWith(".png")) {
+                                                e.target.src = currentSrc.replace("/learning/images/", "/learning/svgs/").replace(".png", ".svg");
+                                                return;
+                                            }
+                                            e.target.onerror = null;
+                                            if (currentCard.svg_fallback) {
+                                                e.target.src = currentCard.svg_fallback;
+                                            } else {
+                                                // High contrast minimal placeholder fallback
+                                                e.target.src = `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400"><rect width="600" height="400" fill="%23FEF3C7"/><text x="50%" y="50%" font-family="sans-serif" font-size="32" font-weight="bold" fill="%231E293B" text-anchor="middle" dominant-baseline="middle">${encodeURIComponent(activeUnit.label)}</text></svg>`;
+                                            }
+                                        }}
+                                    />
+                                </div>
+
+                                <div className="cardContentSection">
+                                    <div className="cardBadgeRow">
+                                        {currentCard.category === "phonetic_sound" ? (
+                                            <span className="cardTypeBadge phonicBadge">
+                                                🎵 Phonics {currentCard.phonetic_sound ? `• ${currentCard.phonetic_sound}` : ""}
+                                            </span>
+                                        ) : (
+                                            <span className="cardTypeBadge vocabBadge">
+                                                🔤 Vocabulary
+                                            </span>
+                                        )}
+                                        {currentCard.syllables && (
+                                            <span className="cardTypeBadge syllableBadge">
+                                                {currentCard.syllables}
+                                            </span>
+                                        )}
+                                    </div>
+
+                                    <div className="cardTextCenter">
+                                        <div className="giantLetterDisplay font-dyslexic">
+                                            {activeUnit.label}
+                                        </div>
+
+                                        <h2 className="minimalCardText font-dyslexic">
+                                            {currentDisplayText}
+                                        </h2>
+                                    </div>
+
+                                    <div className="cardSpeakerRow">
+                                        <button
+                                            type="button"
+                                            className={`minimalSpeakerBtn ${isSpeaking ? "speaking" : ""}`}
+                                            onClick={speakCard}
+                                            aria-label="Speak text"
+                                            title="Speak text"
+                                        >
+                                            🔊
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        ) : (
+                            /* Font-Variation Card Layout: Strictly Text ONLY (NO image) */
+                            <div className="mainCardInner fontOnlyLayout">
+                                <div className="fontOnlyCardContent">
+                                    <div className="cardBadgeRow">
+                                        {currentCard.category === "phonetic_sound" ? (
+                                            <span className="cardTypeBadge phonicBadge">
+                                                🎵 Phonics {currentCard.phonetic_sound ? `• ${currentCard.phonetic_sound}` : ""}
+                                            </span>
+                                        ) : (
+                                            <span className="cardTypeBadge vocabBadge">
+                                                🔤 Vocabulary
+                                            </span>
+                                        )}
+                                        {currentCard.syllables && (
+                                            <span className="cardTypeBadge syllableBadge">
+                                                {currentCard.syllables}
+                                            </span>
+                                        )}
+                                    </div>
+
+                                    <div className="cardTextCenter">
+                                        <div className={`giantLetterDisplay ${fontStyleClass}`}>
+                                            {activeUnit.label}
+                                        </div>
+
+                                        <h2 className={`minimalCardText ${fontStyleClass}`}>
+                                            {currentDisplayText}
+                                        </h2>
+                                    </div>
+
+                                    <div className="cardSpeakerRow">
+                                        <button
+                                            type="button"
+                                            className={`minimalSpeakerBtn ${isSpeaking ? "speaking" : ""}`}
+                                            onClick={speakCard}
+                                            aria-label="Speak text"
+                                            title="Speak text"
+                                        >
+                                            🔊
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        )}
+                    </article>
+
+                    {/* Minimal Navigation: Arrows (← and →) ONLY - Strictly NO Counter Text */}
+                    <div className="cardNavigationRow">
+                        <button
+                            type="button"
+                            className="minimalNavBtn prev"
+                            onClick={handlePrevious}
+                            disabled={isFirstCard}
+                            aria-label="Previous card"
+                            title="Previous card"
+                        >
+                            ←
+                        </button>
+
+                        <div className="navProgressSummary">
+                            <strong>{activeUnit.label}</strong>
+                        </div>
+
+                        <button
+                            type="button"
+                            className="minimalNavBtn next"
+                            onClick={handleNext}
+                            disabled={isLastCard}
+                            aria-label="Next card"
+                            title="Next card"
+                        >
+                            →
+                        </button>
+                    </div>
+                </div>
             </main>
 
-
-            {/* =========================
-                FOOTER
-            ========================= */}
-
             <Footer />
-
         </div>
-
     );
-
 }
-
 
 export default LearningModule;

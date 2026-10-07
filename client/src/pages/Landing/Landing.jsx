@@ -15,6 +15,16 @@ function Landing() {
     const navigate =
         useNavigate();
 
+    const handleStart = () => {
+        const token = localStorage.getItem("token");
+        if (token) {
+            const activeChild = localStorage.getItem("activeChild");
+            navigate(activeChild ? "/dashboard" : "/parent-dashboard");
+        } else {
+            navigate("/login");
+        }
+    };
+
 
     return (
 
@@ -24,9 +34,7 @@ function Landing() {
 
 
             <Hero
-                onStart={() =>
-                    navigate("/login")
-                }
+                onStart={handleStart}
             />
 
 

@@ -63,16 +63,36 @@ function ProtectedRoute({
 
                 } catch (error) {
 
-                    localStorage.removeItem(
-                        "token"
-                    );
+                    if (
+                        error.response?.status === 401 ||
+                        error.response?.status === 403
+                    ) {
 
-                    localStorage.removeItem(
-                        "parent"
-                    );
+                        localStorage.removeItem(
+                            "token"
+                        );
+
+                        localStorage.removeItem(
+                            "parent"
+                        );
+
+                        localStorage.removeItem(
+                            "activeChild"
+                        );
 
 
-                    setAuthenticated(false);
+                        setAuthenticated(false);
+
+                    } else if (localStorage.getItem("token")) {
+
+                        // Retain authenticated session on temporary network issues
+                        setAuthenticated(true);
+
+                    } else {
+
+                        setAuthenticated(false);
+
+                    }
 
                 } finally {
 

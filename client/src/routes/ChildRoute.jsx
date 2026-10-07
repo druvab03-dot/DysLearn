@@ -5,6 +5,7 @@ import { getCurrentParent } from "../services/authService";
 function ChildRoute({ children }) {
     const [checking, setChecking] = useState(true);
     const [authenticated, setAuthenticated] = useState(false);
+    const [hasChild, setHasChild] = useState(false);
 
     useEffect(() => {
         const check = async () => {
@@ -13,27 +14,37 @@ function ChildRoute({ children }) {
 
             if (!token) {
                 setAuthenticated(false);
+                setHasChild(false);
                 setChecking(false);
                 return;
             }
 
             try {
                 await getCurrentParent();
+                setAuthenticated(true);
 
                 if (!activeChild) {
-                    setAuthenticated(false);
-                    setChecking(false);
+                    setHasChild(false);
                     return;
                 }
 
                 JSON.parse(activeChild);
-
-                setAuthenticated(true);
-            } catch (err) {
-                localStorage.removeItem("token");
-                localStorage.removeItem("parent");
-                localStorage.removeItem("activeChild");
-                setAuthenticated(false);
+                setHasChild(true);
+            } catch (error) {
+                if (error.response?.status === 401 || error.response?.status === 403) {
+                    localStorage.removeItem("token");
+                    localStorage.removeItem("parent");
+                    localStorage.removeItem("activeChild");
+                    setAuthenticated(false);
+                    setHasChild(false);
+                } else if (localStorage.getItem("token")) {
+                    // Retain session on network latency or non-auth error
+                    setAuthenticated(true);
+                    setHasChild(Boolean(activeChild));
+                } else {
+                    setAuthenticated(false);
+                    setHasChild(false);
+                }
             } finally {
                 setChecking(false);
             }
@@ -48,6 +59,10 @@ function ChildRoute({ children }) {
 
     if (!authenticated) {
         return <Navigate to="/login" replace />;
+    }
+
+    if (!hasChild) {
+        return <Navigate to="/parent-dashboard" replace />;
     }
 
     return children;

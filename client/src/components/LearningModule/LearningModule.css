@@ -1,719 +1,676 @@
-.learningModulePage {
+/* ==========================================================================
+   Learning Module V1 - Accessible EdTech for Primary Students (Classes 1 - 5)
+   Specifically crafted for children with dyslexia following multisensory principles.
+   WCAG AAA Contrast, Soft Pastel Background, Generous Spacing, Clean Minimal UI.
+   ========================================================================== */
 
-    min-height: 100vh;
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Lexend:wght@500;600;700;800&family=Lora:ital,wght@0,500;0,600;1,400&family=Patrick+Hand&family=Noto+Sans+Devanagari:wght@500;600;700;800&family=Noto+Sans+Kannada:wght@500;600;700;800&display=swap');
 
-    display: flex;
-
-    flex-direction: column;
-
-    background:
-        var(
-            --bg-primary,
-            #f7f8fc
-        );
-
-    color:
-        var(
-            --text-primary,
-            #202938
-        );
-
+:root {
+    --dys-text-primary: #1E293B;
+    --dys-text-muted: #64748B;
+    --dys-bg-pastel: #FAF0E6; /* Soft warm linen pastel background for low eye-strain */
+    --dys-card-bg: #FFFFFF;
+    --dys-border: rgba(30, 41, 59, 0.12);
+    --dys-accent: #2563EB;
+    --dys-accent-hover: #1D4ED8;
+    --dys-radius: 18px;
+    --dys-shadow: 0 4px 18px rgba(30, 41, 59, 0.08);
 }
 
-
-/* ==========================================
-   MAIN
-========================================== */
+.learningModulePage {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--dys-bg-pastel);
+    color: var(--dys-text-primary);
+    font-family: 'Lexend', 'Noto Sans Devanagari', 'Noto Sans Kannada', sans-serif;
+    letter-spacing: 0.04em;
+    word-spacing: 0.08em;
+}
 
 .learningModuleMain {
-
     flex: 1;
-
     width: 100%;
-
-    padding:
-        55px 40px 80px;
-
+    padding: 20px 16px 60px;
+    box-sizing: border-box;
 }
-
 
 .learningModuleContainer {
-
     width: 100%;
-
-    max-width: 1250px;
-
+    max-width: 920px;
     margin: 0 auto;
-
-}
-
-
-/* ==========================================
-   HEADER
-========================================== */
-
-.learningModuleHeader {
-
     display: flex;
-
-    align-items: flex-end;
-
-    justify-content: space-between;
-
-    gap: 40px;
-
-    margin-bottom: 35px;
-
-}
-
-
-.learningEyebrow {
-
-    display: block;
-
-    margin-bottom: 8px;
-
-    font-size: 14px;
-
-    font-weight: 800;
-
-    letter-spacing: 2px;
-
-    color:
-        var(
-            --accent-color,
-            #6366f1
-        );
-
-}
-
-
-.learningModuleHeader h1 {
-
-    margin: 0;
-
-    font-size: 48px;
-
-    line-height: 1.05;
-
-    font-weight: 800;
-
-}
-
-
-.learningModuleHeader p {
-
-    margin:
-        10px 0 0;
-
-    font-size: 18px;
-
-    color:
-        var(
-            --text-secondary,
-            #64748b
-        );
-
-}
-
-
-/* ==========================================
-   PROGRESS
-========================================== */
-
-.learningProgressBox {
-
-    width: 250px;
-
-    flex-shrink: 0;
-
-}
-
-
-.learningProgressBox > span {
-
-    display: block;
-
-    margin-bottom: 10px;
-
-    text-align: right;
-
-    font-size: 14px;
-
-    font-weight: 700;
-
-    color:
-        var(
-            --text-secondary,
-            #64748b
-        );
-
-}
-
-
-.learningProgressTrack {
-
-    width: 100%;
-
-    height: 9px;
-
-    overflow: hidden;
-
-    border-radius: 999px;
-
-    background:
-        var(
-            --progress-background,
-            #e4e7ef
-        );
-
-}
-
-
-.learningProgressFill {
-
-    height: 100%;
-
-    border-radius: inherit;
-
-    background:
-        var(
-            --accent-color,
-            #6366f1
-        );
-
-    transition:
-        width 0.3s ease;
-
-}
-
-
-/* ==========================================
-   LEARNING CARD
-========================================== */
-
-.learningCard {
-
-    position: relative;
-
-    display: grid;
-
-    grid-template-columns:
-        minmax(400px, 1.1fr)
-        minmax(300px, 0.9fr);
-
-    min-height: 540px;
-
-    overflow: hidden;
-
-    border:
-        1px solid
-        var(
-            --border-color,
-            #dfe3ee
-        );
-
-    border-radius: 32px;
-
-    background:
-        var(
-            --card-background,
-            #ffffff
-        );
-
-    box-shadow:
-        0 18px 45px
-        rgba(
-            31,
-            41,
-            55,
-            0.08
-        );
-
-}
-
-
-/* ==========================================
-   IMAGE SECTION
-========================================== */
-
-.learningImageSection {
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    min-height: 540px;
-
-    padding: 45px;
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(99, 102, 241, 0.08),
-            rgba(99, 102, 241, 0.02)
-        );
-
-}
-
-
-.learningImage {
-
-    display: block;
-
-    width: 100%;
-
-    max-width: 560px;
-
-    max-height: 440px;
-
-    object-fit: contain;
-
-}
-
-
-/* ==========================================
-   CONTENT
-========================================== */
-
-.learningContent {
-
-    display: flex;
-
     flex-direction: column;
-
-    justify-content: center;
-
-    padding: 55px;
-
+    gap: 16px;
 }
 
-
-.lessonNumber {
-
-    margin-bottom: 14px;
-
-    font-size: 13px;
-
-    font-weight: 800;
-
-    letter-spacing: 1.5px;
-
-    color:
-        var(
-            --accent-color,
-            #6366f1
-        );
-
-}
-
-
-.learningContent h2 {
-
-    margin: 0 0 18px;
-
-    font-size: 38px;
-
-    line-height: 1.15;
-
-    font-weight: 800;
-
-}
-
-
-.learningContent p {
-
-    margin: 0;
-
-    font-size: 21px;
-
-    line-height: 1.7;
-
-    color:
-        var(
-            --text-secondary,
-            #64748b
-        );
-
-}
-
-
-/* ==========================================
-   SPEAKER
-========================================== */
-
-.learningSpeakerButton {
-
-    display: inline-flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 10px;
-
-    width: fit-content;
-
-    margin-top: 32px;
-
-    padding:
-        13px 22px;
-
-    border: none;
-
-    border-radius: 15px;
-
-    background:
-        var(
-            --accent-color,
-            #6366f1
-        );
-
-    color: #ffffff;
-
-    font-size: 15px;
-
-    font-weight: 750;
-
-    cursor: pointer;
-
-    transition:
-        transform 0.2s ease,
-        opacity 0.2s ease;
-
-}
-
-
-.learningSpeakerButton:hover {
-
-    transform:
-        translateY(-2px);
-
-    opacity: 0.92;
-
-}
-
-
-.speakerIcon {
-
-    font-size: 18px;
-
-}
-
-
-/* ==========================================
-   NAVIGATION
-========================================== */
-
-.learningNavigation {
-
+/* ==========================================================================
+   Top Bar: Breadcrumb & Multilingual Selector
+   ========================================================================== */
+.moduleTopBar {
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
-
-    margin-top: 28px;
-
-}
-
-
-.learningNavButton {
-
-    display: inline-flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 10px;
-
-    min-width: 130px;
-
-    padding:
-        13px 20px;
-
-    border:
-        1px solid
-        var(
-            --border-color,
-            #dfe3ee
-        );
-
+    background: #FFFFFF;
+    border: 1px solid var(--dys-border);
     border-radius: 14px;
-
-    background:
-        var(
-            --card-background,
-            #ffffff
-        );
-
-    color:
-        var(
-            --text-primary,
-            #202938
-        );
-
-    font-size: 14px;
-
-    font-weight: 750;
-
-    cursor: pointer;
-
-    transition:
-        transform 0.2s ease;
-
+    padding: 12px 18px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    gap: 12px;
+    flex-wrap: wrap;
 }
 
-
-.learningNavButton:hover:not(:disabled) {
-
-    transform:
-        translateY(-2px);
-
-}
-
-
-.learningNext {
-
-    border-color:
-        var(
-            --accent-color,
-            #6366f1
-        );
-
-    background:
-        var(
-            --accent-color,
-            #6366f1
-        );
-
-    color: #ffffff;
-
-}
-
-
-.learningNavButton:disabled {
-
-    opacity: 0.35;
-
-    cursor: not-allowed;
-
-}
-
-
-/* ==========================================
-   DOTS
-========================================== */
-
-.learningDots {
-
+.moduleTitleBlock {
     display: flex;
-
     align-items: center;
-
-    gap: 8px;
-
+    gap: 12px;
+    flex-wrap: wrap;
 }
 
+.moduleBadge {
+    background: #EFF6FF;
+    color: #1D4ED8;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 999px;
+    letter-spacing: 0.05em;
+}
 
-.learningDot {
+.moduleTopicTitle {
+    font-size: 17px;
+    font-weight: 800;
+    color: var(--dys-text-primary);
+}
 
-    width: 9px;
+/* Multilingual Toggle (EN | HI | KN) */
+.langToggleGroup {
+    display: inline-flex;
+    align-items: center;
+    background: #F1F5F9;
+    padding: 3px;
+    border-radius: 999px;
+    border: 1px solid var(--dys-border);
+}
 
-    height: 9px;
-
-    padding: 0;
-
+.langToggleBtn {
     border: none;
-
-    border-radius: 50%;
-
-    background:
-        var(
-            --border-color,
-            #cbd5e1
-        );
-
+    background: transparent;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #64748B;
     cursor: pointer;
-
-    transition:
-        transform 0.2s ease,
-        background 0.2s ease;
-
+    transition: all 0.2s ease;
+    font-family: 'Lexend', sans-serif;
 }
 
-
-.learningDot.active {
-
-    width: 11px;
-
-    height: 11px;
-
-    background:
-        var(
-            --accent-color,
-            #6366f1
-        );
-
-    transform:
-        scale(1.15);
-
+.langToggleBtn:hover {
+    color: var(--dys-text-primary);
 }
 
-
-/* ==========================================
-   DARK THEME
-========================================== */
-
-[data-theme="dark"] .learningImageSection {
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(99, 102, 241, 0.13),
-            rgba(99, 102, 241, 0.04)
-        );
-
+.langToggleBtn.active {
+    background: #2563EB;
+    color: #FFFFFF;
+    box-shadow: 0 2px 6px rgba(37, 99, 235, 0.35);
 }
 
-
-[data-theme="dark"] .learningCard {
-
-    box-shadow:
-        0 18px 45px
-        rgba(
-            0,
-            0,
-            0,
-            0.25
-        );
-
+/* ==========================================================================
+   Curriculum Selector Strip (Class 1-5 & 5 Core Subjects)
+   ========================================================================== */
+.curriculumSelectorStrip {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: #FFFFFF;
+    border: 1px solid var(--dys-border);
+    border-radius: 14px;
+    padding: 10px 14px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
+.classPillGroup {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    scrollbar-width: thin;
+}
 
-/* ==========================================
-   RESPONSIVE
-========================================== */
+.classPillBtn {
+    border: 1px solid var(--dys-border);
+    background: #F8FAFC;
+    color: var(--dys-text-primary);
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    white-space: nowrap;
+}
 
-@media (max-width: 900px) {
+.classPillBtn:hover {
+    background: #E2E8F0;
+}
 
-    .learningModuleMain {
+.classPillBtn.active {
+    background: #1E293B;
+    color: #FFFFFF;
+    border-color: #0F172A;
+}
 
-        padding:
-            40px 22px 60px;
+.subjectPillGroup {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    scrollbar-width: thin;
+}
 
-    }
+.subjectPillBtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border: 1px solid var(--dys-border);
+    background: #F8FAFC;
+    color: var(--dys-text-primary);
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    white-space: nowrap;
+}
 
+.subjectPillBtn:hover {
+    background: #E2E8F0;
+}
 
-    .learningModuleHeader {
+.subjectPillBtn.active {
+    background: #2563EB;
+    color: #FFFFFF;
+    border-color: #1D4ED8;
+    box-shadow: 0 2px 6px rgba(37, 99, 235, 0.3);
+}
 
-        align-items: flex-start;
+.pillIcon {
+    font-size: 14px;
+}
 
-        flex-direction: column;
+/* ==========================================================================
+   Topic Ribbon
+   ========================================================================== */
+.topicRibbon {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    scrollbar-width: thin;
+    padding: 2px 0;
+}
 
-    }
+.topicBtn {
+    border: 1px solid var(--dys-border);
+    background: #FFFFFF;
+    color: var(--dys-text-primary);
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    white-space: nowrap;
+}
 
+.topicBtn:hover {
+    background: #F1F5F9;
+}
 
-    .learningProgressBox {
+.topicBtn.active {
+    background: #EFF6FF;
+    color: #1D4ED8;
+    border-color: #93C5FD;
+}
 
-        width: 100%;
+/* ==========================================================================
+   Units Ribbon (e.g. A-Z, Swar, Shapes, etc.)
+   ========================================================================== */
+.unitRibbonContainer {
+    background: #FFFFFF;
+    border: 1px solid var(--dys-border);
+    border-radius: 12px;
+    padding: 8px 12px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+}
 
-    }
+.unitRibbon {
+    display: flex;
+    gap: 6px;
+    min-width: max-content;
+}
 
+.ribbonUnitBtn {
+    min-width: 38px;
+    height: 38px;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--dys-border);
+    border-radius: 8px;
+    background: #F8FAFC;
+    color: var(--dys-text-primary);
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    white-space: nowrap;
+}
 
-    .learningProgressBox > span {
+.ribbonUnitBtn:hover {
+    background: #E2E8F0;
+}
 
-        text-align: left;
+.ribbonUnitBtn.active {
+    background: #2563EB;
+    color: #FFFFFF;
+    border-color: #1D4ED8;
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+}
 
-    }
+/* ==========================================================================
+   Progress Header (Minimal Dots - Strictly NO Counter Text)
+   ========================================================================== */
+.cardProgressHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    background: #FFFFFF;
+    border: 1px solid var(--dys-border);
+    border-radius: 12px;
+    padding: 10px 18px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
 
+.progressLabel {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--dys-text-primary);
+}
 
-    .learningCard {
+.unitHighlight {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 32px;
+    height: 32px;
+    padding: 0 8px;
+    background: #2563EB;
+    color: #FFFFFF;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 800;
+}
 
+.cardStepPills {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Minimalist Step Dot - Clean circle, strictly no counter text */
+.stepDot {
+    width: 12px;
+    height: 12px;
+    padding: 0;
+    border-radius: 50%;
+    border: 2px solid #CBD5E1;
+    background: #F1F5F9;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.stepDot:hover {
+    border-color: #94A3B8;
+    background: #E2E8F0;
+    transform: scale(1.2);
+}
+
+.stepDot.active {
+    width: 28px;
+    border-radius: 10px;
+    background: #2563EB;
+    border-color: #1D4ED8;
+    box-shadow: 0 2px 6px rgba(37, 99, 235, 0.35);
+}
+
+/* ==========================================================================
+   Main Learning Card (STRICT 8-CARD PATTERN)
+   - Visual Cards (1-4): Two-Column (Image + Minimal Text)
+   - Font Cards (5-8): Single-Column Text Only (ABSOLUTELY NO Image)
+   ========================================================================== */
+.mainCardWrapper {
+    background: #FFFFFF;
+    border: 2px solid var(--dys-border);
+    border-radius: var(--dys-radius);
+    box-shadow: var(--dys-shadow);
+    overflow: hidden;
+}
+
+/* 1. Visual Card Layout: Two-Column (Image + Text) */
+.mainCardInner.visualLayout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 420px;
+}
+
+@media (max-width: 720px) {
+    .mainCardInner.visualLayout {
         grid-template-columns: 1fr;
-
     }
-
-
-    .learningImageSection {
-
-        min-height: 400px;
-
-    }
-
-
-    .learningContent {
-
-        padding: 40px;
-
-    }
-
 }
 
-
-@media (max-width: 600px) {
-
-    .learningModuleHeader h1 {
-
-        font-size: 38px;
-
-    }
-
-
-    .learningCard {
-
-        border-radius: 24px;
-
-    }
-
-
-    .learningImageSection {
-
-        min-height: 300px;
-
-        padding: 25px;
-
-    }
-
-
-    .learningContent {
-
-        padding: 30px;
-
-    }
-
-
-    .learningContent h2 {
-
-        font-size: 30px;
-
-    }
-
-
-    .learningContent p {
-
-        font-size: 18px;
-
-    }
-
-
-    .learningNavigation {
-
-        gap: 12px;
-
-    }
-
-
-    .learningNavButton {
-
-        min-width: 105px;
-
-        padding:
-            12px 14px;
-
-    }
-
+.cardVisualSection {
+    background: #F8FAFC;
+    border-right: 1px solid var(--dys-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 320px;
+    overflow: hidden;
 }
+
+.cardHeroImage {
+    width: 100%;
+    height: 100%;
+    min-height: 320px;
+    max-height: 480px;
+    object-fit: contain;
+    background: #FEF3C7;
+    padding: 12px;
+    box-sizing: border-box;
+    display: block;
+}
+
+.cardContentSection {
+    padding: 36px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 32px;
+    box-sizing: border-box;
+}
+
+/* 2. Font-Variation Card Layout: Single-Column Text Only (Strictly NO Image) */
+.mainCardInner.fontOnlyLayout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 420px;
+    padding: 60px 40px;
+    box-sizing: border-box;
+    background: #FFFFFF;
+}
+
+.fontOnlyCardContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 36px;
+    max-width: 650px;
+}
+
+.cardTextCenter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.giantLetterDisplay {
+    font-size: 80px;
+    line-height: 1;
+    font-weight: 800;
+    color: #1E293B;
+}
+
+/* Minimal Card Text - Strictly concise (e.g. "A for Apple", "2 + 3 = 5") */
+.minimalCardText {
+    font-size: 38px;
+    font-weight: 800;
+    margin: 0;
+    color: #1E293B;
+    letter-spacing: 0.05em;
+    line-height: 1.25;
+}
+
+/* ==========================================================================
+   Pre-Applied Font Variation Classes
+   ========================================================================== */
+.font-dyslexic {
+    font-family: 'Lexend', 'Noto Sans Devanagari', 'Noto Sans Kannada', sans-serif !important;
+    letter-spacing: 0.08em;
+}
+
+.font-serif-text {
+    font-family: 'Lora', Georgia, serif !important;
+    letter-spacing: 0.05em;
+}
+
+.font-handwriting {
+    font-family: 'Patrick Hand', 'Noto Sans Devanagari', cursive !important;
+    letter-spacing: 0.08em;
+    font-size: 1.15em;
+}
+
+.font-chunky {
+    font-family: 'Fredoka', 'Noto Sans Devanagari', 'Noto Sans Kannada', sans-serif !important;
+    letter-spacing: 0.06em;
+}
+
+/* Minimalist Audio Speaker Button (🔊 only) */
+.cardSpeakerRow {
+    display: flex;
+    justify-content: center;
+}
+
+.minimalSpeakerBtn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid var(--dys-border);
+    background: #F8FAFC;
+    font-size: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.minimalSpeakerBtn:hover {
+    background: #EFF6FF;
+    border-color: #93C5FD;
+    transform: scale(1.1);
+}
+
+.minimalSpeakerBtn.speaking {
+    background: #DBEAFE;
+    border-color: #2563EB;
+    animation: speakPulse 1.2s infinite ease-in-out;
+}
+
+@keyframes speakPulse {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.4); }
+    50% { transform: scale(1.08); box-shadow: 0 0 0 10px rgba(37, 99, 235, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 99, 235, 0); }
+}
+
+/* ==========================================================================
+   Minimal Navigation Row (Arrows ← and → ONLY - Strictly NO Counter Text)
+   ========================================================================== */
+.cardNavigationRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #FFFFFF;
+    border: 1px solid var(--dys-border);
+    border-radius: 14px;
+    padding: 10px 18px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.minimalNavBtn {
+    width: 52px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--dys-border);
+    background: #FFFFFF;
+    color: var(--dys-text-primary);
+    font-size: 24px;
+    font-weight: 800;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.minimalNavBtn:hover:not(:disabled) {
+    background: #2563EB;
+    color: #FFFFFF;
+    border-color: #1D4ED8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+}
+
+.minimalNavBtn:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+    background: #F1F5F9;
+    border-color: #E2E8F0;
+}
+
+.navProgressSummary {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--dys-text-primary);
+    letter-spacing: 0.05em;
+}
+
+/* ==========================================================================
+   Curriculum Content Filter Strip (Vocabulary vs Phonetics)
+   ========================================================================== */
+.contentFilterStrip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+}
+
+.contentFilterBtn {
+    border: 1.5px solid var(--dys-border);
+    background: #FFFFFF;
+    color: var(--dys-text-primary);
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    letter-spacing: 0.03em;
+}
+
+.contentFilterBtn:hover:not(:disabled) {
+    border-color: #2563EB;
+    color: #2563EB;
+    background: #EFF6FF;
+}
+
+.contentFilterBtn.active {
+    background: #1E293B;
+    color: #FFFFFF;
+    border-color: #1E293B;
+    box-shadow: 0 2px 8px rgba(30, 41, 59, 0.2);
+}
+
+.contentFilterBtn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    background: #F8FAFC;
+}
+
+.ribbonUnitBtn.phonicItem {
+    border-color: #F59E0B;
+}
+
+.phonicHeaderTag {
+    font-size: 11px;
+    font-weight: 700;
+    background: #FEF3C7;
+    color: #92400E;
+    padding: 2px 8px;
+    border-radius: 6px;
+    border: 1px solid #FDE68A;
+    letter-spacing: 0.04em;
+}
+
+/* ==========================================================================
+   Card Badges: Phonetic Sounds, Vocabulary & Syllable Breakdown
+   ========================================================================== */
+.cardBadgeRow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+}
+
+.cardTypeBadge {
+    display: inline-flex;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 8px;
+    letter-spacing: 0.04em;
+}
+
+.cardTypeBadge.phonicBadge {
+    background: #FEF3C7;
+    color: #92400E;
+    border: 1px solid #FCD34D;
+}
+
+.cardTypeBadge.vocabBadge {
+    background: #EEF2FF;
+    color: #3730A3;
+    border: 1px solid #C7D2FE;
+}
+
+.cardTypeBadge.syllableBadge {
+    background: #F1F5F9;
+    color: #334155;
+    border: 1px dashed #CBD5E1;
+    font-family: monospace;
+    font-size: 13px;
+    letter-spacing: 0.1em;
+}
+

@@ -29,26 +29,31 @@ function ClassDashboard() {
         {
             key: "english",
             letter: "E",
+            title: "English",
+            progress: 0
+        },
+        {
+            key: "hindi",
+            letter: "हि",
+            title: "Hindi",
             progress: 0
         },
         {
             key: "kannada",
             letter: "ಕ",
+            title: "Kannada",
             progress: 0
         },
         {
-            key: "mathematics",
+            key: "maths",
             letter: "M",
+            title: "Maths",
             progress: 0
         },
         {
-            key: "science",
-            letter: "S",
-            progress: 0
-        },
-        {
-            key: "gk",
+            key: "evs",
             letter: "GK",
+            title: "EVS / GK",
             progress: 0
         }
     ];
@@ -56,22 +61,9 @@ function ClassDashboard() {
 
     const handleSubjectSelect =
         (subject) => {
-
-            if (subject === "english") {
-
-                navigate(
-                    `/class/${classNumber}/english`
-                );
-
-                return;
-
-            }
-
-
-            console.log(
-                `Selected ${subject}`
+            navigate(
+                `/class/${classNumber}/${subject}`
             );
-
         };
 
 

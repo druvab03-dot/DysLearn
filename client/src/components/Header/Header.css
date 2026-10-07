@@ -111,8 +111,70 @@
 
 
 /* ==================================================
-   BRAND
+   LEFT GROUP & BRAND
 ================================================== */
+
+.headerLeftGroup {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
+
+
+.headerBackButton {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    padding: 7px 13px;
+
+    border-radius: 9px;
+
+    border: 1px solid var(--border);
+
+    background: var(--surface-2);
+
+    color: var(--text);
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: var(--transition);
+
+    user-select: none;
+
+}
+
+
+.headerBackButton:hover {
+
+    background: rgba(99, 102, 241, 0.1);
+
+    color: var(--primary);
+
+    border-color: var(--primary);
+
+    transform: translateX(-2px);
+
+}
+
+
+.headerBackButton:active {
+
+    transform: scale(0.97);
+
+}
+
 
 .headerBrand {
 
@@ -498,6 +560,22 @@
     .headerInner {
 
         padding: 0 18px;
+
+    }
+
+
+    .headerBackButton {
+
+        padding: 6px 9px;
+
+        font-size: 12px;
+
+    }
+
+
+    .headerBackButton .backText {
+
+        display: none;
 
     }
 

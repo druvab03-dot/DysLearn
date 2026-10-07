@@ -20,10 +20,13 @@ export const getChildren = async () => {
 // ADD CHILD
 // ==========================================
 
-export const addChild = async (name, handwritingImage) => {
+export const addChild = async (name, handwritingImage, childClass = "") => {
     const formData = new FormData();
 
     formData.append("name", name);
+    if (childClass) {
+        formData.append("class", childClass);
+    }
     formData.append("handwritingImage", handwritingImage);
 
     const response = await api.post("/children", formData);

@@ -16,6 +16,20 @@ import LearningModule from "../components/LearningModule/LearningModule";
 import ProtectedRoute from "./ProtectedRoute";
 import ChildRoute from "./ChildRoute";
 
+function PublicOnlyRoute({ children }) {
+    const token = localStorage.getItem("token");
+    if (token) {
+        const activeChild = localStorage.getItem("activeChild");
+        return (
+            <Navigate
+                to={activeChild ? "/dashboard" : "/parent-dashboard"}
+                replace
+            />
+        );
+    }
+    return children;
+}
+
 
 function AppRoutes() {
 
@@ -38,14 +52,18 @@ function AppRoutes() {
                 <Route
                     path="/login"
                     element={
-                        <Login />
+                        <PublicOnlyRoute>
+                            <Login />
+                        </PublicOnlyRoute>
                     }
                 />
 
                 <Route
                     path="/signup"
                     element={
-                        <Login />
+                        <PublicOnlyRoute>
+                            <Login />
+                        </PublicOnlyRoute>
                     }
                 />
 
@@ -86,15 +104,22 @@ function AppRoutes() {
                 />
 
 
-                {/* ================= ENGLISH LEARNING ================= */}
+                {/* ================= LEARNING MODULE ================= */}
 
                 <Route
-                    path="/class/:classNumber/english"
+                    path="/class/:classNumber/:subject"
                     element={
                         <ChildRoute>
-                            <LearningModule
-                                subject="English"
-                            />
+                            <LearningModule />
+                        </ChildRoute>
+                    }
+                />
+
+                <Route
+                    path="/class/:classNumber/learning"
+                    element={
+                        <ChildRoute>
+                            <LearningModule />
                         </ChildRoute>
                     }
                 />

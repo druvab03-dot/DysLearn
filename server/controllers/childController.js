@@ -1,8 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const Child = require("../models/Child");
-const Parent = require("../models/Parent");
+const { Child, Parent } = require("../models/dbAdapter");
 
 const {
     analyzeHandwriting,
@@ -51,7 +50,8 @@ const addChild = async (
 
     try {
 
-        const { name } = req.body;
+        const { name, class: childClass, className } = req.body;
+        const selectedClass = (childClass || className || "").trim();
 
 
         if (!name?.trim()) {
@@ -103,6 +103,9 @@ const addChild = async (
 
                 name:
                     name.trim(),
+
+                class:
+                    selectedClass,
 
                 handwritingImage,
 

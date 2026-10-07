@@ -1,6 +1,5 @@
 const jwt = require("jsonwebtoken");
-const Parent = require("../models/Parent");
-
+const { Parent } = require("../models/dbAdapter");
 
 const protect = async (req, res, next) => {
 
@@ -25,15 +24,16 @@ const protect = async (req, res, next) => {
         }
 
 
+        const secret = process.env.JWT_SECRET || "dyslearn_default_jwt_secret_dev_2026";
         const decoded = jwt.verify(
             token,
-            process.env.JWT_SECRET
+            secret
         );
 
 
         const parent = await Parent.findById(
             decoded.id
-        ).select("-password");
+        );
 
 
         if (!parent) {

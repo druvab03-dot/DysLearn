@@ -4,8 +4,9 @@ import {
     useState
 } from "react";
 
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { ArrowLeft } from "lucide-react";
 
 import "./Header.css";
 
@@ -45,17 +46,12 @@ function Header() {
 
 
     let parent = null;
-
-    try {
-
-        parent = storedParent
-            ? JSON.parse(storedParent)
-            : null;
-
-    } catch {
-
-        parent = null;
-
+    if (storedParent) {
+        try {
+            parent = JSON.parse(storedParent);
+        } catch {
+            parent = null;
+        }
     }
 
 
@@ -206,17 +202,55 @@ function Header() {
 
 
     // ==========================================
-    // LOGO
+    // BACK NAVIGATION & LOGO
     // ==========================================
 
+    const location = useLocation();
+
+    const canGoBack = (() => {
+        // Landing page never has back navigation
+        if (location.pathname === "/") {
+            return false;
+        }
+
+        // On parent-dashboard (the parent root screen):
+        // Only show if user arrived here from an inner page (e.g. child dashboard or class)
+        if (location.pathname === "/parent-dashboard") {
+            return Boolean(window.history.state && window.history.state.idx > 0);
+        }
+
+        // All inner sub-routes (/class/*, /dashboard, /login, /signup) can navigate back
+        return true;
+    })();
+
+    const handleBack = () => {
+        const path = location.pathname;
+
+        if (path.includes("/english")) {
+            const parts = path.split("/");
+            const classNum = parts[2];
+            navigate(`/class/${classNum}`);
+        } else if (path.startsWith("/class/")) {
+            navigate("/dashboard");
+        } else if (path === "/dashboard") {
+            navigate("/parent-dashboard");
+        } else if (path === "/login" || path === "/signup") {
+            navigate("/");
+        } else if (window.history.state && window.history.state.idx > 0) {
+            navigate(-1);
+        } else {
+            const hasToken = Boolean(localStorage.getItem("token"));
+            navigate(hasToken ? "/parent-dashboard" : "/");
+        }
+    };
+
     const handleLogoClick = () => {
-
-        navigate(
-            token
-                ? "/dashboard"
-                : "/"
-        );
-
+        if (!token) {
+            navigate("/");
+            return;
+        }
+        const activeChild = localStorage.getItem("activeChild");
+        navigate(activeChild ? "/dashboard" : "/parent-dashboard");
     };
 
 
@@ -236,26 +270,41 @@ return (
 
             <div className="headerInner">
 
+                <div className="headerLeftGroup">
 
-                {/* BRAND */}
+                    {canGoBack && (
+                        <button
+                            type="button"
+                            className="headerBackButton"
+                            onClick={handleBack}
+                            aria-label={t("global.back", "Back")}
+                            title={t("global.back", "Back")}
+                            id="headerBackBtn"
+                        >
+                            <ArrowLeft size={18} />
+                            <span className="backText">
+                                {t("global.back", "Back")}
+                            </span>
+                        </button>
+                    )}
 
-                <button
-                    type="button"
-                    className="headerBrand"
-                    onClick={handleLogoClick}
-                >
+                    {/* BRAND */}
+                    <button
+                        type="button"
+                        className="headerBrand"
+                        onClick={handleLogoClick}
+                    >
+                        <img
+                            src="/favicon.png"
+                            alt=""
+                            className="headerLogo"
+                        />
+                        <span>
+                            DysLearn
+                        </span>
+                    </button>
 
-                    <img
-                        src="/favicon.png"
-                        alt=""
-                        className="headerLogo"
-                    />
-
-                    <span>
-                        DysLearn
-                    </span>
-
-                </button>
+                </div>
 
 
                 <div className="headerActions">

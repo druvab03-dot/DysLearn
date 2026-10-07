@@ -4,12 +4,17 @@ import {
 } from "react";
 
 import { useTranslation } from "react-i18next";
+import { Download } from "lucide-react";
 
 import "./AddChildModal.css";
 
 import {
     addChild
 } from "../../services/childService";
+
+import {
+    downloadPreAssessment
+} from "../../services/assessmentService";
 
 
 function AddChildModal({
@@ -23,6 +28,12 @@ function AddChildModal({
 
     const [name, setName] =
         useState("");
+
+    const [childClass, setChildClass] =
+        useState("");
+
+    const [downloading, setDownloading] =
+        useState(false);
 
     const [
         handwritingImage,
@@ -72,6 +83,21 @@ function AddChildModal({
             }
 
 
+            const finalClass = childClass.trim();
+
+            if (!finalClass) {
+
+                setError(
+                    t(
+                        "child.selectClassError"
+                    )
+                );
+
+                return;
+
+            }
+
+
             if (!handwritingImage) {
 
                 setError(
@@ -93,7 +119,8 @@ function AddChildModal({
                 const data =
                     await addChild(
                         name.trim(),
-                        handwritingImage
+                        handwritingImage,
+                        finalClass
                     );
 
 
@@ -119,6 +146,33 @@ function AddChildModal({
             }
 
         };
+
+
+    const handleDownloadAssessment = async () => {
+
+        if (!childClass) {
+
+            return;
+
+        }
+
+        try {
+
+            setDownloading(true);
+
+            await downloadPreAssessment(childClass);
+
+        } catch {
+
+            setError("Unable to download assessment sheet. Please try again.");
+
+        } finally {
+
+            setDownloading(false);
+
+        }
+
+    };
 
 
     return (
@@ -205,7 +259,7 @@ function AddChildModal({
                             value={name}
                             placeholder={
                                 t(
-                                    "child.namePlaceholder"
+                                     "child.namePlaceholder"
                                 )
                             }
                             onChange={(event) => {
@@ -219,6 +273,128 @@ function AddChildModal({
                             }}
                             disabled={loading}
                         />
+
+                    </div>
+
+
+                    <div className="childFormGroup">
+
+                        <label htmlFor="childClass">
+
+                            {t("child.childClass")}
+
+                        </label>
+
+
+                        <select
+                            id="childClass"
+                            value={childClass}
+                            onChange={(event) => {
+
+                                setChildClass(
+                                    event.target.value
+                                );
+
+                                setError("");
+
+                            }}
+                            disabled={loading}
+                        >
+
+                            <option value="">
+
+                                {t("child.selectClass")}
+
+                            </option>
+
+                            <option value="1">
+
+                                {t("child.class")} 1
+
+                            </option>
+
+                            <option value="2">
+
+                                {t("child.class")} 2
+
+                            </option>
+
+                            <option value="3">
+
+                                {t("child.class")} 3
+
+                            </option>
+
+                            <option value="4">
+
+                                {t("child.class")} 4
+
+                            </option>
+
+                            <option value="5">
+
+                                {t("child.class")} 5
+
+                            </option>
+
+                        </select>
+
+
+                        <div className="assessmentDownloadBox">
+
+                            <div className="assessmentDownloadInfo">
+
+                                <span className="assessmentDownloadTitle">
+
+                                    {t("child.preAssessmentSheet", "Handwriting Writing Prompt (Plain Sheet)")}
+
+                                </span>
+
+                                <span className="assessmentDownloadSubtitle">
+
+                                    {childClass
+                                        ? t("child.downloadAssessmentHint")
+                                        : t("child.selectClassToDownload")}
+
+                                </span>
+
+                                <span className="assessmentDownloadNote">
+
+                                    {t("child.preAssessmentNote")}
+
+                                </span>
+
+                            </div>
+
+
+                            <button
+                                type="button"
+                                className={`downloadAssessmentButton ${!childClass ? "disabled" : ""}`}
+                                onClick={handleDownloadAssessment}
+                                disabled={!childClass || downloading}
+                                id="downloadAssessmentBtn"
+                                aria-label={
+                                    childClass
+                                        ? `Class ${childClass} assessment`
+                                        : "Class X assessment"
+                                }
+                            >
+
+                                <Download size={16} />
+
+                                <span>
+
+                                    {downloading
+                                        ? "Downloading..."
+                                        : childClass
+                                        ? `Class ${childClass} assessment`
+                                        : "Class X assessment"}
+
+                                </span>
+
+                            </button>
+
+                        </div>
 
                     </div>
 

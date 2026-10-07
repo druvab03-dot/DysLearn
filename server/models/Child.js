@@ -15,6 +15,12 @@ const childSchema = new mongoose.Schema(
             trim: true,
         },
 
+        class: {
+            type: String,
+            trim: true,
+            default: "",
+        },
+
         handwritingImage: {
             type: String,
             required: true,
