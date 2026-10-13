@@ -1,0 +1,732 @@
+.parentDashboardPage {
+
+    min-height: 100vh;
+
+    background: var(--background);
+
+    color: var(--text);
+
+}
+
+
+.parentDashboardMain {
+
+    width: 100%;
+
+    max-width: 1400px;
+
+    min-height: 65vh;
+
+    margin: 0 auto;
+
+    padding: 55px 40px;
+
+}
+
+
+.parentDashboardSection {
+
+    width: 100%;
+
+}
+
+
+/* ================= Heading ================= */
+
+.parentDashboardHeading {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    gap: 24px;
+
+    margin-bottom: 36px;
+
+}
+
+
+.parentDashboardHeading h1 {
+
+    margin: 0 0 8px;
+
+    color: var(--text);
+
+    font-size: 32px;
+
+    font-weight: 700;
+
+}
+
+
+.parentDashboardHeading p {
+
+    margin: 0;
+
+    color: var(--text-light);
+
+    font-size: 15px;
+
+}
+
+
+.openAddChildButton {
+
+    min-height: 44px;
+
+    padding: 0 18px;
+
+    border: 1px solid var(--primary);
+
+    border-radius: 11px;
+
+    background: var(--primary);
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: var(--transition);
+
+}
+
+
+.openAddChildButton:hover {
+
+    background: var(--primary-dark);
+
+}
+
+
+/* ================= Children ================= */
+
+.childrenGrid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fill,
+            minmax(240px, 1fr)
+        );
+
+    gap: 20px;
+
+}
+
+
+.childCard {
+
+    padding: 24px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    background: var(--surface);
+
+    box-shadow: var(--shadow);
+
+    transition: var(--transition);
+
+}
+
+
+.childCard:hover {
+
+    transform: translateY(-3px);
+
+}
+
+
+.childCardTop {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.childAvatar {
+
+    width: 48px;
+
+    height: 48px;
+
+    border-radius: 50%;
+
+    background: var(--primary);
+
+    color: #ffffff;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+}
+
+
+.childCard h2 {
+
+    margin: 0 0 14px;
+
+    color: var(--text);
+
+    font-size: 20px;
+
+}
+
+
+.removeChildButton {
+
+    padding: 7px 10px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 8px;
+
+    background: transparent;
+
+    color: var(--text-light);
+
+    font-size: 12px;
+
+    cursor: pointer;
+
+    transition: var(--transition);
+
+}
+
+
+.removeChildButton:hover {
+
+    border-color: var(--primary);
+
+    color: var(--primary);
+
+}
+
+
+.removeChildButton:disabled {
+
+    opacity: 0.6;
+
+    cursor: not-allowed;
+
+}
+
+
+.childClassBadge {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 3px 9px;
+
+    margin-bottom: 12px;
+
+    border-radius: 6px;
+
+    background: var(--surface-2);
+
+    border: 1px solid var(--border);
+
+    color: var(--text-light);
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.5px;
+
+}
+
+
+.cardUploadBox {
+
+    margin-bottom: 16px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+
+}
+
+
+.cardUploadButton {
+
+    width: 100%;
+
+    min-height: 44px;
+
+    padding: 10px 14px;
+
+    border: 1.5px dashed var(--border);
+
+    border-radius: 10px;
+
+    background: var(--surface-2);
+
+    color: var(--text);
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    cursor: pointer;
+
+    transition: var(--transition);
+
+}
+
+
+.cardUploadButton:hover {
+
+    border-color: var(--primary);
+
+    color: var(--primary);
+
+}
+
+
+.cardUploadIcon {
+
+    font-size: 16px;
+
+}
+
+
+.cardUploadHelp {
+
+    font-size: 11px;
+
+    color: var(--text-light);
+
+    text-align: center;
+
+}
+
+
+.changeImageLabel {
+
+    position: absolute;
+
+    bottom: 8px;
+
+    right: 8px;
+
+    padding: 4px 9px;
+
+    border-radius: 6px;
+
+    background: rgba(0, 0, 0, 0.65);
+
+    color: #ffffff;
+
+    font-size: 11px;
+
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition: var(--transition);
+
+}
+
+
+.changeImageLabel:hover {
+
+    background: var(--primary);
+
+}
+
+
+.handwritingPreviewCard {
+
+    position: relative;
+
+    margin-bottom: 16px;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    border: 1px solid var(--border);
+
+}
+
+
+.handwritingImg {
+
+    width: 100%;
+
+    height: 140px;
+
+    object-fit: cover;
+
+    background: var(--surface-2);
+
+}
+
+
+.viewReportPopupButton {
+
+    width: 100%;
+
+    min-height: 38px;
+
+    margin-bottom: 10px;
+
+    border: 1px solid var(--success);
+
+    border-radius: 10px;
+
+    background: rgba(34, 197, 94, 0.1);
+
+    color: var(--success);
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: var(--transition);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 6px;
+
+}
+
+
+.viewReportPopupButton:hover {
+
+    background: var(--success);
+
+    color: #ffffff;
+
+}
+
+
+/* ================= Analysis ================= */
+
+.analysisStatus {
+
+    display: inline-flex;
+
+    margin-bottom: 14px;
+
+    padding: 7px 10px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 999px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+}
+
+
+.analysisStatus.pending {
+
+    background: var(--surface-2);
+
+    color: var(--text-light);
+
+}
+
+
+.analysisStatus.analyzed {
+
+    background: var(--primary-light);
+
+    color: var(--primary);
+
+}
+
+
+.analyzeHandwritingButton {
+
+    width: 100%;
+
+    min-height: 40px;
+
+    margin-bottom: 10px;
+
+    border: 1px solid var(--primary);
+
+    border-radius: 10px;
+
+    background: var(--primary);
+
+    color: #ffffff;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: var(--transition);
+
+}
+
+
+.analyzeHandwritingButton:hover:not(:disabled) {
+
+    background: var(--primary-dark);
+
+}
+
+
+.analyzeHandwritingButton:disabled {
+
+    opacity: 0.6;
+
+    cursor: not-allowed;
+
+}
+
+
+/* ================= View ================= */
+
+.viewChildButton {
+
+    width: 100%;
+
+    min-height: 40px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    transition: var(--transition);
+
+}
+
+
+.viewChildButton.enabled {
+
+    background: var(--primary);
+
+    border-color: var(--primary);
+
+    color: #ffffff;
+
+    cursor: pointer;
+
+}
+
+
+.viewChildButton.enabled:hover {
+
+    background: var(--primary-dark);
+
+}
+
+
+.viewChildButton.locked {
+
+    background: var(--surface-2);
+
+    border-color: var(--border);
+
+    color: var(--text-light);
+
+    cursor: not-allowed;
+
+    opacity: 0.65;
+
+}
+
+
+/* ================= Empty / Loading ================= */
+
+.childrenState {
+
+    padding: 70px 20px;
+
+    color: var(--text-light);
+
+    text-align: center;
+
+}
+
+
+.emptyChildren {
+
+    max-width: 500px;
+
+    margin: 70px auto;
+
+    text-align: center;
+
+}
+
+
+.emptyChildIcon {
+
+    width: 58px;
+
+    height: 58px;
+
+    margin: 0 auto 18px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 50%;
+
+    background: var(--surface);
+
+    color: var(--primary);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 28px;
+
+}
+
+
+.emptyChildren h2 {
+
+    margin: 0 0 10px;
+
+    color: var(--text);
+
+    font-size: 22px;
+
+}
+
+
+.emptyChildren p {
+
+    margin: 0 auto 22px;
+
+    color: var(--text-light);
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+}
+
+
+.emptyChildren button {
+
+    min-height: 42px;
+
+    padding: 0 18px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: var(--primary);
+
+    color: #ffffff;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+}
+
+
+.dashboardError {
+
+    margin-bottom: 24px;
+
+    padding: 12px 14px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    background: var(--surface);
+
+    color: var(--text);
+
+    font-size: 13px;
+
+}
+
+
+/* ================= Responsive ================= */
+
+@media (max-width: 700px) {
+
+    .parentDashboardMain {
+
+        padding: 38px 20px;
+
+    }
+
+
+    .parentDashboardHeading {
+
+        flex-direction: column;
+
+    }
+
+
+    .parentDashboardHeading h1 {
+
+        font-size: 27px;
+
+    }
+
+
+    .openAddChildButton {
+
+        width: 100%;
+
+    }
+
+}

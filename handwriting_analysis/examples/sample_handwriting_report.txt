@@ -1,0 +1,73 @@
+HANDWRITING ANALYSIS REPORT
+========================================
+Characters analysed: 55
+
+FINAL CLASSIFICATION
+----------------------------------------
+Corrected: 8 (14.55%)
+Normal: 41 (74.55%)
+Reversal: 6 (10.91%)
+
+Handwriting Score: 83.27/100
+Student Level: Progressing well
+
+Letter-aware adjustments: 7
+
+CHARACTER PREDICTIONS
+========================================
+file,letter,raw_prediction,final_prediction,confidence,rule_applied
+line_01/word_01_This/char_01_T_28x28.png,t,Corrected,Normal,0.9874,True
+line_01/word_01_This/char_02_h_28x28.png,h,Normal,Normal,0.9995,False
+line_01/word_01_This/char_03_i_28x28.png,i,Normal,Normal,0.9955,False
+line_01/word_01_This/char_04_s_28x28.png,s,Normal,Normal,0.9998,False
+line_01/word_02_is/char_01_i_28x28.png,i,Normal,Normal,0.9995,False
+line_01/word_02_is/char_02_s_28x28.png,s,Normal,Normal,0.9997,False
+line_01/word_03_a/char_01_a_28x28.png,a,Reversal,Reversal,0.9983,False
+line_01/word_04_simple/char_01_s_28x28.png,s,Reversal,Reversal,0.9648,False
+line_01/word_04_simple/char_02_i_28x28.png,i,Normal,Normal,0.9990,False
+line_01/word_04_simple/char_03_m_28x28.png,m,Corrected,Corrected,0.9653,False
+line_01/word_04_simple/char_04_p_28x28.png,p,Normal,Normal,0.9955,False
+line_01/word_04_simple/char_05_l_28x28.png,l,Normal,Normal,0.8852,False
+line_01/word_04_simple/char_06_e_28x28.png,e,Reversal,Reversal,1.0000,False
+line_01/word_05_text/char_01_t_28x28.png,t,Corrected,Normal,1.0000,True
+line_01/word_05_text/char_02_e_28x28.png,e,Normal,Normal,0.9955,False
+line_01/word_05_text/char_03_x_28x28.png,x,Normal,Normal,1.0000,False
+line_01/word_05_text/char_04_t_28x28.png,t,Corrected,Normal,0.6284,True
+line_02/word_01_to/char_01_t_28x28.png,t,Normal,Normal,0.9236,False
+line_02/word_01_to/char_02_o_28x28.png,o,Normal,Normal,0.9345,False
+line_02/word_02_test/char_01_t_28x28.png,t,Corrected,Normal,0.7182,True
+line_02/word_02_test/char_02_e_28x28.png,e,Reversal,Reversal,0.9958,False
+line_02/word_02_test/char_03_s_28x28.png,s,Normal,Normal,1.0000,False
+line_02/word_02_test/char_04_t_28x28.png,t,Corrected,Normal,0.9955,True
+line_02/word_03_the/char_01_t_28x28.png,t,Corrected,Normal,0.9999,True
+line_02/word_03_the/char_02_h_28x28.png,h,Corrected,Corrected,0.7558,False
+line_02/word_03_the/char_03_e_28x28.png,e,Normal,Normal,0.9953,False
+line_02/word_04_model/char_01_m_28x28.png,m,Corrected,Corrected,1.0000,False
+line_02/word_04_model/char_02_o_28x28.png,o,Normal,Normal,1.0000,False
+line_02/word_04_model/char_03_d_28x28.png,d,Normal,Normal,1.0000,False
+line_02/word_04_model/char_04_e_28x28.png,e,Normal,Normal,0.9955,False
+line_02/word_04_model/char_05_l_28x28.png,l,Normal,Normal,0.9997,False
+line_02/word_05_of/char_01_o_28x28.png,o,Normal,Normal,0.9974,False
+line_02/word_05_of/char_02_f_28x28.png,f,Corrected,Corrected,0.9055,False
+line_02/word_06_the/char_01_t_28x28.png,t,Corrected,Normal,0.9965,True
+line_02/word_06_the/char_02_h_28x28.png,h,Normal,Normal,0.9955,False
+line_02/word_06_the/char_03_e_28x28.png,e,Reversal,Reversal,0.9998,False
+line_03/word_01_letter/char_01_l_28x28.png,l,Normal,Normal,1.0000,False
+line_03/word_01_letter/char_02_e_28x28.png,e,Corrected,Corrected,0.9999,False
+line_03/word_01_letter/char_03_t_28x28.png,t,Normal,Normal,0.9400,False
+line_03/word_01_letter/char_04_t_28x28.png,t,Normal,Normal,0.8888,False
+line_03/word_01_letter/char_05_e_28x28.png,e,Corrected,Corrected,0.9974,False
+line_03/word_01_letter/char_06_r_28x28.png,r,Normal,Normal,1.0000,False
+line_03/word_02_detector/char_01_d_28x28.png,d,Corrected,Corrected,0.9997,False
+line_03/word_02_detector/char_02_e_28x28.png,e,Normal,Normal,0.9731,False
+line_03/word_02_detector/char_03_t_28x28.png,t,Normal,Normal,0.9955,False
+line_03/word_02_detector/char_04_e_28x28.png,e,Normal,Normal,0.7763,False
+line_03/word_02_detector/char_05_c_28x28.png,c,Corrected,Corrected,0.9699,False
+line_03/word_02_detector/char_06_t_28x28.png,t,Normal,Normal,0.9999,False
+line_03/word_02_detector/char_07_o_28x28.png,o,Normal,Normal,0.9955,False
+line_03/word_02_detector/char_08_r_28x28.png,r,Normal,Normal,1.0000,False
+line_03/word_03_model/char_01_m_28x28.png,m,Normal,Normal,0.9999,False
+line_03/word_03_model/char_02_o_28x28.png,o,Normal,Normal,1.0000,False
+line_03/word_03_model/char_03_d_28x28.png,d,Reversal,Reversal,0.9997,False
+line_03/word_03_model/char_04_e_28x28.png,e,Normal,Normal,1.0000,False
+line_03/word_03_model/char_05_l_28x28.png,l,Normal,Normal,0.9999,False

@@ -1,0 +1,23 @@
+.speakerButton {
+    width: 44px;
+    height: 44px;
+    border: none;
+    border-radius: 50%;
+    background: #2563eb;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.speakerButton:hover {
+    background: #1d4ed8;
+    transform: scale(1.05);
+}
+
+.speakerButton:active {
+    transform: scale(0.95);
+}

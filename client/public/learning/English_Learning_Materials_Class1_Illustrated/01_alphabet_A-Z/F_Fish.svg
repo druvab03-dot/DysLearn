@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+<rect width="1200" height="800" rx="40" fill="#F7F8FF"/>
+<rect x="28" y="28" width="1144" height="744" rx="32" fill="none" stroke="#6366F1" stroke-width="5" opacity=".35"/>
+<text x="90" y="155" font-family="Arial, sans-serif" font-size="120" font-weight="800" fill="#6366F1">F</text>
+<text x="90" y="225" font-family="Arial, sans-serif" font-size="42" font-weight="700" fill="#263044">F for Fish</text>
+<g transform="translate(520,120)">
+<path d="M150 300 Q300 120 500 300 Q300 480 150 300Z" fill="#F59E0B"/>
+<path d="M500 300 L585 220 L585 380Z" fill="#EF4444"/>
+<circle cx="210" cy="275" r="14" fill="#263044"/>
+<path d="M260 220 Q320 300 260 380" fill="none" stroke="#FFF7ED" stroke-width="18"/>
+</g>
+</svg>

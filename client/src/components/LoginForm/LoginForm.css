@@ -1,0 +1,147 @@
+.loginForm {
+
+    width: 100%;
+
+}
+
+.errorMessage {
+
+    margin-bottom: 18px;
+
+    padding: 14px 16px;
+
+    border-radius: 12px;
+
+    background: rgba(239, 68, 68, 0.12);
+
+    border: 1px solid rgba(239, 68, 68, 0.25);
+
+    color: #ef4444;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+}
+
+.otpButton {
+
+    background: none;
+
+    border: none;
+
+    color: var(--primary);
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    margin: 6px 0 20px;
+
+    padding: 0;
+
+    transition: var(--transition);
+
+    font-weight: 600;
+
+}
+
+.otpButton:hover {
+
+    color: var(--primary-dark);
+
+}
+
+.loginFooter {
+
+    margin-top: 22px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+
+}
+
+.rememberMe {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: var(--text-light);
+
+    cursor: pointer;
+
+    user-select: none;
+
+}
+
+.rememberMe input {
+
+    width: 16px;
+
+    height: 16px;
+
+    accent-color: var(--primary);
+
+    cursor: pointer;
+
+}
+
+.rememberMe span {
+
+    font-size: 14px;
+
+}
+
+.textButton {
+
+    background: none;
+
+    border: none;
+
+    color: var(--primary);
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    transition: var(--transition);
+
+}
+
+.textButton:hover {
+
+    color: var(--primary-dark);
+
+}
+
+.textButton:disabled {
+
+    opacity: .6;
+
+    cursor: not-allowed;
+
+}
+
+@media (max-width: 600px) {
+
+    .loginFooter {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 14px;
+
+    }
+
+}

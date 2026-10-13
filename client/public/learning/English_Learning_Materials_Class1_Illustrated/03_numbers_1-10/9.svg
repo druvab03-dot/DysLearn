@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800">
+<rect width="1200" height="800" rx="40" fill="#F3F7FF"/>
+<text x="90" y="155" font-family="Arial" font-size="120" font-weight="800" fill="#6366F1">9</text>
+<text x="90" y="225" font-family="Arial" font-size="42" font-weight="700" fill="#263044">Number 9</text>
+<g transform="translate(480,80)"><circle cx="120" cy="170" r="28" fill="#6366F1"/>
+<circle cx="205" cy="170" r="28" fill="#6366F1"/>
+<circle cx="290" cy="170" r="28" fill="#6366F1"/>
+<circle cx="375" cy="170" r="28" fill="#6366F1"/>
+<circle cx="460" cy="170" r="28" fill="#6366F1"/>
+<circle cx="120" cy="255" r="28" fill="#6366F1"/>
+<circle cx="205" cy="255" r="28" fill="#6366F1"/>
+<circle cx="290" cy="255" r="28" fill="#6366F1"/>
+<circle cx="375" cy="255" r="28" fill="#6366F1"/></g>
+</svg>

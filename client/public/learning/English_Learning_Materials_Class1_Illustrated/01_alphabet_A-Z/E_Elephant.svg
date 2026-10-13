@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+<rect width="1200" height="800" rx="40" fill="#F7F8FF"/>
+<rect x="28" y="28" width="1144" height="744" rx="32" fill="none" stroke="#6366F1" stroke-width="5" opacity=".35"/>
+<text x="90" y="155" font-family="Arial, sans-serif" font-size="120" font-weight="800" fill="#6366F1">E</text>
+<text x="90" y="225" font-family="Arial, sans-serif" font-size="42" font-weight="700" fill="#263044">E for Elephant</text>
+<g transform="translate(520,120)">
+<ellipse cx="300" cy="330" rx="180" ry="150" fill="#A7B0BA"/>
+<circle cx="155" cy="235" r="75" fill="#A7B0BA"/><circle cx="445" cy="235" r="75" fill="#A7B0BA"/>
+<path d="M190 270 Q120 300 145 405 Q155 455 195 435" fill="none" stroke="#8E98A4" stroke-width="45" stroke-linecap="round"/>
+<circle cx="185" cy="235" r="12" fill="#263044"/><circle cx="425" cy="235" r="12" fill="#263044"/>
+</g>
+</svg>

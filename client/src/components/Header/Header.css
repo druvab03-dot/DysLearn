@@ -1,0 +1,562 @@
+/* ==================================================
+   HEADER SLOT
+   Keeps page height stable when header becomes fixed
+================================================== */
+
+.headerSlot {
+
+    width: 100%;
+
+    height: 72px;
+
+}
+
+
+/* ==================================================
+   HEADER
+================================================== */
+
+.globalHeader {
+
+    width: 100%;
+
+    height: 72px;
+
+    background: var(--surface);
+
+    border-bottom: 1px solid var(--border);
+
+    color: var(--text);
+
+    position: relative;
+
+    z-index: 100;
+
+    transition:
+        background var(--transition),
+        border-color var(--transition),
+        box-shadow 0.25s ease;
+
+}
+
+
+/* ==================================================
+   FLOATING HEADER
+================================================== */
+
+.globalHeader.floatingHeader {
+
+    position: fixed;
+
+    top: 0;
+
+    left: 0;
+
+    right: 0;
+
+    z-index: 1000;
+
+    box-shadow: var(--shadow);
+
+    animation:
+        headerSlideDown 0.28s ease forwards;
+
+}
+
+
+@keyframes headerSlideDown {
+
+    from {
+
+        transform: translateY(-100%);
+
+        opacity: 0;
+
+    }
+
+    to {
+
+        transform: translateY(0);
+
+        opacity: 1;
+
+    }
+
+}
+
+
+/* ==================================================
+   HEADER INNER
+================================================== */
+
+.headerInner {
+
+    width: 100%;
+
+    max-width: 1400px;
+
+    height: 100%;
+
+    margin: 0 auto;
+
+    padding: 0 40px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+}
+
+
+/* ==================================================
+   BRAND
+================================================== */
+
+.headerBrand {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 0;
+
+    border: none;
+
+    background: none;
+
+    color: var(--primary);
+
+    font-size: 24px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+}
+
+
+.headerLogo {
+
+    width: 34px;
+
+    height: 34px;
+
+    object-fit: contain;
+
+}
+
+
+/* ==================================================
+   HEADER ACTIONS
+================================================== */
+
+.headerActions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
+
+
+.headerDropdown {
+
+    position: relative;
+
+}
+
+
+/* ==================================================
+   HEADER CONTROLS
+================================================== */
+
+.headerControl {
+
+    height: 42px;
+
+    min-width: 42px;
+
+    padding: 0 12px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    background: var(--surface);
+
+    color: var(--text);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: var(--transition);
+
+}
+
+
+.headerControl:hover {
+
+    border-color: var(--primary);
+
+    background: var(--surface-2);
+
+}
+
+
+.themeControl {
+
+    padding: 0;
+
+    font-size: 18px;
+
+}
+
+
+.dropdownArrow {
+
+    color: var(--text-light);
+
+    font-size: 11px;
+
+}
+
+
+/* ==================================================
+   PROFILE
+================================================== */
+
+.profileControl {
+
+    height: 44px;
+
+    padding: 4px 10px 4px 5px;
+
+    border: 1px solid transparent;
+
+    border-radius: 12px;
+
+    background: transparent;
+
+    color: var(--text);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    cursor: pointer;
+
+    transition: var(--transition);
+
+}
+
+
+.profileControl:hover {
+
+    border-color: var(--border);
+
+    background: var(--surface-2);
+
+}
+
+
+.headerAvatar {
+
+    width: 34px;
+
+    height: 34px;
+
+    border-radius: 50%;
+
+    background: var(--primary);
+
+    color: #ffffff;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+}
+
+
+.headerParentName {
+
+    max-width: 140px;
+
+    overflow: hidden;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+}
+
+
+/* ==================================================
+   DROPDOWN MENUS
+================================================== */
+
+.headerMenu {
+
+    position: absolute;
+
+    top: calc(100% + 10px);
+
+    right: 0;
+
+    min-width: 180px;
+
+    padding: 7px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 14px;
+
+    background: var(--surface);
+
+    box-shadow: var(--shadow);
+
+    z-index: 200;
+
+}
+
+
+.languageMenu {
+
+    min-width: 160px;
+
+}
+
+
+.profileMenu {
+
+    min-width: 240px;
+
+}
+
+
+/* ==================================================
+   MENU OPTIONS
+================================================== */
+
+.menuOption {
+
+    width: 100%;
+
+    padding: 11px 12px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: transparent;
+
+    color: var(--text);
+
+    text-align: left;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition: var(--transition);
+
+}
+
+
+.menuOption:hover {
+
+    background: var(--surface-2);
+
+    color: var(--primary);
+
+}
+
+
+.menuOption.active {
+
+    background: var(--primary-light);
+
+    color: var(--primary);
+
+    font-weight: 600;
+
+}
+
+
+/* ==================================================
+   PROFILE SUMMARY
+================================================== */
+
+.profileSummary {
+
+    padding: 10px 12px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+}
+
+
+.profileSummary strong {
+
+    color: var(--text);
+
+    font-size: 14px;
+
+}
+
+
+.profileSummary span {
+
+    color: var(--text-light);
+
+    font-size: 12px;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+}
+
+
+/* ==================================================
+   MENU DIVIDER
+================================================== */
+
+.menuDivider {
+
+    height: 1px;
+
+    margin: 5px 4px;
+
+    background: var(--border);
+
+}
+
+
+.logoutOption {
+
+    color: var(--text);
+
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 600px) {
+
+    .headerSlot {
+
+        height: 64px;
+
+    }
+
+
+    .globalHeader {
+
+        height: 64px;
+
+    }
+
+
+    .headerInner {
+
+        padding: 0 18px;
+
+    }
+
+
+    .headerBrand {
+
+        font-size: 20px;
+
+    }
+
+
+    .headerLogo {
+
+        width: 30px;
+
+        height: 30px;
+
+    }
+
+
+    .headerActions {
+
+        gap: 7px;
+
+    }
+
+
+    .headerParentName {
+
+        display: none;
+
+    }
+
+
+    .profileControl {
+
+        padding: 4px;
+
+    }
+
+
+    .profileControl .dropdownArrow {
+
+        display: none;
+
+    }
+
+
+    .languageControl {
+
+        padding: 0 9px;
+
+    }
+
+
+    .profileMenu {
+
+        min-width: 220px;
+
+    }
+
+}

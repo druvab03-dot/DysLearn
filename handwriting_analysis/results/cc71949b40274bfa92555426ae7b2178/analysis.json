@@ -1,0 +1,958 @@
+{
+  "characters_analysed": 105,
+  "counts": {
+    "Corrected": 14,
+    "Normal": 84,
+    "Reversal": 7
+  },
+  "score": 88.0,
+  "level": "Progressing well",
+  "letter_rule_adjustments": 8,
+  "results": [
+    {
+      "file": "word_001_I/char_01_I_28x28.png",
+      "letter": "i",
+      "raw_prediction": "Normal",
+      "prediction": "Normal",
+      "confidence": 1.0,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0001_char_01_I_28x28_gradcam.png"
+    },
+    {
+      "file": "word_002_have/char_01_h_28x28.png",
+      "letter": "h",
+      "raw_prediction": "Reversal",
+      "prediction": "Reversal",
+      "confidence": 0.9996695518493652,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0002_char_01_h_28x28_gradcam.png"
+    },
+    {
+      "file": "word_002_have/char_02_a_28x28.png",
+      "letter": "a",
+      "raw_prediction": "Normal",
+      "prediction": "Normal",
+      "confidence": 0.9955090284347534,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0003_char_02_a_28x28_gradcam.png"
+    },
+    {
+      "file": "word_002_have/char_03_v_28x28.png",
+      "letter": "v",
+      "raw_prediction": "Normal",
+      "prediction": "Normal",
+      "confidence": 0.9996484518051147,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0004_char_03_v_28x28_gradcam.png"
+    },
+    {
+      "file": "word_002_have/char_04_e_28x28.png",
+      "letter": "e",
+      "raw_prediction": "Normal",
+      "prediction": "Normal",
+      "confidence": 1.0,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0005_char_04_e_28x28_gradcam.png"
+    },
+    {
+      "file": "word_003_a/char_01_a_28x28.png",
+      "letter": "a",
+      "raw_prediction": "Reversal",
+      "prediction": "Reversal",
+      "confidence": 0.9888004064559937,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0006_char_01_a_28x28_gradcam.png"
+    },
+    {
+      "file": "word_004_little/char_01_l_28x28.png",
+      "letter": "l",
+      "raw_prediction": "Reversal",
+      "prediction": "Reversal",
+      "confidence": 0.9861975312232971,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0007_char_01_l_28x28_gradcam.png"
+    },
+    {
+      "file": "word_004_little/char_02_i_28x28.png",
+      "letter": "i",
+      "raw_prediction": "Corrected",
+      "prediction": "Normal",
+      "confidence": 0.9411264061927795,
+      "rule_applied": true,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0008_char_02_i_28x28_gradcam.png"
+    },
+    {
+      "file": "word_004_little/char_03_t_28x28.png",
+      "letter": "t",
+      "raw_prediction": "Normal",
+      "prediction": "Normal",
+      "confidence": 0.9973989725112915,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0009_char_03_t_28x28_gradcam.png"
+    },
+    {
+      "file": "word_004_little/char_04_t_28x28.png",
+      "letter": "t",
+      "raw_prediction": "Normal",
+      "prediction": "Normal",
+      "confidence": 0.9993036985397339,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0010_char_04_t_28x28_gradcam.png"
+    },
+    {
+      "file": "word_004_little/char_05_l_28x28.png",
+      "letter": "l",
+      "raw_prediction": "Normal",
+      "prediction": "Normal",
+      "confidence": 0.9352919459342957,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0011_char_05_l_28x28_gradcam.png"
+    },
+    {
+      "file": "word_004_little/char_06_e_28x28.png",
+      "letter": "e",
+      "raw_prediction": "Normal",
+      "prediction": "Normal",
+      "confidence": 0.9996848106384277,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0012_char_06_e_28x28_gradcam.png"
+    },
+    {
+      "file": "word_005_dog/char_01_d_28x28.png",
+      "letter": "d",
+      "raw_prediction": "Corrected",
+      "prediction": "Corrected",
+      "confidence": 0.9999215602874756,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0013_char_01_d_28x28_gradcam.png"
+    },
+    {
+      "file": "word_005_dog/char_02_o_28x28.png",
+      "letter": "o",
+      "raw_prediction": "Normal",
+      "prediction": "Normal",
+      "confidence": 0.9961875081062317,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0014_char_02_o_28x28_gradcam.png"
+    },
+    {
+      "file": "word_005_dog/char_03_g_28x28.png",
+      "letter": "g",
+      "raw_prediction": "Normal",
+      "prediction": "Normal",
+      "confidence": 0.9995232820510864,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0015_char_03_g_28x28_gradcam.png"
+    },
+    {
+      "file": "word_006_His/char_01_H_28x28.png",
+      "letter": "h",
+      "raw_prediction": "Normal",
+      "prediction": "Normal",
+      "confidence": 0.8918977975845337,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0016_char_01_H_28x28_gradcam.png"
+    },
+    {
+      "file": "word_006_His/char_02_i_28x28.png",
+      "letter": "i",
+      "raw_prediction": "Normal",
+      "prediction": "Normal",
+      "confidence": 0.9903455376625061,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0017_char_02_i_28x28_gradcam.png"
+    },
+    {
+      "file": "word_006_His/char_03_s_28x28.png",
+      "letter": "s",
+      "raw_prediction": "Normal",
+      "prediction": "Normal",
+      "confidence": 0.9959307312965393,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0018_char_03_s_28x28_gradcam.png"
+    },
+    {
+      "file": "word_007_name/char_01_n_28x28.png",
+      "letter": "n",
+      "raw_prediction": "Normal",
+      "prediction": "Normal",
+      "confidence": 0.917294442653656,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0019_char_01_n_28x28_gradcam.png"
+    },
+    {
+      "file": "word_007_name/char_02_a_28x28.png",
+      "letter": "a",
+      "raw_prediction": "Normal",
+      "prediction": "Normal",
+      "confidence": 0.9999897480010986,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0020_char_02_a_28x28_gradcam.png"
+    },
+    {
+      "file": "word_007_name/char_03_m_28x28.png",
+      "letter": "m",
+      "raw_prediction": "Normal",
+      "prediction": "Normal",
+      "confidence": 0.9998732805252075,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0021_char_03_m_28x28_gradcam.png"
+    },
+    {
+      "file": "word_007_name/char_04_e_28x28.png",
+      "letter": "e",
+      "raw_prediction": "Normal",
+      "prediction": "Normal",
+      "confidence": 0.6751367449760437,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0022_char_04_e_28x28_gradcam.png"
+    },
+    {
+      "file": "word_008_is/char_01_i_28x28.png",
+      "letter": "i",
+      "raw_prediction": "Normal",
+      "prediction": "Normal",
+      "confidence": 0.6844321489334106,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0023_char_01_i_28x28_gradcam.png"
+    },
+    {
+      "file": "word_008_is/char_02_s_28x28.png",
+      "letter": "s",
+      "raw_prediction": "Normal",
+      "prediction": "Normal",
+      "confidence": 0.8804871439933777,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0024_char_02_s_28x28_gradcam.png"
+    },
+    {
+      "file": "word_009_Bruno/char_01_B_28x28.png",
+      "letter": "b",
+      "raw_prediction": "Normal",
+      "prediction": "Normal",
+      "confidence": 0.9996709823608398,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0025_char_01_B_28x28_gradcam.png"
+    },
+    {
+      "file": "word_009_Bruno/char_02_r_28x28.png",
+      "letter": "r",
+      "raw_prediction": "Corrected",
+      "prediction": "Corrected",
+      "confidence": 0.922355055809021,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0026_char_02_r_28x28_gradcam.png"
+    },
+    {
+      "file": "word_009_Bruno/char_03_u_28x28.png",
+      "letter": "u",
+      "raw_prediction": "Reversal",
+      "prediction": "Normal",
+      "confidence": 0.999930739402771,
+      "rule_applied": true,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0027_char_03_u_28x28_gradcam.png"
+    },
+    {
+      "file": "word_009_Bruno/char_04_n_28x28.png",
+      "letter": "n",
+      "raw_prediction": "Reversal",
+      "prediction": "Reversal",
+      "confidence": 0.9882444143295288,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0028_char_04_n_28x28_gradcam.png"
+    },
+    {
+      "file": "word_009_Bruno/char_05_o_28x28.png",
+      "letter": "o",
+      "raw_prediction": "Normal",
+      "prediction": "Normal",
+      "confidence": 0.9643542170524597,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0029_char_05_o_28x28_gradcam.png"
+    },
+    {
+      "file": "word_010_He/char_01_H_28x28.png",
+      "letter": "h",
+      "raw_prediction": "Normal",
+      "prediction": "Normal",
+      "confidence": 0.9918022751808167,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0030_char_01_H_28x28_gradcam.png"
+    },
+    {
+      "file": "word_010_He/char_02_e_28x28.png",
+      "letter": "e",
+      "raw_prediction": "Corrected",
+      "prediction": "Corrected",
+      "confidence": 0.6388074159622192,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0031_char_02_e_28x28_gradcam.png"
+    },
+    {
+      "file": "word_011_likes/char_01_l_28x28.png",
+      "letter": "l",
+      "raw_prediction": "Normal",
+      "prediction": "Normal",
+      "confidence": 0.9982782602310181,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0032_char_01_l_28x28_gradcam.png"
+    },
+    {
+      "file": "word_011_likes/char_02_i_28x28.png",
+      "letter": "i",
+      "raw_prediction": "Normal",
+      "prediction": "Normal",
+      "confidence": 0.9975979924201965,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0033_char_02_i_28x28_gradcam.png"
+    },
+    {
+      "file": "word_011_likes/char_03_k_28x28.png",
+      "letter": "k",
+      "raw_prediction": "Normal",
+      "prediction": "Normal",
+      "confidence": 0.9994932413101196,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0034_char_03_k_28x28_gradcam.png"
+    },
+    {
+      "file": "word_011_likes/char_04_e_28x28.png",
+      "letter": "e",
+      "raw_prediction": "Normal",
+      "prediction": "Normal",
+      "confidence": 0.9999994039535522,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0035_char_04_e_28x28_gradcam.png"
+    },
+    {
+      "file": "word_011_likes/char_05_s_28x28.png",
+      "letter": "s",
+      "raw_prediction": "Corrected",
+      "prediction": "Corrected",
+      "confidence": 0.9999873638153076,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0036_char_05_s_28x28_gradcam.png"
+    },
+    {
+      "file": "word_012_to/char_01_t_28x28.png",
+      "letter": "t",
+      "raw_prediction": "Normal",
+      "prediction": "Normal",
+      "confidence": 0.986171305179596,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0037_char_01_t_28x28_gradcam.png"
+    },
+    {
+      "file": "word_012_to/char_02_o_28x28.png",
+      "letter": "o",
+      "raw_prediction": "Normal",
+      "prediction": "Normal",
+      "confidence": 0.990965723991394,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0038_char_02_o_28x28_gradcam.png"
+    },
+    {
+      "file": "word_013_run/char_01_r_28x28.png",
+      "letter": "r",
+      "raw_prediction": "Normal",
+      "prediction": "Normal",
+      "confidence": 0.9022253751754761,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0039_char_01_r_28x28_gradcam.png"
+    },
+    {
+      "file": "word_013_run/char_02_u_28x28.png",
+      "letter": "u",
+      "raw_prediction": "Normal",
+      "prediction": "Normal",
+      "confidence": 0.9955090284347534,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0040_char_02_u_28x28_gradcam.png"
+    },
+    {
+      "file": "word_013_run/char_03_n_28x28.png",
+      "letter": "n",
+      "raw_prediction": "Normal",
+      "prediction": "Normal",
+      "confidence": 0.5436534285545349,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0041_char_03_n_28x28_gradcam.png"
+    },
+    {
+      "file": "word_014_and/char_01_a_28x28.png",
+      "letter": "a",
+      "raw_prediction": "Corrected",
+      "prediction": "Corrected",
+      "confidence": 0.9999744892120361,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0042_char_01_a_28x28_gradcam.png"
+    },
+    {
+      "file": "word_014_and/char_02_n_28x28.png",
+      "letter": "n",
+      "raw_prediction": "Normal",
+      "prediction": "Normal",
+      "confidence": 0.994690477848053,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0043_char_02_n_28x28_gradcam.png"
+    },
+    {
+      "file": "word_014_and/char_03_d_28x28.png",
+      "letter": "d",
+      "raw_prediction": "Corrected",
+      "prediction": "Corrected",
+      "confidence": 0.974478006362915,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0044_char_03_d_28x28_gradcam.png"
+    },
+    {
+      "file": "word_015_play/char_01_p_28x28.png",
+      "letter": "p",
+      "raw_prediction": "Corrected",
+      "prediction": "Corrected",
+      "confidence": 0.933602511882782,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0045_char_01_p_28x28_gradcam.png"
+    },
+    {
+      "file": "word_015_play/char_02_l_28x28.png",
+      "letter": "l",
+      "raw_prediction": "Normal",
+      "prediction": "Normal",
+      "confidence": 0.9955090284347534,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0046_char_02_l_28x28_gradcam.png"
+    },
+    {
+      "file": "word_015_play/char_03_a_28x28.png",
+      "letter": "a",
+      "raw_prediction": "Normal",
+      "prediction": "Normal",
+      "confidence": 0.9996601343154907,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0047_char_03_a_28x28_gradcam.png"
+    },
+    {
+      "file": "word_015_play/char_04_y_28x28.png",
+      "letter": "y",
+      "raw_prediction": "Normal",
+      "prediction": "Normal",
+      "confidence": 0.9895188212394714,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0048_char_04_y_28x28_gradcam.png"
+    },
+    {
+      "file": "word_016_in/char_01_i_28x28.png",
+      "letter": "i",
+      "raw_prediction": "Corrected",
+      "prediction": "Normal",
+      "confidence": 0.999925971031189,
+      "rule_applied": true,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0049_char_01_i_28x28_gradcam.png"
+    },
+    {
+      "file": "word_016_in/char_02_n_28x28.png",
+      "letter": "n",
+      "raw_prediction": "Normal",
+      "prediction": "Normal",
+      "confidence": 0.9999902248382568,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0050_char_02_n_28x28_gradcam.png"
+    },
+    {
+      "file": "word_017_the/char_01_t_28x28.png",
+      "letter": "t",
+      "raw_prediction": "Normal",
+      "prediction": "Normal",
+      "confidence": 0.9977745413780212,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0051_char_01_t_28x28_gradcam.png"
+    },
+    {
+      "file": "word_017_the/char_02_h_28x28.png",
+      "letter": "h",
+      "raw_prediction": "Normal",
+      "prediction": "Normal",
+      "confidence": 0.937808632850647,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0052_char_02_h_28x28_gradcam.png"
+    },
+    {
+      "file": "word_017_the/char_03_e_28x28.png",
+      "letter": "e",
+      "raw_prediction": "Normal",
+      "prediction": "Normal",
+      "confidence": 0.6070923805236816,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0053_char_03_e_28x28_gradcam.png"
+    },
+    {
+      "file": "word_018_park/char_01_p_28x28.png",
+      "letter": "p",
+      "raw_prediction": "Normal",
+      "prediction": "Normal",
+      "confidence": 0.7037608027458191,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0054_char_01_p_28x28_gradcam.png"
+    },
+    {
+      "file": "word_018_park/char_02_a_28x28.png",
+      "letter": "a",
+      "raw_prediction": "Corrected",
+      "prediction": "Corrected",
+      "confidence": 0.9954984188079834,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0055_char_02_a_28x28_gradcam.png"
+    },
+    {
+      "file": "word_018_park/char_03_r_28x28.png",
+      "letter": "r",
+      "raw_prediction": "Normal",
+      "prediction": "Normal",
+      "confidence": 0.9956192374229431,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0056_char_03_r_28x28_gradcam.png"
+    },
+    {
+      "file": "word_018_park/char_04_k_28x28.png",
+      "letter": "k",
+      "raw_prediction": "Corrected",
+      "prediction": "Corrected",
+      "confidence": 0.9999483823776245,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0057_char_04_k_28x28_gradcam.png"
+    },
+    {
+      "file": "word_019_He/char_01_H_28x28.png",
+      "letter": "h",
+      "raw_prediction": "Corrected",
+      "prediction": "Corrected",
+      "confidence": 0.9998774528503418,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0058_char_01_H_28x28_gradcam.png"
+    },
+    {
+      "file": "word_019_He/char_02_e_28x28.png",
+      "letter": "e",
+      "raw_prediction": "Normal",
+      "prediction": "Normal",
+      "confidence": 0.99991774559021,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0059_char_02_e_28x28_gradcam.png"
+    },
+    {
+      "file": "word_020_has/char_01_h_28x28.png",
+      "letter": "h",
+      "raw_prediction": "Normal",
+      "prediction": "Normal",
+      "confidence": 0.9919843077659607,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0060_char_01_h_28x28_gradcam.png"
+    },
+    {
+      "file": "word_020_has/char_02_a_28x28.png",
+      "letter": "a",
+      "raw_prediction": "Normal",
+      "prediction": "Normal",
+      "confidence": 0.9994787573814392,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0061_char_02_a_28x28_gradcam.png"
+    },
+    {
+      "file": "word_020_has/char_03_s_28x28.png",
+      "letter": "s",
+      "raw_prediction": "Normal",
+      "prediction": "Normal",
+      "confidence": 0.9998394250869751,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0062_char_03_s_28x28_gradcam.png"
+    },
+    {
+      "file": "word_021_a/char_01_a_28x28.png",
+      "letter": "a",
+      "raw_prediction": "Corrected",
+      "prediction": "Corrected",
+      "confidence": 0.9999998807907104,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0063_char_01_a_28x28_gradcam.png"
+    },
+    {
+      "file": "word_022_big/char_01_b_28x28.png",
+      "letter": "b",
+      "raw_prediction": "Normal",
+      "prediction": "Normal",
+      "confidence": 0.9999821186065674,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0064_char_01_b_28x28_gradcam.png"
+    },
+    {
+      "file": "word_022_big/char_02_i_28x28.png",
+      "letter": "i",
+      "raw_prediction": "Reversal",
+      "prediction": "Normal",
+      "confidence": 0.9162947535514832,
+      "rule_applied": true,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0065_char_02_i_28x28_gradcam.png"
+    },
+    {
+      "file": "word_022_big/char_03_g_28x28.png",
+      "letter": "g",
+      "raw_prediction": "Normal",
+      "prediction": "Normal",
+      "confidence": 1.0,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0066_char_03_g_28x28_gradcam.png"
+    },
+    {
+      "file": "word_023_brown/char_01_b_28x28.png",
+      "letter": "b",
+      "raw_prediction": "Normal",
+      "prediction": "Normal",
+      "confidence": 0.9920935034751892,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0067_char_01_b_28x28_gradcam.png"
+    },
+    {
+      "file": "word_023_brown/char_02_r_28x28.png",
+      "letter": "r",
+      "raw_prediction": "Normal",
+      "prediction": "Normal",
+      "confidence": 0.9955090284347534,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0068_char_02_r_28x28_gradcam.png"
+    },
+    {
+      "file": "word_023_brown/char_03_o_28x28.png",
+      "letter": "o",
+      "raw_prediction": "Normal",
+      "prediction": "Normal",
+      "confidence": 0.9740747213363647,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0069_char_03_o_28x28_gradcam.png"
+    },
+    {
+      "file": "word_023_brown/char_04_w_28x28.png",
+      "letter": "w",
+      "raw_prediction": "Normal",
+      "prediction": "Normal",
+      "confidence": 0.881330132484436,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0070_char_04_w_28x28_gradcam.png"
+    },
+    {
+      "file": "word_023_brown/char_05_n_28x28.png",
+      "letter": "n",
+      "raw_prediction": "Normal",
+      "prediction": "Normal",
+      "confidence": 0.999413251876831,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0071_char_05_n_28x28_gradcam.png"
+    },
+    {
+      "file": "word_024_ball/char_01_b_28x28.png",
+      "letter": "b",
+      "raw_prediction": "Corrected",
+      "prediction": "Corrected",
+      "confidence": 0.9711976647377014,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0072_char_01_b_28x28_gradcam.png"
+    },
+    {
+      "file": "word_024_ball/char_02_a_28x28.png",
+      "letter": "a",
+      "raw_prediction": "Reversal",
+      "prediction": "Reversal",
+      "confidence": 0.9814949631690979,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0073_char_02_a_28x28_gradcam.png"
+    },
+    {
+      "file": "word_024_ball/char_03_l_28x28.png",
+      "letter": "l",
+      "raw_prediction": "Normal",
+      "prediction": "Normal",
+      "confidence": 0.9991092085838318,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0074_char_03_l_28x28_gradcam.png"
+    },
+    {
+      "file": "word_024_ball/char_04_l_28x28.png",
+      "letter": "l",
+      "raw_prediction": "Normal",
+      "prediction": "Normal",
+      "confidence": 0.9953565001487732,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0075_char_04_l_28x28_gradcam.png"
+    },
+    {
+      "file": "word_025_Every/char_01_E_28x28.png",
+      "letter": "e",
+      "raw_prediction": "Corrected",
+      "prediction": "Corrected",
+      "confidence": 0.9979565143585205,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0076_char_01_E_28x28_gradcam.png"
+    },
+    {
+      "file": "word_025_Every/char_02_v_28x28.png",
+      "letter": "v",
+      "raw_prediction": "Normal",
+      "prediction": "Normal",
+      "confidence": 0.9955090284347534,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0077_char_02_v_28x28_gradcam.png"
+    },
+    {
+      "file": "word_025_Every/char_03_e_28x28.png",
+      "letter": "e",
+      "raw_prediction": "Normal",
+      "prediction": "Normal",
+      "confidence": 0.9955090284347534,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0078_char_03_e_28x28_gradcam.png"
+    },
+    {
+      "file": "word_025_Every/char_04_r_28x28.png",
+      "letter": "r",
+      "raw_prediction": "Normal",
+      "prediction": "Normal",
+      "confidence": 0.9955090284347534,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0079_char_04_r_28x28_gradcam.png"
+    },
+    {
+      "file": "word_025_Every/char_05_y_28x28.png",
+      "letter": "y",
+      "raw_prediction": "Normal",
+      "prediction": "Normal",
+      "confidence": 0.9999891519546509,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0080_char_05_y_28x28_gradcam.png"
+    },
+    {
+      "file": "word_026_day/char_01_d_28x28.png",
+      "letter": "d",
+      "raw_prediction": "Normal",
+      "prediction": "Normal",
+      "confidence": 0.9999959468841553,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0081_char_01_d_28x28_gradcam.png"
+    },
+    {
+      "file": "word_026_day/char_02_a_28x28.png",
+      "letter": "a",
+      "raw_prediction": "Normal",
+      "prediction": "Normal",
+      "confidence": 0.9999933242797852,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0082_char_02_a_28x28_gradcam.png"
+    },
+    {
+      "file": "word_026_day/char_03_y_28x28.png",
+      "letter": "y",
+      "raw_prediction": "Corrected",
+      "prediction": "Normal",
+      "confidence": 0.5159929990768433,
+      "rule_applied": true,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0083_char_03_y_28x28_gradcam.png"
+    },
+    {
+      "file": "word_027_I/char_01_I_28x28.png",
+      "letter": "i",
+      "raw_prediction": "Corrected",
+      "prediction": "Normal",
+      "confidence": 0.9999386072158813,
+      "rule_applied": true,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0084_char_01_I_28x28_gradcam.png"
+    },
+    {
+      "file": "word_028_play/char_01_p_28x28.png",
+      "letter": "p",
+      "raw_prediction": "Reversal",
+      "prediction": "Reversal",
+      "confidence": 0.9128919839859009,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0085_char_01_p_28x28_gradcam.png"
+    },
+    {
+      "file": "word_028_play/char_02_l_28x28.png",
+      "letter": "l",
+      "raw_prediction": "Normal",
+      "prediction": "Normal",
+      "confidence": 0.9759173393249512,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0086_char_02_l_28x28_gradcam.png"
+    },
+    {
+      "file": "word_028_play/char_03_a_28x28.png",
+      "letter": "a",
+      "raw_prediction": "Normal",
+      "prediction": "Normal",
+      "confidence": 0.9974157810211182,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0087_char_03_a_28x28_gradcam.png"
+    },
+    {
+      "file": "word_028_play/char_04_y_28x28.png",
+      "letter": "y",
+      "raw_prediction": "Normal",
+      "prediction": "Normal",
+      "confidence": 0.9958693385124207,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0088_char_04_y_28x28_gradcam.png"
+    },
+    {
+      "file": "word_029_with/char_01_w_28x28.png",
+      "letter": "w",
+      "raw_prediction": "Normal",
+      "prediction": "Normal",
+      "confidence": 0.9999504089355469,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0089_char_01_w_28x28_gradcam.png"
+    },
+    {
+      "file": "word_029_with/char_02_i_28x28.png",
+      "letter": "i",
+      "raw_prediction": "Normal",
+      "prediction": "Normal",
+      "confidence": 0.9955090284347534,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0090_char_02_i_28x28_gradcam.png"
+    },
+    {
+      "file": "word_029_with/char_03_t_28x28.png",
+      "letter": "t",
+      "raw_prediction": "Corrected",
+      "prediction": "Normal",
+      "confidence": 0.9849462509155273,
+      "rule_applied": true,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0091_char_03_t_28x28_gradcam.png"
+    },
+    {
+      "file": "word_029_with/char_04_h_28x28.png",
+      "letter": "h",
+      "raw_prediction": "Normal",
+      "prediction": "Normal",
+      "confidence": 0.9999082088470459,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0092_char_04_h_28x28_gradcam.png"
+    },
+    {
+      "file": "word_030_him/char_01_h_28x28.png",
+      "letter": "h",
+      "raw_prediction": "Normal",
+      "prediction": "Normal",
+      "confidence": 0.9998088479042053,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0093_char_01_h_28x28_gradcam.png"
+    },
+    {
+      "file": "word_030_him/char_02_i_28x28.png",
+      "letter": "i",
+      "raw_prediction": "Normal",
+      "prediction": "Normal",
+      "confidence": 0.9976183772087097,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0094_char_02_i_28x28_gradcam.png"
+    },
+    {
+      "file": "word_030_him/char_03_m_28x28.png",
+      "letter": "m",
+      "raw_prediction": "Normal",
+      "prediction": "Normal",
+      "confidence": 0.7393456697463989,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0095_char_03_m_28x28_gradcam.png"
+    },
+    {
+      "file": "word_031_near/char_01_n_28x28.png",
+      "letter": "n",
+      "raw_prediction": "Normal",
+      "prediction": "Normal",
+      "confidence": 0.9497612118721008,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0096_char_01_n_28x28_gradcam.png"
+    },
+    {
+      "file": "word_031_near/char_02_e_28x28.png",
+      "letter": "e",
+      "raw_prediction": "Reversal",
+      "prediction": "Reversal",
+      "confidence": 0.7758774161338806,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0097_char_02_e_28x28_gradcam.png"
+    },
+    {
+      "file": "word_031_near/char_03_a_28x28.png",
+      "letter": "a",
+      "raw_prediction": "Normal",
+      "prediction": "Normal",
+      "confidence": 0.9998822212219238,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0098_char_03_a_28x28_gradcam.png"
+    },
+    {
+      "file": "word_031_near/char_04_r_28x28.png",
+      "letter": "r",
+      "raw_prediction": "Normal",
+      "prediction": "Normal",
+      "confidence": 0.9999622106552124,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0099_char_04_r_28x28_gradcam.png"
+    },
+    {
+      "file": "word_032_my/char_01_m_28x28.png",
+      "letter": "m",
+      "raw_prediction": "Corrected",
+      "prediction": "Corrected",
+      "confidence": 0.9999997615814209,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0100_char_01_m_28x28_gradcam.png"
+    },
+    {
+      "file": "word_032_my/char_02_y_28x28.png",
+      "letter": "y",
+      "raw_prediction": "Normal",
+      "prediction": "Normal",
+      "confidence": 0.8307561874389648,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0101_char_02_y_28x28_gradcam.png"
+    },
+    {
+      "file": "word_033_home/char_01_h_28x28.png",
+      "letter": "h",
+      "raw_prediction": "Normal",
+      "prediction": "Normal",
+      "confidence": 0.9063829779624939,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0102_char_01_h_28x28_gradcam.png"
+    },
+    {
+      "file": "word_033_home/char_02_o_28x28.png",
+      "letter": "o",
+      "raw_prediction": "Reversal",
+      "prediction": "Normal",
+      "confidence": 0.9746034741401672,
+      "rule_applied": true,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0103_char_02_o_28x28_gradcam.png"
+    },
+    {
+      "file": "word_033_home/char_03_m_28x28.png",
+      "letter": "m",
+      "raw_prediction": "Normal",
+      "prediction": "Normal",
+      "confidence": 0.9999990463256836,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0104_char_03_m_28x28_gradcam.png"
+    },
+    {
+      "file": "word_033_home/char_04_e_28x28.png",
+      "letter": "e",
+      "raw_prediction": "Normal",
+      "prediction": "Normal",
+      "confidence": 1.0,
+      "rule_applied": false,
+      "gradcam_path": "/Users/druvab/Downloads/handwriting_analysis_model 2/results/cc71949b40274bfa92555426ae7b2178/gradcam/0105_char_04_e_28x28_gradcam.png"
+    }
+  ]
+}

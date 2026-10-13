@@ -1,0 +1,372 @@
+/* ==========================================
+   DYSLEXIA-FRIENDLY TEXT CARD STYLES
+   Designed for enhanced readability and dyslexia accessibility
+========================================== */
+
+.dyslexiaTextCard {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 540px;
+    padding: 44px 50px;
+    border: 2px solid var(--border-color, #e2e8f0);
+    border-radius: 32px;
+    background: #fffdf8;
+    box-shadow: 0 18px 45px rgba(31, 41, 55, 0.08);
+    font-family: "Lexend", "Noto Sans Devanagari", "Comic Neue", Verdana, sans-serif;
+    color: #1e293b;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* ---------- CARD HEADER ---------- */
+
+.dyslexiaCardHeader {
+    margin-bottom: 24px;
+    border-bottom: 2px dashed rgba(99, 102, 241, 0.25);
+    padding-bottom: 20px;
+}
+
+.dyslexiaBadgeRow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+    flex-wrap: wrap;
+}
+
+.dyslexiaModeBadge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: rgba(99, 102, 241, 0.12);
+    color: #4f46e5;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+}
+
+.conceptReinforceBadge {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: rgba(16, 185, 129, 0.12);
+    color: #059669;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+}
+
+.dyslexiaCardTitle {
+    margin: 0 0 6px;
+    font-size: 38px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    word-spacing: 0.15em;
+    color: #0f172a;
+    line-height: 1.25;
+}
+
+.dyslexiaCardSubheading {
+    margin: 0;
+    font-size: 16px;
+    color: #64748b;
+    letter-spacing: 0.05em;
+    font-weight: 500;
+}
+
+/* ---------- READING AREA ---------- */
+
+.dyslexiaReadingArea {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* Focus Pills */
+.dyslexiaFocusBox {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.dyslexiaLetterPill,
+.dyslexiaWordPill,
+.dyslexiaSoundPill {
+    display: inline-flex;
+    flex-direction: column;
+    padding: 10px 20px;
+    border-radius: 16px;
+    border: 2px solid;
+    min-width: 110px;
+}
+
+.dyslexiaLetterPill {
+    background: rgba(99, 102, 241, 0.08);
+    border-color: rgba(99, 102, 241, 0.35);
+}
+
+.dyslexiaWordPill {
+    background: rgba(14, 165, 233, 0.08);
+    border-color: rgba(14, 165, 233, 0.35);
+}
+
+.dyslexiaSoundPill {
+    background: rgba(245, 158, 11, 0.08);
+    border-color: rgba(245, 158, 11, 0.35);
+}
+
+.pillLabel {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+    color: #64748b;
+    margin-bottom: 2px;
+}
+
+.pillValue {
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    color: #0f172a;
+}
+
+/* Chunks list */
+.dyslexiaChunksList {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    background: #ffffff;
+    padding: 24px 28px;
+    border-radius: 20px;
+    border: 1px solid rgba(226, 232, 240, 0.9);
+}
+
+.dyslexiaChunkItem {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+}
+
+.chunkDot {
+    color: #6366f1;
+    font-size: 24px;
+    line-height: 1.2;
+    flex-shrink: 0;
+}
+
+.chunkText {
+    font-size: 21px;
+    line-height: 1.85;
+    letter-spacing: 0.07em;
+    word-spacing: 0.18em;
+    color: #1e293b;
+    font-weight: 500;
+}
+
+/* Example Box */
+.dyslexiaExampleBox {
+    padding: 16px 22px;
+    border-radius: 14px;
+    background: rgba(99, 102, 241, 0.06);
+    border-left: 5px solid #6366f1;
+}
+
+.exampleTitle {
+    display: block;
+    font-size: 13px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #4f46e5;
+    margin-bottom: 4px;
+}
+
+.exampleContent {
+    margin: 0;
+    font-size: 17px;
+    line-height: 1.6;
+    letter-spacing: 0.06em;
+    color: #334155;
+    font-weight: 500;
+}
+
+/* ---------- CARD FOOTER ---------- */
+
+.dyslexiaCardFooter {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 24px;
+}
+
+.dyslexiaSpeakerButton {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 26px;
+    border: none;
+    border-radius: 15px;
+    background: #6366f1;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    font-family: inherit;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.dyslexiaSpeakerButton:hover {
+    transform: translateY(-2px);
+    opacity: 0.92;
+}
+
+/* ==========================================
+   FOUR DISTINCT TYPOGRAPHY STYLES
+========================================== */
+
+/* Style 1: Balanced Fluency */
+.dyslexiaTextCard.typoStyle1 {
+    background: #fffdf8;
+    border-color: #cbd5e1;
+}
+
+/* Style 2: Phonics & Sounds Focus */
+.dyslexiaTextCard.typoStyle2 {
+    background: #f0fdf4;
+    border-color: #86efac;
+}
+
+.dyslexiaTextCard.typoStyle2 .dyslexiaCardHeader {
+    border-bottom-color: rgba(16, 185, 129, 0.35);
+}
+
+.dyslexiaTextCard.typoStyle2 .dyslexiaSoundPill {
+    background: #dcfce7;
+    border-color: #22c55e;
+    box-shadow: 0 4px 12px rgba(34, 197, 94, 0.2);
+}
+
+.dyslexiaTextCard.typoStyle2 .dyslexiaModeBadge {
+    background: rgba(16, 185, 129, 0.16);
+    color: #047857;
+}
+
+/* Style 3: Syllable Rhythm & Spacing */
+.dyslexiaTextCard.typoStyle3 {
+    background: #faf5ff;
+    border-color: #d8b4fe;
+    letter-spacing: 0.08em;
+    word-spacing: 0.22em;
+}
+
+.dyslexiaTextCard.typoStyle3 .dyslexiaCardHeader {
+    border-bottom-color: rgba(168, 85, 247, 0.35);
+}
+
+.dyslexiaTextCard.typoStyle3 .dyslexiaModeBadge {
+    background: rgba(168, 85, 247, 0.16);
+    color: #7e22ce;
+}
+
+.dyslexiaTextCard.typoStyle3 .chunkText {
+    letter-spacing: 0.09em;
+    word-spacing: 0.25em;
+}
+
+/* Style 4: Guided Context */
+.dyslexiaTextCard.typoStyle4 {
+    background: #fffbeb;
+    border-color: #fde68a;
+}
+
+.dyslexiaTextCard.typoStyle4 .dyslexiaCardHeader {
+    border-bottom-color: rgba(245, 158, 11, 0.35);
+}
+
+.dyslexiaTextCard.typoStyle4 .dyslexiaModeBadge {
+    background: rgba(245, 158, 11, 0.18);
+    color: #b45309;
+}
+
+.dyslexiaTextCard.typoStyle4 .dyslexiaExampleBox {
+    background: #fef3c7;
+    border-left: 5px solid #d97706;
+}
+
+/* ==========================================
+   DARK THEME
+========================================== */
+
+[data-theme="dark"] .dyslexiaTextCard {
+    background: #1e293b;
+    border-color: #334155;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.35);
+    color: #f1f5f9;
+}
+
+[data-theme="dark"] .dyslexiaCardHeader {
+    border-bottom-color: rgba(129, 140, 248, 0.25);
+}
+
+[data-theme="dark"] .dyslexiaCardTitle {
+    color: #f8fafc;
+}
+
+[data-theme="dark"] .dyslexiaCardSubheading {
+    color: #94a3b8;
+}
+
+[data-theme="dark"] .pillLabel {
+    color: #94a3b8;
+}
+
+[data-theme="dark"] .pillValue {
+    color: #f8fafc;
+}
+
+[data-theme="dark"] .dyslexiaChunksList {
+    background: #0f172a;
+    border-color: #334155;
+}
+
+[data-theme="dark"] .chunkText {
+    color: #f1f5f9;
+}
+
+[data-theme="dark"] .dyslexiaExampleBox {
+    background: rgba(99, 102, 241, 0.14);
+}
+
+[data-theme="dark"] .exampleContent {
+    color: #e2e8f0;
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 768px) {
+    .dyslexiaTextCard {
+        padding: 30px 24px;
+        border-radius: 24px;
+    }
+
+    .dyslexiaCardTitle {
+        font-size: 28px;
+    }
+
+    .chunkText {
+        font-size: 18px;
+    }
+
+    .pillValue {
+        font-size: 20px;
+    }
+}

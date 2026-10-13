@@ -1,0 +1,47 @@
+.authCard{
+
+    width:min(92vw,700px);
+
+    background:var(--surface);
+
+    border-radius:28px;
+
+    padding:45px;
+
+    box-shadow:0 20px 60px rgba(0,0,0,.08);
+
+    transition:.3s ease;
+
+}
+
+.authHeader{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin-bottom:30px;
+
+}
+
+.authLogo{
+
+    width:110px;
+
+    height:auto;
+
+    object-fit:contain;
+
+    display:block;
+
+}
+
+.formContainer{
+
+    margin-top:25px;
+
+}

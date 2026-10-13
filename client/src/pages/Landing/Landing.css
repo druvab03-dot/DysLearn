@@ -1,0 +1,9 @@
+.landing{
+
+    min-height:100vh;
+
+    background:var(--background);
+
+    transition:background .35s ease;
+
+}

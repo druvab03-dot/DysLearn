@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+<rect width="1200" height="800" rx="40" fill="#F7F8FF"/>
+<rect x="28" y="28" width="1144" height="744" rx="32" fill="none" stroke="#6366F1" stroke-width="5" opacity=".35"/>
+<text x="90" y="155" font-family="Arial, sans-serif" font-size="120" font-weight="800" fill="#6366F1">G</text>
+<text x="90" y="225" font-family="Arial, sans-serif" font-size="42" font-weight="700" fill="#263044">G for Goat</text>
+<g transform="translate(520,120)">
+<path d="M180 190 Q125 100 180 65 Q225 105 240 175 Q390 110 455 210 L500 145 Q545 120 550 180 L520 250 Q510 390 330 440 Q175 410 180 190Z" fill="#F1F1EA"/>
+<path d="M220 120 Q170 40 145 70 M400 130 Q450 45 480 70" fill="none" stroke="#7C6F64" stroke-width="20" stroke-linecap="round"/>
+<circle cx="250" cy="225" r="12" fill="#263044"/>
+</g>
+</svg>

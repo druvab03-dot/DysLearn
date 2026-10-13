@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+<rect width="1200" height="800" rx="40" fill="#F7F8FF"/>
+<rect x="28" y="28" width="1144" height="744" rx="32" fill="none" stroke="#6366F1" stroke-width="5" opacity=".35"/>
+<text x="90" y="155" font-family="Arial, sans-serif" font-size="120" font-weight="800" fill="#6366F1">B</text>
+<text x="90" y="225" font-family="Arial, sans-serif" font-size="42" font-weight="700" fill="#263044">Ball</text>
+<g transform="translate(520,120)">
+<circle cx="300" cy="300" r="190" fill="#3B82F6"/>
+<path d="M135 180 C220 250 365 250 465 170" fill="none" stroke="#F8FAFC" stroke-width="22"/>
+<path d="M155 420 C260 350 380 360 455 430" fill="none" stroke="#F8FAFC" stroke-width="22"/>
+<path d="M245 120 C280 200 275 390 235 480" fill="none" stroke="#F8FAFC" stroke-width="22"/>
+</g>
+</svg>

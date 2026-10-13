@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+<rect width="1200" height="800" rx="40" fill="#F7F8FF"/>
+<rect x="28" y="28" width="1144" height="744" rx="32" fill="none" stroke="#6366F1" stroke-width="5" opacity=".35"/>
+<text x="90" y="155" font-family="Arial, sans-serif" font-size="120" font-weight="800" fill="#6366F1">L</text>
+<text x="90" y="225" font-family="Arial, sans-serif" font-size="42" font-weight="700" fill="#263044">L for Lion</text>
+<g transform="translate(520,120)">
+<circle cx="315" cy="300" r="170" fill="#D97706"/>
+<circle cx="315" cy="300" r="115" fill="#F4C27A"/>
+<circle cx="275" cy="275" r="12" fill="#263044"/><circle cx="355" cy="275" r="12" fill="#263044"/>
+<path d="M295 330 Q315 345 335 330" fill="none" stroke="#263044" stroke-width="10"/>
+</g>
+</svg>

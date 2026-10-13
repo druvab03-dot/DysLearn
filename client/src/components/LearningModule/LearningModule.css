@@ -1,0 +1,1781 @@
+.learningModulePage {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    background:
+        var(
+            --bg-primary,
+            #f7f8fc
+        );
+
+    color:
+        var(
+            --text-primary,
+            #202938
+        );
+
+}
+
+
+/* ==========================================
+   MAIN
+========================================== */
+
+.learningModuleMain {
+
+    flex: 1;
+
+    width: 100%;
+
+    padding:
+        55px 40px 80px;
+
+}
+
+
+.learningModuleContainer {
+
+    width: 100%;
+
+    max-width: 1250px;
+
+    margin: 0 auto;
+
+}
+
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.learningModuleHeader {
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    gap: 40px;
+
+    margin-bottom: 35px;
+
+}
+
+
+.learningEyebrowRow {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    flex-wrap: wrap;
+
+    margin-bottom: 8px;
+
+}
+
+
+.learningTrainingLinkBtn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    padding: 6px 14px;
+
+    border-radius: 999px;
+
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+
+    color: #ffffff;
+
+    font-family: inherit;
+
+    font-size: 0.85rem;
+
+    font-weight: 700;
+
+    border: none;
+
+    cursor: pointer;
+
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+}
+
+
+.learningTrainingLinkBtn:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 6px 16px rgba(16, 185, 129, 0.45);
+
+}
+
+
+.learningAssessmentLinkBtn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    padding: 6px 14px;
+
+    border-radius: 999px;
+
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+
+    color: #ffffff;
+
+    font-family: inherit;
+
+    font-size: 0.85rem;
+
+    font-weight: 700;
+
+    border: none;
+
+    cursor: pointer;
+
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+}
+
+
+.learningAssessmentLinkBtn:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 6px 16px rgba(245, 158, 11, 0.45);
+
+}
+
+
+.learningEyebrow {
+
+    display: block;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    color:
+        var(
+            --accent-color,
+            #6366f1
+        );
+
+}
+
+
+.learningModuleHeader h1 {
+
+    margin: 0;
+
+    font-size: 48px;
+
+    line-height: 1.05;
+
+    font-weight: 800;
+
+}
+
+
+.learningModuleHeader p {
+
+    margin:
+        10px 0 0;
+
+    font-size: 18px;
+
+    color:
+        var(
+            --text-secondary,
+            #64748b
+        );
+
+}
+
+
+.learningSourceCitation {
+
+    display: inline-block;
+
+    margin-top: 8px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    color:
+        var(
+            --accent-color,
+            #6366f1
+        );
+
+    background:
+        rgba(99, 102, 241, 0.08);
+
+    padding: 4px 12px;
+
+    border-radius: 999px;
+
+}
+
+
+/* ==========================================
+   PROGRESS
+========================================== */
+
+.learningProgressBox {
+
+    width: 270px;
+
+    flex-shrink: 0;
+
+}
+
+
+.learningProgressText {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: baseline;
+
+    margin-bottom: 8px;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    color:
+        var(
+            --text-secondary,
+            #64748b
+        );
+
+}
+
+
+.learningProgressText strong {
+
+    color:
+        var(
+            --accent-color,
+            #6366f1
+        );
+
+    font-weight: 800;
+
+}
+
+
+.learningProgressTrack {
+
+    width: 100%;
+
+    height: 9px;
+
+    overflow: hidden;
+
+    border-radius: 999px;
+
+    background:
+        var(
+            --progress-background,
+            #e4e7ef
+        );
+
+}
+
+
+.learningProgressFill {
+
+    height: 100%;
+
+    border-radius: inherit;
+
+    background:
+        var(
+            --accent-color,
+            #6366f1
+        );
+
+    transition:
+        width 0.3s ease;
+
+}
+
+
+.learningGroupHint {
+
+    display: block;
+
+    margin-top: 8px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    color:
+        var(
+            --text-secondary,
+            #64748b
+        );
+
+    text-align: right;
+
+}
+
+
+/* ==========================================
+   TOPIC SELECTOR BAR
+========================================== */
+
+.learningTopicBar {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    margin-bottom: 28px;
+
+    padding: 12px 18px;
+
+    background:
+        var(
+            --card-background,
+            #ffffff
+        );
+
+    border:
+        1px solid
+        var(
+            --border-color,
+            #dfe3ee
+        );
+
+    border-radius: 18px;
+
+    overflow-x: auto;
+
+}
+
+
+.topicBarLabel {
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.5px;
+
+    text-transform: uppercase;
+
+    color:
+        var(
+            --text-secondary,
+            #64748b
+        );
+
+    white-space: nowrap;
+
+}
+
+
+.topicTabsList {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+
+}
+
+
+.topicTabButton {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 8px 14px;
+
+    border-radius: 12px;
+
+    border:
+        1px solid
+        var(
+            --border-color,
+            #dfe3ee
+        );
+
+    background: transparent;
+
+    color:
+        var(
+            --text-primary,
+            #202938
+        );
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+
+    white-space: nowrap;
+
+}
+
+
+.topicTabButton:hover {
+
+    border-color:
+        var(
+            --accent-color,
+            #6366f1
+        );
+
+    background:
+        rgba(99, 102, 241, 0.05);
+
+}
+
+
+.topicTabButton.active {
+
+    background:
+        var(
+            --accent-color,
+            #6366f1
+        );
+
+    border-color:
+        var(
+            --accent-color,
+            #6366f1
+        );
+
+    color: #ffffff;
+
+    box-shadow:
+        0 4px 12px rgba(99, 102, 241, 0.28);
+
+}
+
+
+.topicTabNumber {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 20px;
+
+    height: 20px;
+
+    border-radius: 50%;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    background: rgba(0, 0, 0, 0.08);
+
+}
+
+
+.topicTabButton.active .topicTabNumber {
+
+    background: rgba(255, 255, 255, 0.25);
+
+    color: #ffffff;
+
+}
+
+
+.topicTabTitle {
+
+    font-size: 13px;
+
+}
+
+
+.topicConceptCount {
+
+    font-size: 11px;
+
+    opacity: 0.8;
+
+    margin-left: -2px;
+
+}
+
+
+.conceptProgressTag {
+
+    display: block;
+
+    margin-top: 6px;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    color:
+        var(
+            --text-secondary,
+            #64748b
+        );
+
+    text-align: right;
+
+}
+
+
+.conceptProgressTag strong {
+
+    color:
+        var(
+            --accent-color,
+            #6366f1
+        );
+
+}
+
+
+.conceptPillBadge {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 5px 12px;
+
+    border-radius: 999px;
+
+    background: rgba(14, 165, 233, 0.12);
+
+    color: #0284c7;
+
+    font-size: 12px;
+
+    font-weight: 750;
+
+    letter-spacing: 0.5px;
+
+}
+
+
+/* ==========================================
+   CONCEPT SELECTOR BAR (EACH WITH EXACTLY 8 CARDS)
+========================================== */
+
+.learningConceptBar {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+    margin-bottom: 26px;
+
+    padding: 16px 20px;
+
+    background:
+        var(
+            --card-background,
+            #ffffff
+        );
+
+    border:
+        1px solid
+        var(
+            --border-color,
+            #dfe3ee
+        );
+
+    border-radius: 20px;
+
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+
+}
+
+
+.conceptBarHeader {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    padding-bottom: 8px;
+
+    border-bottom: 1px dashed var(--border-color, #e2e8f0);
+
+}
+
+
+.conceptBarLabel {
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.5px;
+
+    text-transform: uppercase;
+
+    color:
+        var(
+            --text-primary,
+            #202938
+        );
+
+}
+
+
+.conceptBarCounter {
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    color:
+        var(
+            --accent-color,
+            #6366f1
+        );
+
+    background:
+        rgba(99, 102, 241, 0.08);
+
+    padding: 3px 10px;
+
+    border-radius: 999px;
+
+}
+
+
+.conceptTabsList {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+
+}
+
+
+.conceptTabButton {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 8px 14px;
+
+    border-radius: 12px;
+
+    border:
+        1px solid
+        var(
+            --border-color,
+            #dfe3ee
+        );
+
+    background: #f8fafc;
+
+    color:
+        var(
+            --text-primary,
+            #202938
+        );
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+
+    white-space: nowrap;
+
+}
+
+
+.conceptTabButton:hover {
+
+    border-color: #6366f1;
+
+    background: rgba(99, 102, 241, 0.06);
+
+    transform: translateY(-1px);
+
+}
+
+
+.conceptTabButton.active {
+
+    background: #1e1b4b;
+
+    border-color: #4338ca;
+
+    color: #ffffff;
+
+    box-shadow: 0 4px 12px rgba(67, 56, 202, 0.25);
+
+}
+
+
+.conceptTabNumber {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 20px;
+
+    height: 20px;
+
+    border-radius: 50%;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    background: rgba(0, 0, 0, 0.08);
+
+}
+
+
+.conceptTabButton.active .conceptTabNumber {
+
+    background: #6366f1;
+
+    color: #ffffff;
+
+}
+
+
+.conceptTabName {
+
+    font-size: 13px;
+
+}
+
+
+.conceptTabBadge {
+
+    display: inline-block;
+
+    padding: 2px 7px;
+
+    border-radius: 6px;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    background: rgba(99, 102, 241, 0.12);
+
+    color: #4f46e5;
+
+    letter-spacing: 0.3px;
+
+}
+
+
+.conceptTabButton.active .conceptTabBadge {
+
+    background: rgba(255, 255, 255, 0.2);
+
+    color: #c7d2fe;
+
+}
+
+
+/* ==========================================
+   LEARNING CARD
+========================================== */
+
+.learningCard {
+
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(400px, 1.1fr)
+        minmax(300px, 0.9fr);
+
+    min-height: 540px;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        var(
+            --border-color,
+            #dfe3ee
+        );
+
+    border-radius: 32px;
+
+    background:
+        var(
+            --card-background,
+            #ffffff
+        );
+
+    box-shadow:
+        0 18px 45px
+        rgba(
+            31,
+            41,
+            55,
+            0.08
+        );
+
+}
+
+
+/* ==========================================
+   IMAGE SECTION (REAL PHOTOGRAPHS)
+========================================== */
+
+.learningImageSection {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 540px;
+
+    padding: 40px;
+
+    position: relative;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(99, 102, 241, 0.08),
+            rgba(99, 102, 241, 0.02)
+        );
+
+}
+
+
+.learningImageBackground {
+
+    position: absolute;
+
+    top: 22px;
+
+    left: 24px;
+
+    z-index: 2;
+
+}
+
+
+.learningImageBackground span {
+
+    display: inline-block;
+
+    padding: 5px 14px;
+
+    border-radius: 999px;
+
+    background: rgba(255, 255, 255, 0.92);
+
+    backdrop-filter: blur(6px);
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.2px;
+
+    color:
+        var(
+            --text-secondary,
+            #64748b
+        );
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+}
+
+
+.learningImage {
+
+    display: block;
+
+    width: 100%;
+
+    max-width: 480px;
+
+    max-height: 420px;
+
+    border-radius: 20px;
+
+    object-fit: cover;
+
+    box-shadow:
+        0 14px 34px rgba(31, 41, 55, 0.12);
+
+    border: 3px solid #ffffff;
+
+    transition: transform 0.3s ease;
+
+}
+
+
+.learningImage:hover {
+
+    transform: scale(1.02);
+
+}
+
+
+/* ==========================================
+   CONTENT
+========================================== */
+
+.learningContent {
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding: 55px;
+
+}
+
+
+.visualGroupHeader {
+
+    margin-bottom: 12px;
+
+}
+
+
+.visualBadge {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    padding: 5px 14px;
+
+    border-radius: 999px;
+
+    background: rgba(99, 102, 241, 0.1);
+
+    color:
+        var(
+            --accent-color,
+            #6366f1
+        );
+
+    font-size: 12px;
+
+    font-weight: 750;
+
+    letter-spacing: 0.5px;
+
+}
+
+
+.lessonNumber {
+
+    margin-bottom: 12px;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+    color:
+        var(
+            --accent-color,
+            #6366f1
+        );
+
+}
+
+
+.learningContent h2 {
+
+    margin: 0 0 16px;
+
+    font-size: 38px;
+
+    line-height: 1.15;
+
+    font-weight: 800;
+
+}
+
+
+.visualCardText {
+
+    margin: 0;
+
+    font-size: 21px;
+
+    line-height: 1.7;
+
+    color:
+        var(
+            --text-secondary,
+            #64748b
+        );
+
+}
+
+
+.visualTagContainer {
+
+    margin-top: 18px;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+}
+
+
+.visualConceptTag {
+
+    display: inline-block;
+
+    padding: 6px 14px;
+
+    border-radius: 999px;
+
+    background: #eef2ff;
+
+    color: #4338ca;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.3px;
+
+}
+
+
+.visualExampleBox {
+
+    margin-top: 14px;
+
+    padding: 12px 18px;
+
+    background: #f8fafc;
+
+    border-left: 4px solid var(--accent-color, #6366f1);
+
+    border-radius: 0 12px 12px 0;
+
+    font-size: 15px;
+
+    line-height: 1.5;
+
+    color:
+        var(
+            --text-primary,
+            #202938
+        );
+
+}
+
+
+.visualExampleBox strong {
+
+    color:
+        var(
+            --accent-color,
+            #6366f1
+        );
+
+}
+
+
+/* ==========================================
+   SPEAKER
+========================================== */
+
+.learningSpeakerButton {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    width: fit-content;
+
+    margin-top: 32px;
+
+    padding:
+        13px 22px;
+
+    border: none;
+
+    border-radius: 15px;
+
+    background:
+        var(
+            --accent-color,
+            #6366f1
+        );
+
+    color: #ffffff;
+
+    font-size: 15px;
+
+    font-weight: 750;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+
+}
+
+
+.learningSpeakerButton:hover {
+
+    transform:
+        translateY(-2px);
+
+    opacity: 0.92;
+
+}
+
+
+.speakerIcon {
+
+    font-size: 18px;
+
+}
+
+
+/* ==========================================
+   NAVIGATION
+========================================== */
+
+.learningNavigation {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-top: 28px;
+
+}
+
+
+.learningNavButton {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    min-width: 130px;
+
+    padding:
+        13px 20px;
+
+    border:
+        1px solid
+        var(
+            --border-color,
+            #dfe3ee
+        );
+
+    border-radius: 14px;
+
+    background:
+        var(
+            --card-background,
+            #ffffff
+        );
+
+    color:
+        var(
+            --text-primary,
+            #202938
+        );
+
+    font-size: 14px;
+
+    font-weight: 750;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease;
+
+}
+
+
+.learningNavButton:hover:not(:disabled) {
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+.learningNext {
+
+    border-color:
+        var(
+            --accent-color,
+            #6366f1
+        );
+
+    background:
+        var(
+            --accent-color,
+            #6366f1
+        );
+
+    color: #ffffff;
+
+}
+
+
+.learningNavButton:disabled {
+
+    opacity: 0.35;
+
+    cursor: not-allowed;
+
+}
+
+
+/* ==========================================
+   DOTS & GROUP NAVIGATION
+========================================== */
+
+.learningDotsContainer {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+}
+
+
+.learningDotsGroup {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 5px;
+
+}
+
+
+.dotsGroupLabel {
+
+    font-size: 10px;
+
+    font-weight: 750;
+
+    letter-spacing: 0.5px;
+
+    text-transform: uppercase;
+
+    color:
+        var(
+            --text-secondary,
+            #64748b
+        );
+
+}
+
+
+.dotsRow {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+}
+
+
+.dotsDivider {
+
+    font-size: 18px;
+
+    font-weight: 300;
+
+    color:
+        var(
+            --border-color,
+            #cbd5e1
+        );
+
+    user-select: none;
+
+}
+
+
+.learningDot {
+
+    width: 10px;
+
+    height: 10px;
+
+    padding: 0;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background:
+        var(
+            --border-color,
+            #cbd5e1
+        );
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+
+}
+
+
+.learningDot:hover {
+
+    transform: scale(1.2);
+
+}
+
+
+.learningDot.active {
+
+    width: 12px;
+
+    height: 12px;
+
+    background:
+        var(
+            --accent-color,
+            #6366f1
+        );
+
+    transform:
+        scale(1.15);
+
+}
+
+
+.learningDot.dyslexiaDot {
+
+    border-radius: 3px;
+
+}
+
+
+.learningDot.dyslexiaDot.active {
+
+    background: #0d9488;
+
+}
+
+
+/* ==========================================
+   DARK THEME
+========================================== */
+
+[data-theme="dark"] .learningTopicBar {
+
+    background:
+        var(
+            --card-background,
+            #1e2433
+        );
+
+    border-color:
+        var(
+            --border-color,
+            #2a3449
+        );
+
+}
+
+
+[data-theme="dark"] .topicTabButton {
+
+    border-color:
+        var(
+            --border-color,
+            #2a3449
+        );
+
+    color:
+        var(
+            --text-primary,
+            #f1f5f9
+        );
+
+}
+
+
+[data-theme="dark"] .topicTabButton.active {
+
+    background:
+        var(
+            --accent-color,
+            #6366f1
+        );
+
+    color: #ffffff;
+
+}
+
+
+[data-theme="dark"] .learningImageSection {
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(99, 102, 241, 0.13),
+            rgba(99, 102, 241, 0.04)
+        );
+
+}
+
+
+[data-theme="dark"] .learningImageBackground span {
+
+    background: rgba(30, 36, 51, 0.92);
+
+    color: #94a3b8;
+
+}
+
+
+[data-theme="dark"] .learningImage {
+
+    border-color: #2a3449;
+
+    box-shadow:
+        0 14px 34px rgba(0, 0, 0, 0.4);
+
+}
+
+
+[data-theme="dark"] .visualConceptTag {
+
+    background: rgba(99, 102, 241, 0.2);
+
+    color: #a5b4fc;
+
+}
+
+
+[data-theme="dark"] .visualExampleBox {
+
+    background: rgba(30, 36, 51, 0.6);
+
+    border-left-color: var(--accent-color, #6366f1);
+
+    color:
+        var(
+            --text-primary,
+            #f1f5f9
+        );
+
+}
+
+
+[data-theme="dark"] .learningConceptBar {
+
+    background:
+        var(
+            --card-background,
+            #1e2433
+        );
+
+    border-color:
+        var(
+            --border-color,
+            #2a3449
+        );
+
+}
+
+
+[data-theme="dark"] .conceptBarHeader {
+
+    border-bottom-color: #2a3449;
+
+}
+
+
+[data-theme="dark"] .conceptBarLabel {
+
+    color: #f1f5f9;
+
+}
+
+
+[data-theme="dark"] .conceptTabButton {
+
+    background: #0f172a;
+
+    border-color: #2a3449;
+
+    color: #f1f5f9;
+
+}
+
+
+[data-theme="dark"] .conceptTabButton:hover {
+
+    border-color: #6366f1;
+
+    background: rgba(99, 102, 241, 0.15);
+
+}
+
+
+[data-theme="dark"] .conceptTabButton.active {
+
+    background: #4f46e5;
+
+    border-color: #6366f1;
+
+    color: #ffffff;
+
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.35);
+
+}
+
+
+[data-theme="dark"] .conceptPillBadge {
+
+    background: rgba(14, 165, 233, 0.2);
+
+    color: #38bdf8;
+
+}
+
+
+[data-theme="dark"] .learningCard {
+
+    box-shadow:
+        0 18px 45px
+        rgba(
+            0,
+            0,
+            0,
+            0.25
+        );
+
+}
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 900px) {
+
+    .learningModuleMain {
+
+        padding:
+            40px 22px 60px;
+
+    }
+
+
+    .learningModuleHeader {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+    }
+
+
+    .learningProgressBox {
+
+        width: 100%;
+
+    }
+
+
+    .learningProgressBox > span {
+
+        text-align: left;
+
+    }
+
+
+    .learningCard {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .learningImageSection {
+
+        min-height: 400px;
+
+    }
+
+
+    .learningContent {
+
+        padding: 40px;
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .learningModuleHeader h1 {
+
+        font-size: 38px;
+
+    }
+
+
+    .learningCard {
+
+        border-radius: 24px;
+
+    }
+
+
+    .learningImageSection {
+
+        min-height: 300px;
+
+        padding: 25px;
+
+    }
+
+
+    .learningContent {
+
+        padding: 30px;
+
+    }
+
+
+    .learningContent h2 {
+
+        font-size: 30px;
+
+    }
+
+
+    .learningContent p {
+
+        font-size: 18px;
+
+    }
+
+
+    .learningNavigation {
+
+        gap: 12px;
+
+    }
+
+
+    .learningNavButton {
+
+        min-width: 105px;
+
+        padding:
+            12px 14px;
+
+    }
+
+}

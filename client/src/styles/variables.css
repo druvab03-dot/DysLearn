@@ -1,0 +1,110 @@
+/* ==========================================
+            DYSLEARN DESIGN TOKENS
+========================================== */
+
+:root{
+
+    /* ==========================
+            BORDER RADIUS
+    ========================== */
+
+    --radius-xs:6px;
+
+    --radius-sm:10px;
+
+    --radius-md:14px;
+
+    --radius-lg:20px;
+
+    --radius-xl:28px;
+
+    --radius-2xl:36px;
+
+
+    /* ==========================
+              SPACING
+    ========================== */
+
+    --space-xs:4px;
+
+    --space-sm:8px;
+
+    --space-md:16px;
+
+    --space-lg:24px;
+
+    --space-xl:32px;
+
+    --space-2xl:48px;
+
+    --space-3xl:64px;
+
+
+    /* ==========================
+              FONT SIZE
+    ========================== */
+
+    --text-xs:12px;
+
+    --text-sm:14px;
+
+    --text-md:16px;
+
+    --text-lg:18px;
+
+    --text-xl:22px;
+
+    --text-2xl:28px;
+
+    --text-3xl:40px;
+
+    --text-4xl:56px;
+
+
+    /* ==========================
+            FONT WEIGHT
+    ========================== */
+
+    --weight-light:300;
+
+    --weight-normal:400;
+
+    --weight-medium:500;
+
+    --weight-semibold:600;
+
+    --weight-bold:700;
+
+
+    /* ==========================
+            TRANSITIONS
+    ========================== */
+
+    --transition-fast:.2s ease;
+
+    --transition:.35s ease;
+
+    --transition-slow:.5s ease;
+
+
+    /* ==========================
+             SHADOWS
+    ========================== */
+
+    --shadow-sm:
+        0 4px 12px rgba(0,0,0,.08);
+
+    --shadow-md:
+        0 10px 25px rgba(0,0,0,.12);
+
+    --shadow-lg:
+        0 18px 45px rgba(0,0,0,.16);
+
+
+    /* ==========================
+            CONTAINER
+    ========================== */
+
+    --container-width:1200px;
+
+}

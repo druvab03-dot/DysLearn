@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+<rect width="1200" height="800" rx="40" fill="#F7F8FF"/>
+<rect x="28" y="28" width="1144" height="744" rx="32" fill="none" stroke="#6366F1" stroke-width="5" opacity=".35"/>
+<text x="90" y="155" font-family="Arial, sans-serif" font-size="120" font-weight="800" fill="#6366F1">K</text>
+<text x="90" y="225" font-family="Arial, sans-serif" font-size="42" font-weight="700" fill="#263044">K for Kite</text>
+<g transform="translate(520,120)">
+<path d="M300 80 L470 300 L300 520 L130 300Z" fill="#F43F5E"/>
+<path d="M300 80 L300 520 M130 300 L470 300" stroke="#FDE68A" stroke-width="16"/>
+<path d="M300 520 Q260 600 330 650 Q390 690 350 735" fill="none" stroke="#475569" stroke-width="8"/>
+</g>
+</svg>
