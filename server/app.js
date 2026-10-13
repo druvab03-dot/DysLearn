@@ -7,6 +7,7 @@ const authRoutes = require("./routes/authRoutes");
 const childRoutes = require("./routes/childRoutes");
 const analysisRoutes = require("./routes/analysisRoutes");
 const assessmentRoutes = require("./routes/assessmentRoutes");
+const studentCategoryRoutes = require("../student-categorisation-ml/routes/studentCategoryRoutes");
 
 const app = express();
 
@@ -32,5 +33,6 @@ app.use("/api/auth", authRoutes);
 app.use("/api/children", childRoutes);
 app.use("/api/analysis", analysisRoutes);
 app.use("/api/assessment", assessmentRoutes);
+app.use("/api/student-category", studentCategoryRoutes);
 
 module.exports = app;

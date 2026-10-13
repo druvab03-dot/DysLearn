@@ -6,7 +6,8 @@
   "type": "commonjs",
   "scripts": {
     "dev": "nodemon server.js",
-    "start": "node server.js"
+    "start": "node server.js",
+    "test": "node --test ../student-categorisation-ml/tests/*.test.js"
   },
   "keywords": [],
   "author": "",

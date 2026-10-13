@@ -91,8 +91,21 @@ function AssessmentSession() {
             console.warn("Could not restore saved session:", e);
         }
 
-        // Preview curriculum for intro screen with randomized schedule
-        const previewCurriculum = generateAssessmentSession(classNumber, subject, difficulty);
+        // Initialize difficulty based on active student category:
+        // Support Needed -> Easy | Developing -> Medium | Progressing Well -> Hard
+        let initialDiff = "medium";
+        try {
+            const rawChild = localStorage.getItem("activeChild");
+            if (rawChild) {
+                const parsedChild = JSON.parse(rawChild);
+                if (parsedChild.category === "support_needed") initialDiff = "easy";
+                else if (parsedChild.category === "progressing_well") initialDiff = "hard";
+                else if (parsedChild.category === "developing") initialDiff = "medium";
+            }
+        } catch (e) {}
+
+        setDifficulty(initialDiff);
+        const previewCurriculum = generateAssessmentSession(classNumber, subject, initialDiff);
         setSessionData(previewCurriculum);
     }, [classNumber, subject]);
 

@@ -25,6 +25,7 @@ import {
     uploadChildHandwriting,
     analyzeChildHandwriting
 } from "../../services/childService";
+import StudentCategoryCard from "../../components/StudentCategoryCard/StudentCategoryCard";
 
 
 function ParentDashboard() {
@@ -737,6 +738,9 @@ function ParentDashboard() {
                                                 }
 
                                             </div>
+
+                                            {/* Dedicated Student Categorisation Section */}
+                                            <StudentCategoryCard child={child} />
 
 
                                             {/* Report Download Button if analyzed */}

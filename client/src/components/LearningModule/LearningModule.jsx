@@ -1,6 +1,7 @@
 import {
     useState,
-    useEffect
+    useEffect,
+    useRef
 } from "react";
 
 import {
@@ -18,6 +19,11 @@ import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import DyslexiaTextCard from "./DyslexiaTextCard";
 import { getLearningContent } from "./contentRegistry";
+import {
+    selectPersonalisedCards,
+    recordLearningTime,
+    CATEGORY_LABELS,
+} from "../../services/studentCategoryService";
 
 
 function LearningModule({
@@ -53,6 +59,79 @@ function LearningModule({
         setCurrentCardIndex
     ] = useState(0);
 
+    const [studentCategory, setStudentCategory] = useState("developing");
+    const [childId, setChildId] = useState(null);
+
+    // Active learning time and idle detection
+    const activeSecondsRef = useRef(0);
+    const idleSecondsRef = useRef(0);
+    const lastInteractionRef = useRef(Date.now());
+
+    // Load active child category
+    useEffect(() => {
+        try {
+            const raw = localStorage.getItem("activeChild");
+            if (raw) {
+                const parsed = JSON.parse(raw);
+                if (parsed.category) setStudentCategory(parsed.category);
+                if (parsed._id) setChildId(parsed._id);
+            }
+        } catch (e) {}
+    }, []);
+
+    // Track active and idle time (excluding idle time > 30s)
+    useEffect(() => {
+        const markActive = () => {
+            lastInteractionRef.current = Date.now();
+        };
+
+        window.addEventListener("mousemove", markActive);
+        window.addEventListener("keydown", markActive);
+        window.addEventListener("click", markActive);
+        window.addEventListener("touchstart", markActive);
+
+        const timer = setInterval(() => {
+            if (document.hidden) {
+                idleSecondsRef.current += 1;
+                return;
+            }
+            const idleFor = Date.now() - lastInteractionRef.current;
+            if (idleFor > 30000) {
+                idleSecondsRef.current += 1;
+            } else {
+                activeSecondsRef.current += 1;
+            }
+        }, 1000);
+
+        return () => {
+            window.removeEventListener("mousemove", markActive);
+            window.removeEventListener("keydown", markActive);
+            window.removeEventListener("click", markActive);
+            window.removeEventListener("touchstart", markActive);
+            clearInterval(timer);
+        };
+    }, []);
+
+    // Flush active learning time on unmount or concept change
+    const flushLearningTime = () => {
+        if (childId && activeSecondsRef.current >= 3) {
+            recordLearningTime({
+                childId,
+                activeSeconds: activeSecondsRef.current,
+                idleSeconds: idleSecondsRef.current,
+                conceptTitle: currentConcept?.name || "",
+            });
+            activeSecondsRef.current = 0;
+            idleSecondsRef.current = 0;
+        }
+    };
+
+    useEffect(() => {
+        return () => {
+            flushLearningTime();
+        };
+    }, [childId]);
+
     // Reset navigation indices whenever class or subject changes
     useEffect(() => {
         window.speechSynthesis.cancel();
@@ -77,19 +156,22 @@ function LearningModule({
         concepts[0] ||
         { cards: [] };
 
-    // Every individual learning concept contains EXACTLY eight cards (Cards 1–4 Visual, Cards 5–8 Dyslexia Typography)
+    // Exactly four cards per concept selected according to student category:
+    // Support Needed: 3 visual + 1 text = 4
+    // Developing: 2 visual + 2 text = 4
+    // Progressing Well: 1 visual + 3 text = 4
     const cards =
-        currentConcept?.cards || [];
+        selectPersonalisedCards(currentConcept?.cards, studentCategory);
 
     const currentCard =
-        cards[currentCardIndex];
+        cards[currentCardIndex] || cards[0];
 
     const progress =
         cards.length > 0
             ? ((currentCardIndex + 1) / cards.length) * 100
             : 0;
 
-    const isGroupA = currentCardIndex < 4;
+    const isGroupA = currentCard?.cardType === "visual";
 
     /* =========================
        STOP SPEECH ON EXIT/CHANGE
@@ -106,25 +188,18 @@ function LearningModule({
     }, []);
 
     const handleTopicChange = (index) => {
-
         window.speechSynthesis.cancel();
-
+        flushLearningTime();
         setCurrentTopicIndex(index);
-
         setCurrentConceptIndex(0);
-
         setCurrentCardIndex(0);
-
     };
 
     const handleConceptChange = (index) => {
-
         window.speechSynthesis.cancel();
-
+        flushLearningTime();
         setCurrentConceptIndex(index);
-
         setCurrentCardIndex(0);
-
     };
 
     /* =========================
@@ -316,44 +391,31 @@ function LearningModule({
                         <div className="learningProgressBox">
 
                             <div className="learningProgressText">
-
                                 <span>
-
-                                    {t("learningModule.card", "Card")} {currentCardIndex + 1} / 8
-
+                                    {t("learningModule.card", "Card")} {currentCardIndex + 1} / {cards.length || 4}
                                 </span>
-
                                 <strong>
-
                                     {Math.round(progress)}%
-
                                 </strong>
-
                             </div>
 
                             <div className="learningProgressTrack">
-
                                 <div
                                     className="learningProgressFill"
                                     style={{
                                         width: `${progress}%`
                                     }}
                                 />
-
                             </div>
 
                             <span className="learningGroupHint">
-
                                 {isGroupA
-                                    ? `Group A: Real Image ${currentCardIndex + 1} of 4`
-                                    : `Group B: Typography Style ${currentCardIndex - 3} of 4`}
-
+                                    ? `🖼️ Visual Learning Card (${currentCardIndex + 1} of ${cards.filter(c => c.cardType === "visual").length} visual)`
+                                    : `🔤 Dyslexia Typography Card (${cards.filter(c => c.cardType === "typography").length} typography)`}
                             </span>
 
                             <span className="conceptProgressTag">
-
-                                Concept {currentConceptIndex + 1} of {concepts.length}: <strong>{currentConcept?.name}</strong> (8 Cards)
-
+                                Concept {currentConceptIndex + 1} of {concepts.length}: <strong>{currentConcept?.name}</strong> (4 Cards • {CATEGORY_LABELS[studentCategory] || "Personalised"})
                             </span>
 
                         </div>
@@ -653,68 +715,27 @@ function LearningModule({
 
                         {/* 8 CARD DOTS WITH GROUP DIVISION */}
 
+                        {/* 4 PERSONALISED CARDS DOTS */}
                         <div className="learningDotsContainer">
-
                             <div className="learningDotsGroup">
-
                                 <span className="dotsGroupLabel">
-                                    {t("learningModule.groupAVisual", "Group A (4 Images)")}
+                                    {CATEGORY_LABELS[studentCategory] || "Personalised"} (4 Cards)
                                 </span>
-
                                 <div className="dotsRow">
-
-                                    {cards.slice(0, 4).map((_, index) => (
-
+                                    {cards.map((c, index) => (
                                         <button
-                                            key={`a-${index}`}
+                                            key={`card-dot-${index}`}
                                             type="button"
-                                            className={`learningDot ${
+                                            className={`learningDot ${c.cardType === "typography" ? "dyslexiaDot" : ""} ${
                                                 index === currentCardIndex ? "active" : ""
                                             }`}
                                             onClick={() => handleCardSelect(index)}
-                                            aria-label={`Visual Card ${index + 1}`}
+                                            aria-label={`Card ${index + 1}: ${c.cardType === "visual" ? "Visual" : "Typography"}`}
+                                            title={`Card ${index + 1}: ${c.cardType === "visual" ? "Visual" : "Typography"}`}
                                         />
-
                                     ))}
-
                                 </div>
-
                             </div>
-
-                            <span className="dotsDivider" aria-hidden="true">|</span>
-
-                            <div className="learningDotsGroup">
-
-                                <span className="dotsGroupLabel">
-                                    {t("learningModule.groupBText", "Group B (4 Typography)")}
-                                </span>
-
-                                <div className="dotsRow">
-
-                                    {cards.slice(4, 8).map((_, index) => {
-
-                                        const actualIndex = index + 4;
-
-                                        return (
-
-                                            <button
-                                                key={`b-${actualIndex}`}
-                                                type="button"
-                                                className={`learningDot dyslexiaDot ${
-                                                    actualIndex === currentCardIndex ? "active" : ""
-                                                }`}
-                                                onClick={() => handleCardSelect(actualIndex)}
-                                                aria-label={`Dyslexia Text Card ${index + 1}`}
-                                            />
-
-                                        );
-
-                                    })}
-
-                                </div>
-
-                            </div>
-
                         </div>
 
 

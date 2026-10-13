@@ -1,5 +1,8 @@
 const AssessmentResult = require("../models/AssessmentResult");
 const Child = require("../models/Child");
+const {
+    reevaluateStudentCategory,
+} = require("../../student-categorisation-ml/services/categoryAssignmentService");
 
 // In-memory active session tracker to validate start times against tampering
 const activeSessions = new Map();
@@ -222,6 +225,13 @@ exports.submitAssessment = async (req, res) => {
                     latestAssessment: assessmentDoc._id,
                     $push: { assessmentResults: assessmentDoc._id },
                 });
+
+                // Trigger multi-component student re-categorisation
+                try {
+                    await reevaluateStudentCategory(targetChildId, { assessmentId: assessmentDoc._id });
+                } catch (catErr) {
+                    console.warn("Student re-categorisation warning:", catErr.message);
+                }
             } catch (childErr) {
                 console.warn("Could not attach assessment to child document:", childErr.message);
             }

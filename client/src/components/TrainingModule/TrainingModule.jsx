@@ -7,18 +7,45 @@ import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import { useTheme } from "../../context/ThemeContext";
 import { getTrainingQuestions, getTrainingSummary } from "./trainingData";
+import {
+    recordTrainingMetrics,
+    getPersonalisedTrainingConfig,
+    CATEGORY_LABELS,
+} from "../../services/studentCategoryService";
 
-function TrainingModule({ defaultMode = "image" }) {
+function TrainingModule({ defaultMode = "personalised" }) {
     const { classNumber = "1", subject = "english" } = useParams();
     const navigate = useNavigate();
     const { theme } = useTheme();
     const { t } = useTranslation();
 
-    const [mode, setMode] = useState(defaultMode); // 'image' | 'text'
+    const [studentCategory, setStudentCategory] = useState("developing");
+    const [childId, setChildId] = useState(null);
+    const [childName, setChildName] = useState("");
+
+    const [mode, setMode] = useState(defaultMode); // 'personalised' | 'image' | 'text'
     const [currentIndex, setCurrentIndex] = useState(0);
     const [selectedOption, setSelectedOption] = useState(null);
     const [isRevealed, setIsRevealed] = useState(false);
     const [isCompleted, setIsCompleted] = useState(false);
+
+    // Track responses for student categorisation model
+    const [attemptedCount, setAttemptedCount] = useState(0);
+    const [correctCount, setCorrectCount] = useState(0);
+    const [hasRecorded, setHasRecorded] = useState(false);
+
+    // Load active child from localStorage
+    useEffect(() => {
+        try {
+            const raw = localStorage.getItem("activeChild");
+            if (raw) {
+                const parsed = JSON.parse(raw);
+                if (parsed.category) setStudentCategory(parsed.category);
+                if (parsed._id) setChildId(parsed._id);
+                if (parsed.name) setChildName(parsed.name);
+            }
+        } catch (e) {}
+    }, []);
 
     // Normalize subject
     const normSubject = String(subject).toLowerCase().trim();
@@ -34,7 +61,24 @@ function TrainingModule({ defaultMode = "image" }) {
         resolvedSubject.charAt(0).toUpperCase() + resolvedSubject.slice(1);
 
     // Get questions for active class, subject, and mode
-    const questions = getTrainingQuestions(classNumber, resolvedSubject, mode);
+    let questions = [];
+    if (mode === "personalised") {
+        const imgQ = getTrainingQuestions(classNumber, resolvedSubject, "image");
+        const txtQ = getTrainingQuestions(classNumber, resolvedSubject, "text");
+        if (studentCategory === "support_needed") {
+            // 20 questions: mostly visual (up to 15 visual + 5 text, or all available up to 20)
+            questions = [...imgQ.slice(0, 15), ...txtQ.slice(0, 5)];
+        } else if (studentCategory === "progressing_well") {
+            // 8 questions: mostly text (2 visual + 6 text)
+            questions = [...imgQ.slice(0, 2), ...txtQ.slice(0, 6)];
+        } else {
+            // Developing: 12 questions (6 visual + 6 text)
+            questions = [...imgQ.slice(0, 6), ...txtQ.slice(0, 6)];
+        }
+    } else {
+        questions = getTrainingQuestions(classNumber, resolvedSubject, mode);
+    }
+
     const currentQuestion = questions[currentIndex] || null;
     const totalQuestions = questions.length;
 
@@ -45,6 +89,9 @@ function TrainingModule({ defaultMode = "image" }) {
         setSelectedOption(null);
         setIsRevealed(false);
         setIsCompleted(false);
+        setAttemptedCount(0);
+        setCorrectCount(0);
+        setHasRecorded(false);
     }, [classNumber, resolvedSubject, mode]);
 
     // Stop TTS when leaving page
@@ -97,6 +144,15 @@ function TrainingModule({ defaultMode = "image" }) {
 
     const handleNextQuestion = () => {
         window.speechSynthesis.cancel();
+
+        // Record response metrics for this question
+        if (selectedOption !== null && currentQuestion) {
+            setAttemptedCount((prev) => prev + 1);
+            if (selectedOption === currentQuestion.correctAnswer) {
+                setCorrectCount((prev) => prev + 1);
+            }
+        }
+
         if (currentIndex < totalQuestions - 1) {
             setCurrentIndex(currentIndex + 1);
             setSelectedOption(null);
@@ -106,12 +162,29 @@ function TrainingModule({ defaultMode = "image" }) {
         }
     };
 
+    // Auto-record training session metrics to student profile upon completion
+    useEffect(() => {
+        if (isCompleted && childId && attemptedCount > 0 && !hasRecorded) {
+            recordTrainingMetrics({
+                childId,
+                totalAttempted: attemptedCount,
+                totalCorrect: correctCount,
+                subject: resolvedSubject,
+                mode,
+            });
+            setHasRecorded(true);
+        }
+    }, [isCompleted, childId, attemptedCount, correctCount, hasRecorded, resolvedSubject, mode]);
+
     const handleRestart = () => {
         window.speechSynthesis.cancel();
         setCurrentIndex(0);
         setSelectedOption(null);
         setIsRevealed(false);
         setIsCompleted(false);
+        setAttemptedCount(0);
+        setCorrectCount(0);
+        setHasRecorded(false);
     };
 
     const handleSwitchMode = (newMode) => {
@@ -165,13 +238,25 @@ function TrainingModule({ defaultMode = "image" }) {
                 <div className="trainingModeSelector">
                     <button
                         type="button"
+                        className={`modeTabBtn ${mode === "personalised" ? "active" : ""}`}
+                        onClick={() => handleSwitchMode("personalised")}
+                        aria-pressed={mode === "personalised"}
+                    >
+                        <span className="modeIcon">🎯</span>
+                        <span className="modeLabel">
+                            Personalised ({studentCategory === "support_needed" ? "20 Qs" : studentCategory === "progressing_well" ? "8 Qs" : "12 Qs"})
+                        </span>
+                    </button>
+
+                    <button
+                        type="button"
                         className={`modeTabBtn ${mode === "image" ? "active" : ""}`}
                         onClick={() => handleSwitchMode("image")}
                         aria-pressed={mode === "image"}
                     >
                         <span className="modeIcon">🖼️</span>
                         <span className="modeLabel">
-                            Image-Based Training
+                            Image-Based (10)
                         </span>
                     </button>
 
@@ -183,7 +268,7 @@ function TrainingModule({ defaultMode = "image" }) {
                     >
                         <span className="modeIcon">📝</span>
                         <span className="modeLabel">
-                            Text-Based Training
+                            Text-Based (10)
                         </span>
                     </button>
                 </div>
@@ -383,13 +468,27 @@ function TrainingModule({ defaultMode = "image" }) {
                             <p className="completionMessage">
                                 You have finished all questions in{" "}
                                 <strong>
-                                    {mode === "image" ? "Image-Based" : "Text-Based"} Training
+                                    {mode === "personalised"
+                                        ? "Personalised"
+                                        : mode === "image"
+                                        ? "Image-Based"
+                                        : "Text-Based"}{" "}
+                                    Training
                                 </strong>{" "}
                                 for <strong>Class {classNumber} {displaySubjectName}</strong>!
                             </p>
-                            <p className="completionSub">
-                                Training helps us learn and remember educational concepts with confidence.
-                            </p>
+
+                            <div style={{ margin: "20px 0", padding: "16px 20px", background: "rgba(16, 185, 129, 0.1)", borderRadius: "12px", border: "1px solid rgba(16, 185, 129, 0.3)", textAlign: "center" }}>
+                                <div style={{ fontSize: "14px", fontWeight: "700", color: "#047857", marginBottom: "6px" }}>
+                                    🎯 Training Performance Metrics
+                                </div>
+                                <div style={{ fontSize: "18px", fontWeight: "800", color: "var(--text-primary, #111827)" }}>
+                                    {correctCount} / {attemptedCount} Correct ({attemptedCount > 0 ? Math.round((correctCount / attemptedCount) * 100) : 0}%)
+                                </div>
+                                <div style={{ fontSize: "13px", color: "var(--text-secondary, #6b7280)", marginTop: "4px" }}>
+                                    ✓ Performance recorded to student profile for continuous categorisation progress.
+                                </div>
+                            </div>
 
                             <div className="completionActionGrid">
                                 <button

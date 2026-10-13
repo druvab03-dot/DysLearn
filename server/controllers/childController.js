@@ -10,6 +10,11 @@ const {
 } = require(
     "../services/handwritingAnalysisService"
 );
+const {
+    assignInitialCategory,
+} = require(
+    "../../student-categorisation-ml/services/categoryAssignmentService"
+);
 
 
 // ==========================================
@@ -374,6 +379,16 @@ const analyzeChildHandwriting = async (
 
         await child.save();
 
+        // Assign initial student category based on handwriting features
+        try {
+            await assignInitialCategory(child._id);
+            const updated = await Child.findById(child._id);
+            if (updated) {
+                child = updated;
+            }
+        } catch (catErr) {
+            console.warn("Initial categorisation warning:", catErr.message);
+        }
 
         return res
             .status(200)
